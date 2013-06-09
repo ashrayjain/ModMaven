@@ -8,8 +8,8 @@
     <link href="../css/cssMain.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<div id="fb-root"></div>
-<script>
+    <div id="fb-root"></div>
+    <script>
     window.fbAsyncInit = function() {
         // init the FB JS SDK
         FB.init({
@@ -30,40 +30,58 @@
         js.src = "http://connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
-<div class="navbar">
-    <div class="navbar-inner">
-        <a class="brand" href=""><img src="../img/modmaven.png"/></a>
-        <ul class="nav pull-right" style="top: 31px">
-            <li><a href="#" onclick="FB.login()"><h4>Login with Facebook</h4></a></li>
-        </ul>
-    </div>
-</div>
-<div id = "main-body" class="container-fluid">
-    <div class="row-fluid">
-        <div id="search-sidebar" class="span2">
-            <form id = "modsearch" class="navbar-search pull-left" action="/modpage" method="post">
-                <input name="modName" type="text" class="search-query" placeholder="Insert Module Code">
-            </form>
-        </div>
-        <div class="span10 color-head">
-            <h3>{{modName}}</h3>
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#">Information</a>
-                </li>
-                <li><a href="#">Tree</a></li>
-                <li><a href="#">Statistics</a></li>
-                <li><a href="#">Discussion</a></li>
+    </script>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href=""><img src="../img/modmaven.png"/></a>
+            <ul class="nav pull-right" style="top: 31px">
+                <li><a href="#" onclick="FB.login()"><h4>Login with Facebook</h4></a></li>
             </ul>
         </div>
     </div>
-</div>
-<div id = "pagedata" class = "text-center">
-    <div id = "data" class = "row">
+    <div id = "main-body" class="container-fluid">
+        <div class="row-fluid">
+            <div id="search-sidebar" class="span2">
+                <form id = "modsearch" class="navbar-search pull-left" action="/modpage" method="post">
+                    <input name="modName" type="text" class="search-query" placeholder="Insert Module Code">
+                </form>
+            </div>
+            <div class="span10 color-head">
+                <h3>{{modName}}</h3>
+                <div id="Tabs">
+                    <ul class="nav nav-pills">
+                        <li id="InfoTab" class="active" onclick="tab('InfoTab');">
+                            <a>Information</a>
+                        </li>
+                        <li id="TreeTab" onclick="tab('TreeTab');"><a>Tree</a></li>
+                        <li id="StatsTab" onclick="tab('StatsTab');"><a>Statistics</a></li>
+                        <li id="DiscTab" onclick="tab('DiscTab');"><a>Discussion</a></li>
+                    </ul>
+                    <div id="TabContent" class="container">
+                        <div id="InfoTabContent">
+                            <h4>{{modTitle}}</h4>
+                            <p class="lead">{{modDesc}}</p>
+                        </div>
+                        <div id="TreeTabContent" style="display:none;">
+                            <p>TreeTabContent</p>
+                        </div>
+                        <div id="StatsTabContent" style="display:none;">
+                            <p>StatsTabContent</p>
+                        </div>
+                        <div id="DiscTabContent" style="display:none;">
+                            <p>DiscTabContent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+    <div id = "pagedata" class = "text-center">
+        <div id = "data" class = "row">
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/tabLogic.js"></script>
 </body>
 </html>

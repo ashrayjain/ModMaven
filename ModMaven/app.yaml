@@ -9,7 +9,6 @@ handlers:
 - url: /css
   static_dir: css
 
-
 - url: /js
   static_dir: js
 
@@ -21,7 +20,7 @@ handlers:
   script: main.app
 
 # Handler for front page
-- url: /*
+- url: /.*
   script: main.app
 
 libraries:

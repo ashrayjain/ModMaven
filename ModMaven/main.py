@@ -24,6 +24,8 @@ class ModPage(webapp2.RequestHandler):
         
             template_values = {
                 'modName': input,
+                'modTitle': data[input]["title"],
+                'modDesc': data[input]["description"]
             }
             self.response.out.write(template.render(template_values))
         else:
