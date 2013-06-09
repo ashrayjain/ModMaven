@@ -47,16 +47,17 @@
     <div id="main-body" class="container" style="padding-top: 40px; padding-left: 40px;">
         <div class="row">
             <div id="search-sidebar" class="container span3">
-                <form id = "modsearch" class="navbar-search">
+                <form id = "modsearch" class="navbar-search" action="/modpage" method ="post">
                     <label style="font-size: 25px; padding-left: 3px;">Search For Modules</label>
 
-                    <input type="text" class="search-query" style="border-radius: 5px !important; line-height: 2;"placeholder="Insert Module Code..">
+                    <input name="modName" type="text" class="search-query" style="border-radius: 5px !important; line-height: 2;"placeholder="Insert Module Code..">
                 </form>
             </div>
         </div>
     </div>
     <div id = "pagedata" class = "text-center">
         <div id = "data" class = "row">
+            <p class = "text-error">{{NotFoundError}}</p>
         </div>
     </div>
 </div>

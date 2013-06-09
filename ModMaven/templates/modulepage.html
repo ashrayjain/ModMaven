@@ -42,12 +42,12 @@
 <div id = "main-body" class="container-fluid">
     <div class="row-fluid">
         <div id="search-sidebar" class="span2">
-            <form id = "modsearch" class="navbar-search pull-left">
-                <input type="text" class="search-query" placeholder="Insert Module Code">
+            <form id = "modsearch" class="navbar-search pull-left" action="/modpage" method="post">
+                <input name="modName" type="text" class="search-query" placeholder="Insert Module Code">
             </form>
         </div>
         <div class="span10 color-head">
-            <h3>Module Name</h3>
+            <h3>{{modName}}</h3>
             <ul class="nav nav-pills">
                 <li class="active">
                     <a href="#">Information</a>

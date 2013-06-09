@@ -16,6 +16,10 @@ handlers:
 - url: /img
   static_dir: img
 
+# Handler for module page
+- url: /modpage
+  script: main.app
+
 # Handler for front page
 - url: /*
   script: main.app
