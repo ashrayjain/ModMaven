@@ -7,6 +7,14 @@ body {
     padding-bottom: 10px;
 }
 
+.container-fluid {
+    max-width: 940px;
+    min-width: 728px;
+    margin: 0 auto;
+}
+
+
+/* Facebook Login Button */
 .btn-custom {
     background-color: hsl(201, 100%, 40%) !important;
     background-repeat: repeat-x;
@@ -32,6 +40,7 @@ body {
     color: #777
 }
 
+/* Hide the Bootstrap Navbar */
 .navbar-inner {
     background: none !important;
     border: 0 !important;

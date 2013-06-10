@@ -1,87 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>ModMaven</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="../css/cssMain.css" rel="stylesheet" media="screen">
-</head>
-<body>
-    <div id="fb-root"></div>
-    <script>
-    window.fbAsyncInit = function() {
-        // init the FB JS SDK
-        FB.init({
-            appId      : '579845202048952',                        // App ID from the app dashboard
-            //channelUrl : '//localhost/channel.html',              // Channel file for x-domain comms
-            status     : true,                                 // Check Facebook Login status
-            xfbml      : true                                  // Look for social plugins on the page
-        });
-
-        // Additional initialization code such as adding Event Listeners goes here
-    };
-
-    // Load the SDK asynchronously
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "http://connect.facebook.net/en_US/all.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <a class="brand" href=""><img src="../img/modmaven.png"/></a>
-            <ul class="nav pull-right" style="top: 31px">
-                <li><a href="#" onclick="FB.login()"><h4>Login with Facebook</h4></a></li>
-            </ul>
-        </div>
-    </div>
-    <div id = "main-body" class="container-fluid">
-        <div class="row-fluid">
-            <div id="search-sidebar" class="span2">
-                <form id = "modsearch" class="navbar-search pull-left" action="/modpage" method="post">
-                    <input name="modName" type="text" class="search-query" placeholder="Insert Module Code">
-                </form>
-            </div>
-            <div class="span10 color-head">
-                <h3>{{modName}}</h3>
-                <div id="Tabs">
-                    <ul class="nav nav-pills">
-                        <li id="InfoTab" class="active" onclick="tab('InfoTab');">
-                            <a>Information</a>
-                        </li>
-                        <li id="TreeTab" onclick="tab('TreeTab');"><a>Tree</a></li>
-                        <li id="StatsTab" onclick="tab('StatsTab');"><a>Statistics</a></li>
-                        <li id="DiscTab" onclick="tab('DiscTab');"><a>Discussion</a></li>
-                    </ul>
-                    <div id="TabContent" class="container">
-                        <div id="InfoTabContent">
-                            <h4>{{modTitle}}</h4>
-                            <p class="lead">{{modDesc}}</p>
-                        </div>
-                        <div id="TreeTabContent" style="display:none;">
-                            <p>TreeTabContent</p>
-                        </div>
-                        <div id="StatsTabContent" style="display:none;">
-                            <p>StatsTabContent</p>
-                        </div>
-                        <div id="DiscTabContent" style="display:none;">
-                            <p>DiscTabContent</p>
-                        </div>
+{% extends "base.html" %}
+{% block title %}ModMaven{% endblock %}
+{% block main_content %}
+    <div class="row-fluid">
+        <div class="span12 color-head">
+            <h3>{{modName}}</h3>
+            <div id="Tabs">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#Info" data-toggle="pill">Information</a></li>
+                    <li><a href="#Tree" data-toggle="pill">Tree</a></li>
+                    <li><a href="#Stats" data-toggle="pill">Statistics</a></li>
+                    <li><a href="#Disc" data-toggle="pill">Discussion</a></li>
+                </ul>
+                <div class="pill-content">
+                    <div id="Info" class="pill-pane active">
+                        <h4>{{modTitle}}</h4>
+                        <p class="lead">{{modDesc}}</p>
+                    </div>
+                    <div id="Tree" class="pill-pane">
+                        <p>TreeTabContent</p>
+                    </div>
+                    <div id="Stats" class="pill-pane">
+                        <p>StatsTabContent</p>
+                    </div>
+                    <div id="Disc" class="pill-pane">
+                        <p>DiscTabContent</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id = "pagedata" class = "text-center">
-        <div id = "data" class = "row">
-        </div>
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/tabLogic.js"></script>
-</body>
-</html>
+{% endblock %}
