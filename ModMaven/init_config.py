@@ -30,7 +30,9 @@ jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(template_d
 
 json_data = open("modInfo.json")
 data = json.load(json_data, encoding='latin1')
-print "data loaded"
+
+# for debugging
+# print "data loaded"
 
 class User(ndb.Model):
     """DataStore Model Class for User Table"""
@@ -58,10 +60,14 @@ class Handler(webapp2.RequestHandler):
     def current_user(self):
         if self.session.get("user"):
             # User is logged in
-            print "Retreived from session", self.session.get("user")
+
+            # for debugging
+            # print "Retreived from session", self.session.get("user")
             return self.session.get("user")
         else:
-            print "In cookie", self.session.get("user")
+            # for debugging
+            # print "In cookie", self.session.get("user")
+
             # Either user just logged in or logged in for the first time
             cookie = facebook.get_user_from_cookie(self.request.cookies,
                                                    FACEBOOK_APP_ID,
@@ -97,7 +103,8 @@ class Handler(webapp2.RequestHandler):
                     access_token=user.access_token
                 )
                 return self.session.get("user")
-        return None # User didn't complete FB authentication
+        # User didn't complete FB authentication
+        return None
 
     def dispatch(self):
         """
