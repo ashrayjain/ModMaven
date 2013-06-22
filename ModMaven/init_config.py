@@ -104,7 +104,7 @@ class Handler(webapp2.RequestHandler):
                     access_token=user.access_token
                 )
                 return self.session.get("user")
-        # User didn't complete FB authentication
+            # User didn't complete FB authentication
         return None
 
     def dispatch(self):
