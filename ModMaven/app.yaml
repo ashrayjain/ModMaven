@@ -22,10 +22,14 @@ handlers:
 - url: /modpage/?
   script: main.app
 
+# Handler for logging out
+- url: /logout/?
+  script: main.app
+
 # Handler for front page
 - url: /.*
   script: main.app
 
 libraries:
 - name: jinja2
-  version: latest
+  version: 2.6
