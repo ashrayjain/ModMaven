@@ -1,8 +1,14 @@
+FACEBOOK_APP_ID = "579845202048952"
+
+import facebook
 import webapp2
 import jinja2
 import os
 import json
+import urllib2
 
+from google.appengine.ext import db
+from webapp2_extras import sessions
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 

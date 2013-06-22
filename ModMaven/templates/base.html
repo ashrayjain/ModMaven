@@ -7,13 +7,13 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../css/cssMain.css" rel="stylesheet" media="screen">
-
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 <body>
 
-<!-- FB Stuff -->
-<div id="fb-root"></div>
-<script>
+    <!-- FB Stuff -->
+    <div id="fb-root"></div>
+    <script>
     window.fbAsyncInit = function() {
         // init the FB JS SDK
         FB.init({
@@ -33,29 +33,29 @@
         js.src = "http://connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
+    </script>
 
-<!-- Other Stuff -->
+    <!-- Other Stuff -->
 
-<div class="container-fluid">
-    <div class = "navbar">
-        <div class="navbar-inner">
-            <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
-            <ul class="nav pull-right" style="top: 22px">
-                <li><a href="#">
-                    <button onclick="FB.login()" class="btn-custom">
-                        <div style="font-size: 20px; padding: 5px 0;">Login with Facebook</div>
-                    </button>
-                </a></li>
-            </ul>
+    <div class="container-fluid">
+        <div class = "navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
+                <ul class="nav pull-right" style="top: 22px">
+                    <li><a href="#">
+                        <button onclick="FB.login()" class="btn-custom">
+                            <div style="font-size: 20px; padding: 5px 0;">Login with Facebook</div>
+                        </button>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-body" class="container-fluid">
+            {% block main_content %}{% endblock %}
         </div>
     </div>
-    <div id="main-body" class="container-fluid">
-        {% block main_content %}{% endblock %}
-    </div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 </html>
