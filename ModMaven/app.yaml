@@ -5,6 +5,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /data
+  static_dir: data
+  mime_type: application/json
 
 - url: /css
   static_dir: css
