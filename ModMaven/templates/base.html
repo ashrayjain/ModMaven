@@ -9,14 +9,14 @@
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../css/cssMain.css" rel="stylesheet" media="screen">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 </head>
 <body>
 
 
 <!-- FB Stuff -->
 <div id="fb-root"></div>
-
-
 <script type="text/javascript">
     window.fbAsyncInit = function() {
         FB.init({appId: '{{ FacebookAppID }}', status: true, cookie: true});
@@ -31,7 +31,6 @@
         ref.parentNode.insertBefore(js, ref);
     }(document));
 </script>
-
 
 <!-- Other Stuff -->
 
@@ -85,10 +84,11 @@
     </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
 <script src="../js/bootstrap.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="../js/tree2.js"></script>
 
 </body>
 </html>
