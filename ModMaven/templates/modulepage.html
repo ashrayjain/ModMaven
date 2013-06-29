@@ -18,6 +18,22 @@
                     </div>
                     <div id="Tree" class="pill-pane">
                         <div class="TreeSpace row-fluid"></div>
+                            <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 id="myModalLabel">Modal header</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>One fine body…</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                <button class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
                         <script type="text/javascript">
 
                             document.getElementById("treebutton").onclick = function() {
@@ -41,7 +57,9 @@
                                 var tree = d3.layout.tree()
                                         .size([1000,750]);
 
-                                d3.json("http://localhost:8080/data/testInfo.json", function (error,jsonData) {
+                                d3.json("http://localhost:8080/data/test2.json", function (error,jsonData) {
+                                    //var id="{{modName}}"
+                                    //tree.children(function(d) { console.log(d[id].prereqs); return d[id].prereqs;})
                                     var nodes = tree.nodes(jsonData);
                                     var links = tree.links(nodes);
 
@@ -54,7 +72,7 @@
 
                                     var diagonal = d3.svg.diagonal()
                                             .projection(function(d) { return [d.x, d.y+50]; });
-
+                                    var x,y;
                                     canvas.selectAll(".link")
                                             .data(links)
                                             .enter()
@@ -64,6 +82,20 @@
                                             .attr("stroke", "black")
                                             .attr("opacity", 0)
                                             .attr("d", diagonal);
+
+                                    var backButton = canvas.append("circle")
+                                                        .attr("r", 25)
+                                                        .attr("cx", 50)
+                                                        .attr("cy", 50)
+                                                        .attr("fill", "steelblue")
+                                                        .attr("stroke", "black")
+                                                        .attr("stroke-width", 1.5);
+                                                        
+                                    backButton.append("text")
+                                                .text(function(d){ return "Back";})
+                                                .style("fill", "black")
+                                                .attr("text-anchor", "middle")
+                                                .attr("class", "lead");
 
                                     var rectangles = node.append("rect")
                                             .attr("width", 0)
@@ -75,6 +107,7 @@
                                             .attr("stroke", "black")
                                             .attr("stroke-width", 1.5)
                                             .attr("opacity", 1)
+                                            .attr("nodeValue", function(d) { return d.name;})
                                             .attr("fill", "steelblue");
 
                                     node.append("text")
@@ -106,7 +139,7 @@
                                             .attr("opacity",1);
 
                                     canvas.on("mouseover", function() {
-                                        node.select("rect")
+                                        node.selectAll("rect")
                                                 .transition()
                                                 .attr("width", 100);
                                     })
@@ -114,6 +147,13 @@
                                         d3. select(this)
                                                 .transition()
                                                 .attr("width", 500);
+                                        var currNode=this.parentNode;
+                                        var currMod= d3.select(currNode).text();
+                                        //console.log(currNode);
+                                        d3.select(".modal-body")
+                                            .select("p")
+                                            .text(currMod);    
+                                        $('#myModal').modal('show');
                                     })
                                     console.log(rectangles);
                                 })

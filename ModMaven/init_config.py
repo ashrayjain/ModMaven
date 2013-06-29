@@ -37,6 +37,8 @@ data = json.load(json_data, encoding='latin1')
 
 class User(ndb.Model):
     """DataStore Model Class for User Table"""
+
+    key_name = ndb.StringProperty(required=True)
     id = ndb.StringProperty(required=True)
     created = ndb.DateTimeProperty(auto_now_add=True)
     updated = ndb.DateTimeProperty(auto_now=True)
@@ -67,7 +69,7 @@ class Handler(webapp2.RequestHandler):
             return self.session.get("user")
         else:
             # for debugging
-            # print "In cookie", self.session.get("user")
+            #print "In cookie", self.session.get("user")
 
             # Either user just logged in or logged in for the first time
             cookie = facebook.get_user_from_cookie(self.request.cookies,
@@ -77,7 +79,7 @@ class Handler(webapp2.RequestHandler):
                 # Facebook authentication complete
                 # Check to see if existing user
                 user = User.get_by_id(cookie["uid"])
-                print user
+                #print user
                 if not user:
                     # Not an existing user so get user info and
                     # create DataStore entry
