@@ -29,7 +29,7 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
                                        autoescape = True)
 
-json_data = open("modInfo.json")
+json_data = open("data/modInfo.json")
 data = json.load(json_data, encoding='latin1')
 
 # for debugging
@@ -37,9 +37,6 @@ data = json.load(json_data, encoding='latin1')
 
 class User(ndb.Model):
     """DataStore Model Class for User Table"""
-
-    key_name = ndb.StringProperty(required=True)
-    id = ndb.StringProperty(required=True)
     created = ndb.DateTimeProperty(auto_now_add=True)
     updated = ndb.DateTimeProperty(auto_now=True)
     name = ndb.StringProperty(required=True)
@@ -72,6 +69,7 @@ class Handler(webapp2.RequestHandler):
             #print "In cookie", self.session.get("user")
 
             # Either user just logged in or logged in for the first time
+            # Either user just logged in or logged in for the first time
             cookie = facebook.get_user_from_cookie(self.request.cookies,
                                                    FACEBOOK_APP_ID,
                                                    FACEBOOK_APP_SECRET)
@@ -86,8 +84,7 @@ class Handler(webapp2.RequestHandler):
                     graph = facebook.GraphAPI(cookie["access_token"])
                     profile = graph.get_object("me")
                     user = User(
-                        key_name=str(profile["id"]),
-                        id=str(profile["id"]),
+                        id=profile["id"],
                         name=profile["name"],
                         profile_url=profile["link"],
                         access_token=cookie["access_token"]
@@ -102,7 +99,7 @@ class Handler(webapp2.RequestHandler):
                 self.session["user"] = dict(
                     name=user.name,
                     profile_url=user.profile_url,
-                    id=user.id,
+                    id=user.key.id(),
                     access_token=user.access_token
                 )
                 return self.session.get("user")
