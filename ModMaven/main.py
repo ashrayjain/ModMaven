@@ -1,9 +1,10 @@
 from init_config import *
 
+
 class MainPage(Handler):
     """Handler for the front page"""
-    def get(self):
 
+    def get(self):
         isError = self.request.cookies.get('error')
         error = ""
         if isError:
@@ -17,6 +18,7 @@ class MainPage(Handler):
 
 class Logout(Handler):
     """Handler for AJAX calls for clearing session (logging out)"""
+
     def get(self):
         if self.current_user is not None:
             # Close the session
@@ -26,6 +28,7 @@ class Logout(Handler):
 
 class ModPage(Handler):
     """ Handler for the module page."""
+
     def get(self):
         modName = self.request.get('modName').upper()
         if modName in data:
@@ -39,8 +42,44 @@ class ModPage(Handler):
             self.response.headers.add_header('Set-Cookie', 'error=true; Path=/')
             self.redirect('/')
 
+class RequestMod(Handler):
+    def get(self):
+        modName=self.request.get('modName').upper()
+        if modName in data:
+            return data[modName]
+        return None
+
+class TreeData(Handler):
+    def get(self):
+        modName = self.request.get('modName')
+        if modName in data:
+            retJSON = {'name': modName, 'children': self.getPrereq(data[modName]['prerequisite'])}
+            return retJSON
+        return None
+
+    def getPrereq(self, prereq):
+        """Given a prereq, returns all prereqs of that prereq"""
+        retList = []
+        if isinstance(prereq, dict):
+            for prereqs in prereq:
+
+
+        elif len(prereq) < 9:
+            if 'prerequisite' in data[prereq]:
+                retList.append({'name': prereq, 'children': self.getPrereq(data[prereq]['prerequisite'])})
+            else:
+                retList.append({'name': prereq, 'children': []})
+        else:
+            return prereq
+
+
+
+
 app = webapp2.WSGIApplication([('/modpage/?', ModPage),
                                ('/logout/?', Logout),
-                               ('/.*', MainPage)],
+                               ('/gettree/?', TreeData),
+                               ('/getmod/?', RequestMod),
+                               ('/.*', MainPage)
+                              ],
                               config=config,
                               debug=True)

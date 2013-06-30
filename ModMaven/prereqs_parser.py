@@ -10,7 +10,7 @@ defaultCommaOp = ' and '
 # Precedence of Operators (0 ==> lowest)
 _pre = {' and ': 0, ' or ': 1}
 
-modString = '(?:[A-Z]{2,3}|MUT |CE |ME |MUA )[0-9]{4}[A-Z]?'
+modString = '(?:[A-Z]{2,3}|MUT |CE |ME |MUA )[0-9]{4}(?:[A-Z]|[A-Z]R)?'
 verifyRE = re.compile(modString)
 modRE = re.compile(modString + '|' + '|'.join(operators) + '|[\(\)\[\]\{\}]')
 parenRE = re.compile('[\{\}\[\]]')
@@ -21,7 +21,7 @@ commaFixRE = re.compile(modString + ', |' + '|'.join(operators))
 
 # Add any Key-words for which NO parsing should be done and the entire
 # pre-req string should be shown instead
-restricted = ['USP', 'Cohort', 'AY20', 'H2 ', 'Qualifying English Test', 'MCs']
+restricted = ['USP', 'Cohort', 'AY20', 'H2 ', 'Qualifying English Test', 'MCs', 'grade', 'Grade']
 restrictedRE = re.compile('|'.join(restricted))
 
 # Add any special Exceptions here in the following format

@@ -5,9 +5,6 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /data
-  static_dir: data
-  mime_type: application/json
 
 - url: /css
   static_dir: css
@@ -18,15 +15,6 @@ handlers:
 - url: /img
   static_dir: img
 
-# Handler for module page
-- url: /modpage/?
-  script: main.app
-
-# Handler for logging out
-- url: /logout/?
-  script: main.app
-
-# Handler for front page
 - url: /.*
   script: main.app
 

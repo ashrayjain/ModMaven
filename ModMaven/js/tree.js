@@ -2,25 +2,25 @@ $(document).ready(function(){
     $('a[data-toggle="pill"]').on('shown', function (e) {
         if(e.target.innerText === "Tree" && e.relatedTarget.innerText !== "Tree")
         {
-
             d3.selectAll("svg")
                 .remove();
-            var canvas = d3.select('.TreeSpace')
+
+            var canvas = d3.select('#Tree')
                 .append("svg")
-                .attr("width", 1000)//document.getElementsByTagName('body')[0].clientWidth/1.5)
+                .attr("width", document.getElementsByTagName('body')[0].clientWidth/1.5)
                 .attr("height", 1500)
                 .append("g")
                 .attr("transform", "translate(50,50");
 
             var borderRect = canvas.append("rect")
-                .attr("width", 1000)//document.getElementsByTagName('body')[0].clientWidth/1.5)
+                .attr("width", document.getElementsByTagName('body')[0].clientWidth/1.5)
                 .attr("height",1500)
                 .attr("stroke","black")
                 .attr("stroke-width", 2.5)
                 .attr("fill","grey")
                 .attr("opacity", 0.65);
-
-            var tree = d3.layout.tree()
+            console.log(borderRect);
+            /*var tree = d3.layout.tree()
                 .size([1000,750]);
 
             d3.json("http://localhost:8080/data/testInfo.json", function (error,jsonData) {
@@ -97,8 +97,6 @@ $(document).ready(function(){
                         .transition()
                         .attr("width", 500);
                 })
-                console.log(rectangles);
-            })
-        }
-    });
-});
+                console.log(rectangles);*/
+            }});
+        });

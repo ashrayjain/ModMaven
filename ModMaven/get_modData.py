@@ -11,6 +11,8 @@ for mod in modData_NUSmods['cors']:
     modData[mod] = modData_NUSmods['cors'][mod]
     if 'prerequisite' in modData[mod]:
         modData[mod]['prerequisite'] = prereqs_parser.getPrereq(modData[mod]['prerequisite'])
+    else:
+        modData[mod]['prerequisite'] = []
 
 with open('data/modInfo.json', 'w') as outfile:
     json.dump(modData, outfile, indent=2)
