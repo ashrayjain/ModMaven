@@ -1,50 +1,14 @@
 {
     
-        "CS2020":
-        {
-            "modName": "CS2020",
-            "prereqs": [
-                "XY3334",
-                "XY3230",
-                [
-                    "YY2103",
-                    "XX2103"
+       "name": "XY4342",
+       "children": [
+            {"name":"XY3334"},
+            {
+                "name": "XY3230",
+                "children": [
+                    {"name":"XY2221"},
+                    {"name": "YY1101"}
                 ]
-            ]
-        },
-        "XY3334":
-        {
-            "modName": "XY3334",
-            "prereqs": [
-                "XX1101",
-                "XY1103"
-            ]
-        },
-        "XY1101":
-        {
-            "modname": "XX1101"
-        },
-        "XY1103":
-        {
-            "modName": "XY1103"
-        },
-        "XY3230":
-        {
-            "modName": "XY3230",
-            "prereqs": [
-                [
-                    "XX1101",
-                    "XY1103"
-                ]
-            ]
-        },
-        "YY2103":
-        {
-            "modName": "YY2103"
-        },
-        "XX2103":
-        {
-            "modName": "XX2103"
-        }
-    
+            }
+       ]
 }
