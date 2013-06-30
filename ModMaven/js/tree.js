@@ -24,9 +24,11 @@ $(document).ready(function(){
                 .size([1000,750]);
 
             d3.json("http://localhost:8080/data/testInfo.json", function (error,jsonData) {
+                
+                //console.log(treeData);
                 var nodes = tree.nodes(jsonData);
                 var links = tree.links(nodes);
-
+                //console.log(jsonData[currMod]);
                 var node = canvas.selectAll(".node")
                     .data(nodes)
                     .enter()
@@ -87,17 +89,37 @@ $(document).ready(function(){
                     .duration(1500)
                     .attr("opacity",1);
 
-                canvas.on("mouseover", function() {
+                rectangles.on("mouseout", function() {
                     node.select("rect")
                         .transition()
-                        .attr("width", 100);
+                        .attr("fill","steelblue")
+                        .attr("height",70)
+                        .attr("y",-35)
+                        .attr("x",-50)
+                        .attr("width", 100)
+                        .attr("opacity",1);
+                })
+                rectangles.on("mouseover", function(d,i){
+                    d3.select(this)
+                        .transition()
+                        .attr("fill","green")
+                        .attr("height", 100)
+                        .attr("y", -50)
+                        .attr("x",-75)
+                        .attr("width",150)
+                        .attr("opacity",0.3);
                 })
                 rectangles.on("click", function(d,i) {
-                    d3. select(this)
-                        .transition()
-                        .attr("width", 500);
-                })
-                console.log(rectangles);
+                                        
+                                        var currNode=this.parentNode;
+                                        var currMod= d3.select(currNode).text();
+                                        //console.log(currNode);
+                                        d3.select(".modal-body")
+                                            .select("p")
+                                            .text(currMod);    
+                                        $('#myModal').modal('show');
+                                    })
+                //console.log(rectangles);
             })
         }
     });
