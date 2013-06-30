@@ -66,7 +66,7 @@ class Handler(webapp2.RequestHandler):
             return self.session.get("user")
         else:
             # for debugging
-            # print "In cookie", self.session.get("user")
+            #print "In cookie", self.session.get("user")
 
             # Either user just logged in or logged in for the first time
             # Either user just logged in or logged in for the first time
@@ -77,7 +77,7 @@ class Handler(webapp2.RequestHandler):
                 # Facebook authentication complete
                 # Check to see if existing user
                 user = User.get_by_id(cookie["uid"])
-                print user
+                #print user
                 if not user:
                     # Not an existing user so get user info and
                     # create DataStore entry
