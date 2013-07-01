@@ -49,22 +49,6 @@ function drawTree(modName, data){
         .attr("opacity", 0)
         .attr("d", diagonal);
 
-    var backButton = canvas.append("circle")
-        .attr("r", 25)
-        .attr("cx", 50)
-        .attr("cy", 50)
-        .attr("fill", "steelblue")
-        .attr("stroke", "black")
-        .attr("stroke-width", 1.5);
-
-    backButton.append("text")
-        .text(function (d) {
-            return "Back";
-        })
-        .style("fill", "black")
-        .attr("text-anchor", "middle")
-        .attr("class", "lead");
-
     var rectangles = node.append("rect")
         .attr("width", 0)
         .attr("height", 0)
@@ -119,8 +103,17 @@ function drawTree(modName, data){
             .attr("x", -50)
             .attr("width", 100)
             .attr("opacity", 1);
+        node.selectAll("text")
+            .transition()
+            .style("opacity",1);
     });
     rectangles.on("mouseover", function (d, i) {
+        node.selectAll("rect")
+            .transition()
+            .attr("opacity", 0.1);
+        node.selectAll("text")
+            .transition()
+            .style("opacity", 0.1);
         d3.select(this)
             .transition()
             .attr("fill", "green")
@@ -128,12 +121,17 @@ function drawTree(modName, data){
             .attr("y", -50)
             .attr("x", -75)
             .attr("width", 150)
-            .attr("opacity", 0.3);
+            .attr("opacity", 0.8);
+        var currNode = this.parentNode;
+        d3.select(currNode)
+            .select("text")
+                .transition()
+                .style("opacity",1);
 
         rectangles.on("click", function(d, i){
-            var currNode = this.parentNode;
+           
             var currMod = d3.select(currNode).text();
-
+            console.log(currMod);
             $.getJSON('/getmod?modName=' + currMod, function (data) {
 
                 var modalLabel = $("#myModalLabel");
