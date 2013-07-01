@@ -99,15 +99,15 @@ function drawTree(modName, data){
 
     node.selectAll("text")
         .transition()
-        .delay(2000)
-        .duration(2000)
+        .delay(500)
+        .duration(1000)
         .style("fill", "black")
         .style("opacity", 1);
 
     canvas.selectAll("path")
         .transition()
-        .delay(2000)
-        .duration(1500)
+        .delay(500)
+        .duration(1000)
         .attr("opacity", 1);
 
     rectangles.on("mouseout", function () {
