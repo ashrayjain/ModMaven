@@ -29,7 +29,7 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
                                        autoescape = True)
 
-json_data = open("modInfo.json")
+json_data = open("data/modInfo.json")
 data = json.load(json_data, encoding='latin1')
 
 # for debugging

@@ -18,7 +18,6 @@ class MainPage(Handler):
 
 class Logout(Handler):
     """Handler for AJAX calls for clearing session (logging out)"""
-
     def get(self):
         if self.current_user is not None:
             # Close the session
@@ -35,50 +34,39 @@ class ModPage(Handler):
             self.render("modulepage.html",
                         modName=modName,
                         modTitle=data[modName]["title"],
-                        modDesc=data[modName]["description"],
+                        modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
                         CurrentUser=self.current_user,
                         FacebookAppID=FACEBOOK_APP_ID)
         else:
             self.response.headers.add_header('Set-Cookie', 'error=true; Path=/')
             self.redirect('/')
 
+
 class RequestMod(Handler):
+    """ AXAJ Handler for responding to module data requests """
     def get(self):
         modName=self.request.get('modName').upper()
+        self.response.headers['Content-Type'] = "application/json"
         if modName in data:
-            return data[modName]
-        return None
+            self.response.out.write(json.dumps(data[modName]))
+            return
+        self.response.out.write(json.dumps({}))
+        return
 
-class TreeData(Handler):
+class RequestTree(Handler):
     def get(self):
-        modName = self.request.get('modName')
+        modName = self.request.get('modName').upper()
+        self.response.headers['Content-Type'] = "application/json"
         if modName in data:
-            retJSON = {'name': modName, 'children': self.getPrereq(data[modName]['prerequisite'])}
-            return retJSON
-        return None
-
-    def getPrereq(self, prereq):
-        """Given a prereq, returns all prereqs of that prereq"""
-        retList = []
-        if isinstance(prereq, dict):
-            for prereqs in prereq:
-
-
-        elif len(prereq) < 9:
-            if 'prerequisite' in data[prereq]:
-                retList.append({'name': prereq, 'children': self.getPrereq(data[prereq]['prerequisite'])})
-            else:
-                retList.append({'name': prereq, 'children': []})
-        else:
-            return prereq
-
-
-
+            self.response.out.write(json.dumps(data[modName]['tree']))
+            return
+        self.response.out.write(json.dumps({}))
+        return
 
 app = webapp2.WSGIApplication([('/modpage/?', ModPage),
                                ('/logout/?', Logout),
-                               ('/gettree/?', TreeData),
                                ('/getmod/?', RequestMod),
+                               ('/gettree/?', RequestTree),
                                ('/.*', MainPage)
                               ],
                               config=config,

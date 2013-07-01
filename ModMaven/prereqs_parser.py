@@ -111,7 +111,7 @@ def commaFix(prereq, commaResult):
     return prereq
 
 
-def preProcess(prereq):
+def preProcess(prereq, mod):
     if restrictedRE.findall(prereq):
         return None
     prereq = parenRE.sub(replaceParen, prereq)
@@ -120,6 +120,7 @@ def preProcess(prereq):
     commaResult = commaRE.findall(prereq)
     if len(commaResult):
         prereq = commaFix(prereq, commaResult)
+    prereq = re.sub(mod, "", prereq)
     return prereq
 
 
@@ -185,13 +186,13 @@ def noMod(result):
     return True
 
 
-def getPrereq(prereq):
+def getPrereq(prereq, mod):
     # Copy of Prereq
     orignalPrereq = '' + prereq
     if prereq in exceptions:
         return exceptions[prereq]
 
-    prereq = preProcess(prereq)
+    prereq = preProcess(prereq, mod)
 
     if not prereq:
         return orignalPrereq
