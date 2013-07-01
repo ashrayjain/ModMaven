@@ -110,27 +110,40 @@ function drawTree(modName, data){
         .duration(1500)
         .attr("opacity", 1);
 
-    canvas.on("mouseover", function () {
+    rectangles.on("mouseout", function () {
         node.selectAll("rect")
             .transition()
-            .attr("width", 100);
+            .attr("fill", "steelblue")
+            .attr("height", 70)
+            .attr("y", -35)
+            .attr("x", -50)
+            .attr("width", 100)
+            .attr("opacity", 1);
     });
-    rectangles.on("click", function (d, i) {
+    rectangles.on("mouseover", function (d, i) {
         d3.select(this)
             .transition()
-            .attr("width", 500);
-        var currNode = this.parentNode;
-        var currMod = d3.select(currNode).text();
+            .attr("fill", "green")
+            .attr("height", 100)
+            .attr("y", -50)
+            .attr("x", -75)
+            .attr("width", 150)
+            .attr("opacity", 0.3);
 
-        $.getJSON('/getmod?modName=' + currMod, function (data) {
+        rectangles.on("click", function(d, i){
+            var currNode = this.parentNode;
+            var currMod = d3.select(currNode).text();
 
-        var modalLabel = $("#myModalLabel");
-        modalLabel.text(data['label']);
-        modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+            $.getJSON('/getmod?modName=' + currMod, function (data) {
 
-        $(".modal-body p")
-            .text(data['description']);
-        $('#myModal').modal('show');
+                var modalLabel = $("#myModalLabel");
+                modalLabel.text(data['label']);
+                modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+
+                $(".modal-body p")
+                    .text(data['description']);
+                $('#myModal').modal('show');
+            });
         });
     });
     console.log(rectangles);
