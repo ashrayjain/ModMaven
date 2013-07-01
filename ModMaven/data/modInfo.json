@@ -50544,22 +50544,7 @@
     "title": "Advanced Polymer Science", 
     "tree": {
       "name": "CM4268", 
-      "children": [
-        {
-          "name": "CM3221", 
-          "children": [
-            {
-              "name": "CM2121", 
-              "children": [
-                {
-                  "name": "CM1121", 
-                  "children": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "children": []
     }, 
     "label": "CM4268", 
     "tutorials": [
@@ -50573,7 +50558,7 @@
         "day": "WEDNESDAY"
       }
     ], 
-    "prerequisite": "CM3221", 
+    "prerequisite": "For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).", 
     "examTime": "2013-05-07T13:00+0800", 
     "department": "CHEMISTRY", 
     "mcs": "4", 

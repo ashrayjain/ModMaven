@@ -30,6 +30,8 @@ restrictedRE = re.compile('|'.join(restricted))
 # key = EXACT pre-requisite string to match
 # value = parsed output
 exceptions = {
+    'For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).':
+        'For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).',
     'Pass ID 2105 & 2106': {' and ': ['ID2105', 'ID2106']},
     'Pass ID 1105 & 1106': {' and ': ['ID1105', 'ID1106']}
 }

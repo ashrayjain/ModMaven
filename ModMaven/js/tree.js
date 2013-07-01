@@ -83,14 +83,14 @@ function drawTree(modName, data){
 
     node.selectAll("text")
         .transition()
-        .delay(500)
+        //.delay(500)
         .duration(1000)
         .style("fill", "black")
         .style("opacity", 1);
 
     canvas.selectAll("path")
         .transition()
-        .delay(500)
+        //.delay(500)
         .duration(1000)
         .attr("opacity", 1);
 
@@ -147,7 +147,8 @@ function drawTree(modName, data){
                     modalLabel.parent().attr('href', '/modpage?modName='+currMod);
 
                     $(".modal-body p")
-                        .text(data['description']);
+                        .html(data['description']+'<br><br><b>Prerequisite: </b><br>'+data['prerequisite']);
+
                 }
                 $('#myModal').modal('show');
             });
