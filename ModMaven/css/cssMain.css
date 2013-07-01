@@ -7,6 +7,10 @@ body {
     padding-bottom: 10px;
 }
 
+svg {
+    width: 100%;
+    height: 100%;
+}
 .container-fluid {
     max-width: 940px;
     min-width: 728px;

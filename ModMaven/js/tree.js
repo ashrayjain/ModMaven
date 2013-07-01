@@ -1,7 +1,6 @@
 function drawTree(modName, data){
     d3.selectAll("svg")
         .remove();
-    console.log($('#Tree').parent().width());
     var canvas = d3.select('#Tree')
         .append("svg")
         .attr("width", $('#Tree').parent().width())
@@ -11,7 +10,7 @@ function drawTree(modName, data){
 
     var borderRect = canvas.append("rect")
         .attr("width", $('#Tree').parent().width())
-        .attr("height", 1000)
+        .attr("height", 1200)
         .attr("stroke", "black")
         .attr("stroke-width", 2.5)
         .attr("fill", "grey")
@@ -31,12 +30,12 @@ function drawTree(modName, data){
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + d.x + "," + (d.y + 50) + ")";
+            return "translate(" + d.x + "," + (d.y + 100) + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x, d.y + 50];
+            return [d.x, d.y + 100];
         });
     var x, y;
     canvas.selectAll(".link")
@@ -81,80 +80,82 @@ function drawTree(modName, data){
         .attr("height", 70)
         .ease("elastic");
 
-    node.selectAll("text")
-        .transition()
-        //.delay(500)
-        .duration(1000)
-        .style("fill", "black")
-        .style("opacity", 1);
-
     canvas.selectAll("path")
         .transition()
-        //.delay(500)
+        .delay(1000)
         .duration(1000)
         .attr("opacity", 1)
+
+    node.selectAll("text")
+        .transition()
+        .delay(1000)
+        .duration(1000)
+        .style("fill", "black")
+        .style("opacity", 1)
         .each("end",function(){
+            rectangles.on("mouseout", function () {
+                node.selectAll("rect")
+                    .transition()
+                    .attr("fill", "steelblue")
+                    .attr("height", 70)
+                    .attr("y", -35)
+                    .attr("x", -50)
+                    .attr("width", 100)
+                    .attr("opacity", 1);
+                node.selectAll("text")
+                    .transition()
+                    .style("opacity",1);
+            });
+            rectangles.on("mouseover", function (d, i) {
+                node.selectAll("rect")
+                    .transition()
+                    .attr("opacity", 0.1);
+                node.selectAll("text")
+                    .transition()
+                    .style("opacity", 0.1);
+                d3.select(this)
+                    .transition()
+                    .attr("fill", "green")
+                    .attr("height", 100)
+                    .attr("y", -50)
+                    .attr("x", -75)
+                    .attr("width", 150)
+                    .attr("opacity", 0.8);
+                var currNode = this.parentNode;
+                d3.select(currNode)
+                    .select("text")
+                    .transition()
+                    .style("opacity",1);
 
-    rectangles.on("mouseout", function () {
-        node.selectAll("rect")
-            .transition()
-            .attr("fill", "steelblue")
-            .attr("height", 70)
-            .attr("y", -35)
-            .attr("x", -50)
-            .attr("width", 100)
-            .attr("opacity", 1);
-        node.selectAll("text")
-            .transition()
-            .style("opacity",1);
-    });
-    rectangles.on("mouseover", function (d, i) {
-        node.selectAll("rect")
-            .transition()
-            .attr("opacity", 0.1);
-        node.selectAll("text")
-            .transition()
-            .style("opacity", 0.1);
-        d3.select(this)
-            .transition()
-            .attr("fill", "green")
-            .attr("height", 100)
-            .attr("y", -50)
-            .attr("x", -75)
-            .attr("width", 150)
-            .attr("opacity", 0.8);
-        var currNode = this.parentNode;
-        d3.select(currNode)
-            .select("text")
-                .transition()
-                .style("opacity",1);
+                rectangles.on("click", function(d, i){
 
-        rectangles.on("click", function(d, i){
-           
-            var currMod = d3.select(currNode).text();
-            console.log(currMod);
-            $.getJSON('/getmod?modName=' + currMod, function (data) {
-                var modalLabel = $("#myModalLabel");
-                if($.isEmptyObject(data)){
+                    var currMod = d3.select(currNode).text();
+                    console.log(currMod);
+                    $.getJSON('/getmod?modName=' + currMod, function (data) {
+                        var modalLabel = $("#myModalLabel");
+                        if($.isEmptyObject(data)){
 
-                    modalLabel.text(currMod);
-                    modalLabel.parent().attr('href', '#');
+                            modalLabel.text(currMod);
+                            modalLabel.parent().attr('href', '#');
 
-                    $(".modal-body p")
-                        .text("No Information Available");
-                }
-                else {
-                    modalLabel.text(data['label']);
-                    modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+                            $(".modal-body p")
+                                .text("No Information Available");
+                        }
+                        else {
+                            modalLabel.text(data['label']);
+                            modalLabel.parent().attr('href', '/modpage?modName='+currMod);
 
-                    $(".modal-body p")
-                        .html(data['description']+'<br><br><b>Prerequisite: </b><br>'+data['prerequisite']);
-
-                }
-                $('#myModal').modal('show');
+                            var modalBody = data['description'];
+                            if (typeof data['prerequisite'] == "string" && data['prerequisite'].length > 9){
+                                modalBody+= '<br><br><b>Prerequisite: </b><br>'+data['prerequisite'];
+                            }
+                            $(".modal-body p")
+                                .html(modalBody);
+                        }
+                        $('#myModal').modal('show');
+                    });
+                });
             });
         });
-    });
-});
-    console.log(rectangles);
+    //console.log(rectangles);
 }
