@@ -24,7 +24,7 @@ function drawTree(modName, data){
     //tree.children(function(d) { console.log(d[id].prereqs); return d[id].prereqs;})
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
-
+    //console.log(nodes);
     var node = canvas.selectAll(".node")
         .data(nodes)
         .enter()
@@ -92,7 +92,8 @@ function drawTree(modName, data){
         .transition()
         .delay(500)
         .duration(1000)
-        .attr("opacity", 1);
+        .attr("opacity", 1)
+        .each("end",function(){
 
     rectangles.on("mouseout", function () {
         node.selectAll("rect")
@@ -144,5 +145,6 @@ function drawTree(modName, data){
             });
         });
     });
+});
     console.log(rectangles);
 }
