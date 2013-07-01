@@ -135,13 +135,22 @@ function drawTree(modName, data){
             var currMod = d3.select(currNode).text();
 
             $.getJSON('/getmod?modName=' + currMod, function (data) {
-
                 var modalLabel = $("#myModalLabel");
-                modalLabel.text(data['label']);
-                modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+                if($.isEmptyObject(data)){
 
-                $(".modal-body p")
-                    .text(data['description']);
+                    modalLabel.text(currMod);
+                    modalLabel.parent().attr('href', '#');
+
+                    $(".modal-body p")
+                        .text("No Information Available");
+                }
+                else {
+                    modalLabel.text(data['label']);
+                    modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+
+                    $(".modal-body p")
+                        .text(data['description']);
+                }
                 $('#myModal').modal('show');
             });
         });

@@ -5,7 +5,6 @@ processForm = function(){
     $.getJSON('/gettree?modName=' + modName, function (data) {
         if ($.isEmptyObject(data)){
             $("#errormessage").text("The Module You Requested Was Not Found");
-
         }
         else{
             $("#errormessage").text("");
