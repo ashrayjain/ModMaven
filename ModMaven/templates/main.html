@@ -10,9 +10,8 @@
                 <form id="main-form" class="form-search span12">
                     <div class="input-append span12 centered">
                         <input name="modName" id="modName" type="text" class="span3 search-query"
-                               style="border-bottom-left-radius: 7px; border-top-left-radius: 7px;"
-                               placeholder="Insert Module Code..">
-                        <button type="submit" class="btn" 
+                               style="border-bottom-left-radius: 7px; border-top-left-radius: 7px;">
+                        <button type="submit" class="btn"
                                 style="border-bottom-right-radius: 7px; border-top-right-radius: 7px;">Search
                         </button>
                     </div>
@@ -28,7 +27,7 @@
     </div>
     <div class="row-fluid">
         <div id="result-area" class="span12 container-fluid">
-            <div class="span12" id="Tree" style="height: 100%">
+            <div class="span12" id="Tree">
                 <a href="#myModal" data-toggle="modal"></a>
 
                 <!-- Modal -->
@@ -59,7 +58,13 @@
     </div>
 {% endblock %}
 {% block js %}
+    <script src="/js/jquery.autocomplete.min.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+            $.getJSON('/modlist', function(data){
+                $('#modName').autocomplete({"lookup": data, "maxHeight": 100});
+            });
+    </script>
     <script src="/js/tree.js"></script>
     <script src="/js/mainForm.js"></script>
 {% endblock %}

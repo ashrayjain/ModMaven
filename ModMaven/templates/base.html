@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# modmaven: http://ogp.me/ns/fb/modmaven#">
     <title>{% block title %}{% endblock %}</title>
+    <meta property="fb:app_id" content="{{ FacebookAppID }}"/>
+    {% block meta %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -58,7 +60,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a>
-                                    <button class="btn btn-primary">Verify IVLE</button>
+                                    <button class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
                                     <button class="btn btn-danger" onclick="fbLogout()">Logout
                                     </button>
                                 </a></li>
@@ -67,7 +69,7 @@
                     {% else %}
                         <li><a>
                             <button class="btn btn-primary"
-                                    onclick="FB.login()">
+                                    onclick="FB.login();">
                                 <div id="fb-btn-txt" style="font-size: 20px; padding: 3px">
                                     Login with Facebook
                                 </div>
@@ -83,7 +85,42 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    var user_access_token = "{{ CurrentUser.access_token }}";
+</script>
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
+<script src="../js/ivle.js"></script>
+<script type="text/javascript">
+    var verificationDialog = null;
+    var popupClose = null;
+    function ivleVerify() {
+        if (verificationDialog == null || verificationDialog.closed) {
+            var w = 255;
+            var h = 210;
+            var left = (screen.width / 2) - (w / 2);
+            var top = (screen.height / 3) - (h / 2);
+
+            verificationDialog = window.open(
+                    'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://localhost:8080/ivle',
+                    'IVLEVerificationDialog',
+                    'dependent, toolbar=no, location=no, directories=no, ' +
+                            'status=no, menubar=no, scrollbars' +
+                            '=no, resizable=no, copyhistory=no' +
+                            ', width=' + w + ', height=' + h +
+                            ', top=' + top + ', left=' + left);
+
+            popupClose = setInterval(function () {
+                closePopup(verificationDialog);
+            }, 500);
+
+
+        }
+        else {
+            verificationDialog.focus();
+        }
+    }
+
+</script>
 <script src="../js/bootstrap.min.js"></script>
 {% block js %}
 {% endblock %}

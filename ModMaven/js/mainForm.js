@@ -8,6 +8,7 @@ processForm = function(){
         }
         else{
             $("#errormessage").text("");
+            $("#")
             drawTree(modName, data);
         }
     });

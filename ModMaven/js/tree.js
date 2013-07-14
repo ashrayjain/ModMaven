@@ -1,6 +1,8 @@
 function drawTree(modName, data){
+
     d3.selectAll("svg")
         .remove();
+
     var canvas = d3.select('#Tree')
         .append("svg")
         .attr("width", $('#Tree').parent().width())
@@ -10,7 +12,7 @@ function drawTree(modName, data){
 
     var borderRect = canvas.append("rect")
         .attr("width", $('#Tree').parent().width())
-        .attr("height", 1200)
+        .attr("height", 1000)
         .attr("stroke", "black")
         .attr("stroke-width", 2.5)
         .attr("fill", "grey")
@@ -19,23 +21,21 @@ function drawTree(modName, data){
     var tree = d3.layout.tree()
         .size([$('#Tree').parent().width(), 750]);
 
-    //var id="{{modName}}"
-    //tree.children(function(d) { console.log(d[id].prereqs); return d[id].prereqs;})
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
-    //console.log(nodes);
+
     var node = canvas.selectAll(".node")
         .data(nodes)
         .enter()
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + d.x + "," + (d.y + 100) + ")";
+            return "translate(" + d.x + "," + (d.y + 50) + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x, d.y + 100];
+            return [d.x, d.y + 50];
         });
     var x, y;
     canvas.selectAll(".link")
@@ -63,7 +63,7 @@ function drawTree(modName, data){
         })
         .attr("fill", "steelblue");
 
-    node.append("text")
+    var labels = node.append("text")
         .text(function (d) {
             return d.name;
         })
@@ -93,7 +93,7 @@ function drawTree(modName, data){
         .style("fill", "black")
         .style("opacity", 1)
         .each("end",function(){
-            rectangles.on("mouseout", function () {
+            node.on("mouseout", function () {
                 node.selectAll("rect")
                     .transition()
                     .attr("fill", "steelblue")
@@ -106,14 +106,25 @@ function drawTree(modName, data){
                     .transition()
                     .style("opacity",1);
             });
-            rectangles.on("mouseover", function (d, i) {
+            node.on("mouseover", function (d, i){
                 node.selectAll("rect")
                     .transition()
-                    .attr("opacity", 0.1);
+                    .attr("fill", "steelblue")
+                    .attr("height", 70)
+                    .attr("y", -35)
+                    .attr("x", -50)
+                    .attr("width", 100)
+                    .attr("opacity", 0.3);
                 node.selectAll("text")
                     .transition()
-                    .style("opacity", 0.1);
+                    .style("opacity", 0.3);
                 d3.select(this)
+                    .select("text")
+                    .transition()
+                    .style("opacity", 1);
+
+                d3.select(this)
+                    .select("rect")
                     .transition()
                     .attr("fill", "green")
                     .attr("height", 100)
@@ -121,19 +132,14 @@ function drawTree(modName, data){
                     .attr("x", -75)
                     .attr("width", 150)
                     .attr("opacity", 0.8);
-                var currNode = this.parentNode;
-                d3.select(currNode)
-                    .select("text")
-                    .transition()
-                    .style("opacity",1);
 
-                rectangles.on("click", function(d, i){
+                node.on("click", function (d, i) {
 
-                    var currMod = d3.select(currNode).text();
-                    console.log(currMod);
+                    var currMod = d3.select(this).text();
+                    //console.log(currMod);
                     $.getJSON('/getmod?modName=' + currMod, function (data) {
                         var modalLabel = $("#myModalLabel");
-                        if($.isEmptyObject(data)){
+                        if ($.isEmptyObject(data)) {
 
                             modalLabel.text(currMod);
                             modalLabel.parent().attr('href', '#');
@@ -143,11 +149,16 @@ function drawTree(modName, data){
                         }
                         else {
                             modalLabel.text(data['label']);
-                            modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+                            modalLabel.parent().attr('href', '/modpage?modName=' + currMod);
 
-                            var modalBody = data['description'];
-                            if (typeof data['prerequisite'] == "string" && data['prerequisite'].length > 9){
-                                modalBody+= '<br><br><b>Prerequisite: </b><br>'+data['prerequisite'];
+                            if (data['description'] !== undefined) {
+                                var modalBody = data['description'];
+                            }
+                            else {
+                                var modalBody = "Not Available";
+                            }
+                            if (typeof data['prerequisite'] == "string" && data['prerequisite'].length > 9) {
+                                modalBody += '<br><br><b>Prerequisite: </b><br>' + data['prerequisite'];
                             }
                             $(".modal-body p")
                                 .html(modalBody);
@@ -157,5 +168,4 @@ function drawTree(modName, data){
                 });
             });
         });
-    //console.log(rectangles);
 }

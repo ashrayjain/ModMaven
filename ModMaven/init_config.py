@@ -3,6 +3,7 @@ import jinja2
 import sys
 import os
 import json
+import urllib2
 
 # Google DataStore
 from google.appengine.ext import ndb
@@ -15,8 +16,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
 import facebook
 
 # Constants
-FACEBOOK_APP_ID = "579845202048952"
-FACEBOOK_APP_SECRET = "97246d17b224a43c322cbca33bff0261"
+FACEBOOK_APP_ID = "211279135690183"
+FACEBOOK_APP_SECRET = "0a49fe29d02a7995563486ac95ba5a50"
 IVLE_LAPI_KEY = "nR7o7vzmqBA3BAXxPrLLD"
 SESSIONS_SECRET = "QR2YKc1ktlIvd9SvAI01PUFKVY7vso5sfSrDir5ebDbUoC3X7mgp2wNZkWCzlfVG"
 
@@ -27,25 +28,25 @@ config['webapp2_extras.sessions'] = dict(secret_key=SESSIONS_SECRET)
 # Set up template directory
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
-                                       autoescape = True)
+                                       autoescape=True)
 
-json_data = open("data/modInfo.json")
-data = json.load(json_data, encoding='latin1')
+data = json.load(open("data/modInfo.json"), encoding='latin1')
 
-# for debugging
-# print "data loaded"
 
 class User(ndb.Model):
     """DataStore Model Class for User Table"""
     created = ndb.DateTimeProperty(auto_now_add=True)
     updated = ndb.DateTimeProperty(auto_now=True)
-    name = ndb.StringProperty(required=True)
-    profile_url = ndb.StringProperty(required=True)
-    access_token = ndb.StringProperty(required=True)
+    name = ndb.StringProperty("n", required=True)
+    profile_url = ndb.StringProperty("pu", required=True)
+    access_token = ndb.StringProperty("at", required=True)
+    ivle_token = ndb.StringProperty("it")
+    mods_done = ndb.JsonProperty("md")
 
 
 class Handler(webapp2.RequestHandler):
     """Handler Class with Utility functions for Templates"""
+
     def __write__(self, *a, **kw):
         self.response.out.write(*a, **kw)
 
@@ -61,8 +62,8 @@ class Handler(webapp2.RequestHandler):
         if self.session.get("user"):
             # User is logged in
 
-            # for debugging
-            # print "Retreived from session", self.session.get("user")
+            # for debugging            # print "Retreived from session", self.session.get("user")
+
             return self.session.get("user")
         else:
             # for debugging
@@ -103,7 +104,7 @@ class Handler(webapp2.RequestHandler):
                     access_token=user.access_token
                 )
                 return self.session.get("user")
-            # User didn't complete FB authentication
+                # User didn't complete FB authentication
         return None
 
     def dispatch(self):
