@@ -5,14 +5,27 @@
         <div class="span12 color-head">
             <h3>{{modName}}</h3>
             <div id="pills-container">
+                {% if postSuccess %}
+                <ul class="nav nav-pills" id="pills">
+                    <li><a href="#Info" data-toggle="pill">Information</a></li>
+                    <li><a href="#Tree" data-toggle="pill">Tree</a></li>
+                    <li><a href="#Stats" data-toggle="pill">Statistics</a></li>
+                    <li class="active"><a href="#Disc" data-toggle="pill">Discussion</a></li>
+                </ul>
+                {% else %}
                 <ul class="nav nav-pills" id="pills">
                     <li class="active"><a href="#Info" data-toggle="pill">Information</a></li>
                     <li><a href="#Tree" data-toggle="pill">Tree</a></li>
                     <li><a href="#Stats" data-toggle="pill">Statistics</a></li>
                     <li><a href="#Disc" data-toggle="pill">Discussion</a></li>
                 </ul>
+                {% endif %}
                 <div class="pill-content">
+                    {% if postSuccess %}
+                    <div id="Info" class="pill-pane">
+                    {% else %}
                     <div id="Info" class="pill-pane active">
+                    {% endif %}
                         <h4>{{modTitle}}</h4>
                         <p class="lead">{{modDesc}}</p>
                     </div>
@@ -42,8 +55,52 @@
                     <div id="Stats" class="pill-pane">
                         <p>StatsTabContent</p>
                     </div>
+                    {% if postSuccess %}
+                    <div id="Disc" class="pill-pane active">
+                    {% else %}
                     <div id="Disc" class="pill-pane">
-                        <p>DiscTabContent</p>
+                    {% endif %}    
+                        {% if CurrentUser %}
+                        {% if postSuccess %}
+                        <div class="alert alert-success">
+                            Your post has been successfully submitted.
+                        </div>
+                        {% endif %}
+                        <form name="modPost-form" action="/addModPost/" method="post">
+                            <fieldset>
+                                <label><h5>Make a post: </h5></label>
+                                <input type='hidden' name='module' value='{{modName}}' />
+                                <textarea name="PostContent" id="NewPost" class="input-xxlarge" rows="3"></textarea><br/>
+                                <button type="submit" class="btn btn-primary">Post</button>
+                            </fieldset>
+                        </form>
+                        {% if isModpost %}
+                        <div class="row-fluid" id="modulePosts">
+                        <p class="lead">Current Discussion:</p>
+                        <p>{{modPosts}}</p>
+                        {% for modPost in modPosts %}
+                            <p class="lead">{{modPost.question}}<br/><small>Posted by {{modPost.askingUser}} at {{modPost.created}}</small></p>
+                            {% for reply in modPost.replies %}
+                                <blockquote>
+                                {{reply.answer}}<br/><small>Answered by {{reply.answeringUser}} at {{reply.created}}</small>
+                                </blockquote>
+                            {% endfor %}
+                            <form name="postReply-form" action="/addPostReply/" method="post">
+                                <fieldset>
+                                    <input type='hidden' name='module' value='{{modName}}' />
+                                    <input type='hidden' name='modpost' value='{{modPost.question}}' />
+                                    <textarea name="answerBox" id="answerBox" class="input-xlarge" placeholder="Answer this question.."></textarea>
+                                    <button type="submit" class="btn btn-primary">Reply</button>
+                                </fielset>
+                            </form>
+                        {% endfor %}
+                        </div>
+                        {% else %}
+                        <p class="lead">Be the first to post!</p>
+                        {% endif %}
+                        {% else %}
+                        <p class="text-info"> You need to be logged in to view this content</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

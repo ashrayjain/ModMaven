@@ -7,6 +7,14 @@ body {
     padding-bottom: 10px;
 }
 
+h5 {
+    color: #ff9900 !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+small {
+    font-size: small;
+}
 svg {
     width: 100%;
     height: 100%;

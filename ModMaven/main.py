@@ -31,10 +31,14 @@ class ModPage(Handler):
     def get(self):
         modName = self.request.get('modName').upper()
         if modName in data:
+            modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+
             self.render("modulepage.html",
+                        isModpost=False if modPosts==[] else True,
                         modName=modName,
                         modTitle=data[modName]["title"],
                         modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
+                        modPosts=modPosts,
                         CurrentUser=self.current_user,
                         FacebookAppID=FACEBOOK_APP_ID)
         else:
@@ -63,10 +67,57 @@ class RequestTree(Handler):
         self.response.out.write(json.dumps({}))
         return
 
+class AddPost(Handler):
+    def post(self):
+        modName = self.request.get('module').upper()
+        #print modName
+        postcontent = self.request.get('PostContent')
+        #print self.current_user
+        CurrentUserName = self.current_user['name']
+        post = Post(moduleName=modName, askingUser=CurrentUserName, question=postcontent)
+        post.put()
+        modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+        self.render("modulepage.html",
+                        modName=modName,
+                        modTitle=data[modName]["title"],
+                        modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
+                        modPosts=modPosts,
+                        isModpost=True,
+                        CurrentUser=self.current_user,
+                        postSuccess=True,
+                        FacebookAppID=FACEBOOK_APP_ID )
+
+class AddReply(Handler):
+    def post(self):
+        modName = self.request.get('module').upper()
+        modquestion = self.request.get('modpost')
+        ans = self.request.get('answerBox')
+        CurrentUserName = self.current_user['name']
+        reply = Reply(answer=ans,answeringUser=CurrentUserName)
+        posts = Post.query(Post.moduleName==modName).fetch()
+        for post in posts :
+            if post.question==modquestion:
+                post.replies.append(reply)
+                post.put()
+        #postkey = ndb.Key('Post',postkeystring[11:-1])
+        #post = postkey.get()
+        modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+        self.render("modulepage.html",
+                        modName=modName,
+                        modTitle=data[modName]["title"],
+                        modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
+                        modPosts=modPosts,
+                        isModpost=True,
+                        CurrentUser=self.current_user,
+                        postSuccess=True,
+                        FacebookAppID=FACEBOOK_APP_ID )
+
 app = webapp2.WSGIApplication([('/modpage/?', ModPage),
                                ('/logout/?', Logout),
                                ('/getmod/?', RequestMod),
                                ('/gettree/?', RequestTree),
+                               ('/addModPost/?', AddPost),
+                               ('/addPostReply/?', AddReply),
                                ('/.*', MainPage)
                               ],
                               config=config,
