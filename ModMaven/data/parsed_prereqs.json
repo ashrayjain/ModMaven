@@ -1,0 +1,3890 @@
+{
+  "CP3106": {
+    " or ": [
+      {
+        " and ": [
+          {
+            " or ": [
+              "CS2102", 
+              "CS2102S"
+            ]
+          }, 
+          "CS2105", 
+          {
+            " or ": [
+              "CS3214", 
+              "CS3215"
+            ]
+          }
+        ]
+      }, 
+      "IS3102", 
+      "IS4102", 
+      "CS3201", 
+      "CS3281", 
+      "CS4201", 
+      "CS4203"
+    ]
+  }, 
+  "UIS4921R": "USP Student", 
+  "CN1111": "H2 Mathematics, H2 Chemistry and H2 Physics (or PC1221 Fundamentals of Physics I) or equivalent", 
+  "EC3333": {
+    " and ": [
+      {
+        " or ": [
+          "EC2101", 
+          "EC2151"
+        ]
+      }, 
+      {
+        " or ": [
+          "EC2102", 
+          "EC2152"
+        ]
+      }
+    ]
+  }, 
+  "UIS3924R": "USP Student", 
+  "PC2230": {
+    " and ": [
+      {
+        " or ": [
+          "PC1142", 
+          "PC1144", 
+          "PC1431", 
+          "PC1433"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1505", 
+          "MA1507"
+        ]
+      }
+    ]
+  }, 
+  "PC2232": "EE2011", 
+  "MUA1181": "MUA1180", 
+  "MUH2116": "MUH2115", 
+  "SP1230": "Currently taking relevant H2 subjects.", 
+  "GEK1000": "Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "PH4211": "Cohort 2006 and before: Completed 80MCs, of which at least 28MCs are PH shared major requirements. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PH, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LAT3201": "LAT2201", 
+  "ENV2102": "For students in the Environmental Studies Programme.", 
+  "CM3312": "SP1001 - Career Planning & Preparation; students must have completed 3 regular semesters of study, have declared Chemistry as first major and have completed a minimum of 32 MCs in Chemistry major at time of application.", 
+  "EE5138R": "Mathematical background of an undergraduate course in ECE", 
+  "RE4220": "RE4222", 
+  "ZB3289": "ZB3288", 
+  "ZB3288": "Passed level 1000 and 2000 essential major requirements", 
+  "PP5296": {
+    " or ": [
+      "PP5101", 
+      "PP5501"
+    ]
+  }, 
+  "EC3332": {
+    " or ": [
+      "EC2102", 
+      "EC2152", 
+      "EC1101E", 
+      "EC1301", 
+      "EC1310", 
+      "USE2301"
+    ]
+  }, 
+  "RE4904": "RE3801", 
+  "JS3101": {
+    " and ": [
+      "JS2101", 
+      "LAJ2202"
+    ]
+  }, 
+  "RE4906": {
+    " and ": [
+      "RE1805", 
+      "RE2801"
+    ]
+  }, 
+  "CG4001": "Level 4 standing", 
+  "ESE4301": "ESE3301", 
+  "LAH1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "EE4408": "EE2021", 
+  "EC4880": "Cohort 2006 and before: EC3101/EC3151 and EC3102/EC3152 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151 and EC3102/EC3152", 
+  "MKT3513": "BSP1005", 
+  "MA5248": {
+    " and ": [
+      "MA3245", 
+      "MA4262"
+    ]
+  }, 
+  "IS2150": {
+    " and ": [
+      {
+        " or ": [
+          "CS1020", 
+          "CS1102", 
+          "CS1102S"
+        ]
+      }, 
+      "IS1112"
+    ]
+  }, 
+  "CM3251": "SP2251", 
+  "NUR2118": "NUR2117", 
+  "LSM2101": {
+    " or ": [
+      "LSM1101", 
+      "LSM1401", 
+      "LSM1101"
+    ]
+  }, 
+  "LSM2102": {
+    " and ": [
+      "LSM1401", 
+      "LSM1102"
+    ]
+  }, 
+  "LSM2103": {
+    " and ": [
+      "LSM1401", 
+      "LSM1102"
+    ]
+  }, 
+  "PC3251": "SP2251", 
+  "PR3106": {
+    " or ": [
+      "PP2106", 
+      "PA2106"
+    ]
+  }, 
+  "FMA1201B": "The medium of instruction of this module is Chinese. Students must have obtained: 1) at least a B4 for (a) Higher Chinese at GCE 'O' level, or (b) Chinese Language at GCE 'AO' level (at GCE 'A' level examination); OR 2) at least a pass for (a) Chinese at GCE 'A' level, or (b) Higher Chinese at GCE 'A' level; OR 3) at least C grade for Chinese Language (H1CL) at GCE 'A' level; OR 4) at least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' level. 5) Equivalent qualifications may be accepted.", 
+  "SW3104": "SW3103A", 
+  "EE3407": "EE2021", 
+  "CE5611": "CE 3165", 
+  "NUR2116": "NUR2106", 
+  "EL3257": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "EL3252": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "ESP4402": {
+    " or ": [
+      "ME3122", 
+      "CN2125"
+    ]
+  }, 
+  "EL3258": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "CZ5226": "Departmental approval", 
+  "PA2106": "PR1908", 
+  "BIS3001": "This will vary according to specific topics.", 
+  "MA2108S": "Departmental approval.", 
+  "LAF1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "CE4104": "CE4 Standing", 
+  "CE4103": "CE4 standing [Successful completion of relevant CE 2 and CE 3 modules which will be specified in the each project]", 
+  "EE4401": "EE3431C", 
+  "PC3289": "Departmental Approval", 
+  "IS3250": "Students must have completed 60 MCs.", 
+  "ST4240": "ST3131", 
+  "PL2131": "Obtained a minimum grade of C6 in G.C.E. 'O' level Mathematics or equivalent.", 
+  "PL2132": "Cohort 2008 and earlier: PL1101E and PL2131. Cohort 2009 onwards: At least a B- in both PL1101E and PL2131. Students who fail to meet the B- criterion in either of the modules, or both, will have the opportunity to take a department-conducted test, which will act as an alternative prerequisite.", 
+  "DSC4219": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "CS1010R": "Co-read with host module in current semester or pass host module in previous semester. Student selection process is enforced.", 
+  "MA4211": {
+    " or ": [
+      "MA3207H", 
+      "MA3209"
+    ]
+  }, 
+  "MA3245": {
+    " and ": [
+      {
+        " or ": [
+          "MA1104", 
+          "MA1104S", 
+          "MA1506", 
+          "MA1507", 
+          "GM1307"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2222", 
+          "QF2101"
+        ]
+      }
+    ]
+  }, 
+  "MA3501": {
+    " or ": [
+      "MA1506", 
+      "MA2501", 
+      "EG1402", 
+      "EE1401", 
+      "EE1461"
+    ]
+  }, 
+  "ME4225": "ME3122", 
+  "CH2228": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CS3103": {
+    " and ": [
+      {
+        " or ": [
+          "CS2105", 
+          "EE3204"
+        ]
+      }, 
+      "CS3103L"
+    ]
+  }, 
+  "LSM2201A": {
+    " or ": [
+      "LSM1101", 
+      "LSM1401"
+    ]
+  }, 
+  "LAJ1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "CN4223R": {
+    " or ": [
+      "MLE1101", 
+      "EE2004", 
+      "EE3431C"
+    ]
+  }, 
+  "NM4202": "Cohort 2006 and before: Read & passed a minimum of 80 MCs Cohort 2007 onwards: (Not applicable to SOC students) Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (For SOC students) Completed 80 MCs and obtain a minimum CAP of 3.5.", 
+  "LSM3221": "LSM3211", 
+  "LAB3202": "LAB3201", 
+  "PC2133": {
+    " or ": [
+      "PC1144", 
+      "PC1433"
+    ]
+  }, 
+  "EE4415E": {
+    " or ": [
+      "EE2006E", 
+      "EE2020E"
+    ]
+  }, 
+  "PF2104": "PF1104", 
+  "PF2103": "PF1102", 
+  "LAK2201": "LAK1201", 
+  "CM3292": {
+    " and ": [
+      "CM2132", 
+      "CM2142", 
+      "CM2101"
+    ]
+  }, 
+  "PC4245": {
+    " or ": [
+      "PC3232", 
+      "PC4130"
+    ]
+  }, 
+  "DSC3202": {
+    " or ": [
+      "DSC2006", 
+      "BH2006", 
+      "BZ2003", 
+      "BK2006"
+    ]
+  }, 
+  "DSC3203": {
+    " or ": [
+      "DSC2006", 
+      "BH2006", 
+      "BZ2003", 
+      "BK2006"
+    ]
+  }, 
+  "NM3550": "(1) For NM Major only, (2) Read and pass a minimum of 80 MCs AND (3) Must read INM3550 concurrently", 
+  "DSC3201": {
+    " or ": [
+      "DSC2006", 
+      "BH2006", 
+      "BZ2003", 
+      "BK2006"
+    ]
+  }, 
+  "EE2032": {
+    " and ": [
+      "EE2011", 
+      "EE2023"
+    ]
+  }, 
+  "EE2031": "EE2021", 
+  "PR4106": "PR1102", 
+  "SE4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2 Cohort 2007 onwards: Completed 100MCs, including 60MCs in SE, with a minimum CAP of 3.5.", 
+  "GE4660": "Cohort 2006 and before: Completed at least 100MC including 56MC of major requirements and obtain a minimum CAP of 3.2. Cohort 2007 onwards: Completed 100MCs, including 60MCs in GE, with a minimum CAP of 3.5.", 
+  "RE3221": "RE2105", 
+  "CS5241": {
+    " and ": [
+      "CS1020", 
+      "CS1231", 
+      {
+        " or ": [
+          "MA1102R", 
+          "MA1505", 
+          "MA1521"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506"
+        ]
+      }
+    ]
+  }, 
+  "JS4217": "Cohort 2006 and before: Students in 2001 cohort and after must have completed 80MCs, of which at least 28MCs should fulfil the JS shared major requirement. Cohort 2007 onwards: Completed 80MCs, including 28MCs in JS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CL2209": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CL2208": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CM2101": {
+    " or ": [
+      "CM1131", 
+      "CM1401"
+    ]
+  }, 
+  "EG3301": "Year 3", 
+  "TS3103": "TS major students who have completed a minimum of 80 MCs.", 
+  "CH3261": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "PR2288": "By permission", 
+  "PR2289": "By permission", 
+  "PC3243": {
+    " or ": [
+      "PC2131", 
+      "PC2231", 
+      "PC3130", 
+      "PC3241", 
+      "PC3235", 
+      "PC2133", 
+      "EE2005"
+    ]
+  }, 
+  "PS4881B": "Cohort 2006 and before: Completed 80MC, including 28MCs in the Major. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "BSP3001A": "All foundation modules", 
+  "UIS3923R": "USP Student", 
+  "BN2201": "BIE Stage 2 standing", 
+  "IS3101": {
+    " or ": [
+      "CS2250", 
+      {
+        " and ": [
+          "IS1103", 
+          "IS1105"
+        ]
+      }
+    ]
+  }, 
+  "UIS3924": "USP Student", 
+  "ME2135E": "ME2134E", 
+  "CM3295": "CM2142", 
+  "ME4101A": "Stage 4 standing", 
+  "MUA2181": "MUA2180", 
+  "MUA3173": "Acoustics and Psychoacoustics", 
+  "LL4104": "For law students: NUS Compulsory Core Curriculum or its equivalent For non-law students: 3rd & 4th Year students from Arts & Social Sciences Faculty", 
+  "MUA2171": "Multitrack Recording 1", 
+  "BSP3001B": "All foundation modules", 
+  "PS5317R": "PS5111", 
+  "MA1521": "GCE 'A' level Mathematics or H2 Mathematics or MA1301", 
+  "XFB4002": "Vary, depending on specific research topic.", 
+  "LAJ2202": "LAJ2201", 
+  "LAJ2203": "LAJ2202", 
+  "LSM4214": {
+    " and ": [
+      "LSM4243", 
+      "LSM4243"
+    ]
+  }, 
+  "LAJ2201": "LAJ1201", 
+  "TE3201": "TE2101", 
+  "ST1232": "GCE 'AO' Level or H1 Pass in Mathematics or its equivalent", 
+  "MKT4429": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "SC4218": "Cohort 2006 and before: Completed 80MCs of which 28MCs must be in Sociology modules Cohort 2007 onwards: Completed 80MCs, of which 28MCs must be in Sociology modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EG1108": "H1 Physics or H2 Physics or A Level Physics or PC1222 Fundamentals of Physics II", 
+  "EG1109": "'A Level Math / H2 Math or equivalent", 
+  "LAC2201": "LAC1201", 
+  "RE4901": {
+    " and ": [
+      "RE2802", 
+      "RE3804", 
+      "RE3805"
+    ]
+  }, 
+  "LAV1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "CM2192": "CM1191", 
+  "BHD4001C": "Varies depending on topics of research", 
+  "EE4415": "EE2020", 
+  "CM2191": "CM1191", 
+  "LAK1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "NUR1118": "NUR1117", 
+  "PY1106": "Pharmacy Year 1 students who have passed GCE 'A' Level Biology.", 
+  "NUR1115": "NUR1114", 
+  "MLE3101": {
+    " or ": [
+      "MLE1101", 
+      "MLE2101"
+    ]
+  }, 
+  "CS3217": "CS2103", 
+  "CS3211": {
+    " or ": [
+      "CS2106", 
+      "CG2271"
+    ]
+  }, 
+  "EC3377": {
+    " and ": [
+      "EC2101", 
+      "EC2102"
+    ]
+  }, 
+  "ME2143": {
+    " and ": [
+      "EG1108", 
+      "PC1431"
+    ]
+  }, 
+  "EE3101E": {
+    " or ": [
+      "EE2009E", 
+      "EE2023E"
+    ]
+  }, 
+  "ACC1006": {
+    " or ": [
+      "FNA1002", 
+      "ACC1002"
+    ]
+  }, 
+  "CM4236": {
+    " and ": [
+      "CM2101", 
+      {
+        " or ": [
+          "CM2132", 
+          "CM2165"
+        ]
+      }, 
+      "CM2167"
+    ]
+  }, 
+  "CM1402": "GCE \u2018A\u2019 level or H2 pass in chemistry or equivalent or CM1417", 
+  "CM3212": "CM2111", 
+  "EE4112E": "EE2011E", 
+  "ESE5601": "ESE4 standing or higher", 
+  "LSM2251": "LSM1103", 
+  "FST3289": "FST3288", 
+  "FST3288": "By permission.", 
+  "OT5206": "CE2112", 
+  "OT5207": "CE4 standing", 
+  "OT5204": {
+    " or ": [
+      "CE5307", 
+      "OT5201"
+    ]
+  }, 
+  "OT5205": "CE4 standing", 
+  "EN4263": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EN. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "OT5203": "OT5201 Marine Statics and Dynamics (as of AY2011/12 onwards) or an equivalent, or CE5887 Topics in Offshore Engineering: Marine Statics & Dynamics (in AY2010/2011)", 
+  "BSP4512": "BSP2001", 
+  "EE4702": {
+    " and ": [
+      "EE3702", 
+      {
+        " or ": [
+          "CS1101C", 
+          "CS1010E", 
+          "CG1101"
+        ]
+      }
+    ]
+  }, 
+  "CE3132": "CE2134", 
+  "MS4201": "Cohort 2006 and before: Completed at least 80MCs, of which at least 28MCs must be from MS major. Cohort 2007 onwards: Completed 80MCs, including 28MCs in MS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MA5206": {
+    " and ": [
+      "MA4211", 
+      {
+        " or ": [
+          "MA4262", 
+          "MA5205"
+        ]
+      }
+    ]
+  }, 
+  "ULS2201": "Minimum G.C.E. 'A' level biology", 
+  "IS4227": "Pass 80 MCs and [CS3361 of IS3220]", 
+  "IS4224": "Pass 80 MCs and [CS3361 or IS3220]", 
+  "UIS4944": "USP Student", 
+  "UIS4943": "USP Student", 
+  "EE4511": "EE2022", 
+  "BL5233": "LSM2251", 
+  "CP3201": "Students can only take this module after completing 70 MCs", 
+  "CS3283": {
+    " and ": [
+      {
+        " or ": [
+          "CS3240", 
+          "CS3242", 
+          "CS3245", 
+          "CS3247", 
+          "CS3248", 
+          "CS3249"
+        ]
+      }, 
+      {
+        " or ": [
+          "CS3240", 
+          "NM3216", 
+          "NM3221", 
+          "NM3226", 
+          "NM3227", 
+          "NM3231"
+        ]
+      }
+    ]
+  }, 
+  "CS3282": "CS3281", 
+  "BN4404": "Stage 3 & 4 Engineering students", 
+  "EC3394": {
+    " and ": [
+      "EC3102", 
+      "EC3304"
+    ]
+  }, 
+  "BN4402": {
+    " or ": [
+      "EG1108", 
+      "PC1432"
+    ]
+  }, 
+  "PC2193": {
+    " or ": [
+      "PC1141", 
+      "PC1142", 
+      "PC1143", 
+      "PC1144", 
+      "PC1431", 
+      "PC1432", 
+      "PC1433"
+    ]
+  }, 
+  "CS3284": "CS3283", 
+  "XFC4101": "Attain at least 70% of the MC requirement for the respective degrees or departmental approval", 
+  "MA3110S": "Departmental approval", 
+  "EL2201": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "EL5880AR": "Must be registered as a Graduate Student in the University or with the approval of the Department", 
+  "PH6660": "Offered to Graduate students only and admission of others by permission of instructor", 
+  "SW4208": "Cohort 2006 and before: (i) Completed a minimum of 80MCs, of which student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3103 in the semester they intend to read the SW4000 modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in SW of which (i) student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3104 in the semester they intend to read the SW4000 modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LSM2241": {
+    " or ": [
+      "LSM1101", 
+      "LSM1401"
+    ]
+  }, 
+  "EC3880A": {
+    " and ": [
+      "EC2101", 
+      "EC2102", 
+      "EC3101", 
+      "EC3102"
+    ]
+  }, 
+  "SP1202": {
+    " or ": [
+      "ES1301", 
+      "ES1102", 
+      "ES1000", 
+      "SP1202"
+    ]
+  }, 
+  "ST1131": "MA1301", 
+  "PC3288": "Departmental Approval", 
+  "ST4242": "ST3131", 
+  "ST4245": {
+    " or ": [
+      "ST3131", 
+      "QF3101"
+    ]
+  }, 
+  "PR5151": "Acceptance in the Pharm.D. program or by permission", 
+  "PR5150": "Acceptance in the Pharm.D. program or by permission", 
+  "PR5153": "Acceptance in the Pharm.D. program or by permission", 
+  "PR5152": "Acceptance in the Pharm.D. program or by permission", 
+  "PR5154": "Acceptance in the Pharm.D. program or by permission", 
+  "MUA3191": "MUA 3190", 
+  "IE2100": "ST2131", 
+  "GE3238": "GE2215", 
+  "LAT3202": "LAT3201", 
+  "HY2259": "Must be HY majors and have completed at least 8 MCs of HY modules, including HY1101E.", 
+  "ME5302": "ME2135", 
+  "ESP3903": "ESP3902", 
+  "ST3312": "SP1001 - Career Planning & Preparation; students must have completed 3 regular semesters of study, have declared Statistics as first major and have completed a minimum of 32 MCs in Statistics major at time of application.", 
+  "MLE4208": {
+    " or ": [
+      "MLE2105", 
+      "EE3406"
+    ]
+  }, 
+  "AR2102": {
+    " and ": [
+      "AR1101", 
+      "AR1102"
+    ]
+  }, 
+  "TG3001": "Level 3 Standing", 
+  "MA4251": {
+    " or ": [
+      "MA3238", 
+      "ST3236"
+    ]
+  }, 
+  "CN2125": "CN2122", 
+  "PC4274": {
+    " or ": [
+      "PC3214", 
+      "PC3234", 
+      "PC3274"
+    ]
+  }, 
+  "MLE4206": {
+    " and ": [
+      "MLE2104", 
+      "MLE2105"
+    ]
+  }, 
+  "MA4255": {
+    " and ": [
+      "MA2213", 
+      "MA3220"
+    ]
+  }, 
+  "MA4254": {
+    " or ": [
+      "MA2215", 
+      "MA3252"
+    ]
+  }, 
+  "EE6130": "EE5139R", 
+  "MLE4202": "MLE3104", 
+  "LSM3241": {
+    " and ": [
+      "LSM2102", 
+      {
+        " or ": [
+          "LSM2104", 
+          "LSM2241"
+        ]
+      }
+    ]
+  }, 
+  "LSM3242": {
+    " and ": [
+      {
+        " or ": [
+          "LSM2101", 
+          "LSM2102"
+        ]
+      }, 
+      {
+        " or ": [
+          "LSM2103", 
+          "LSM3232"
+        ]
+      }
+    ]
+  }, 
+  "TM4101": "Senior Level 3 Standing (For AY 2006/2007 intake & earlier); Level 4 standing (For AY 2007/2008 intake onwards)", 
+  "LSM3244": "LSM2102", 
+  "ACC3606": {
+    " or ": [
+      "FNA3111", 
+      "ACC3601"
+    ]
+  }, 
+  "BLD3001": "MNO1001", 
+  "BLD3002": "MNO1001", 
+  "ACC3604": "BSP1004", 
+  "EL4254": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EL. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "ACC3602": {
+    " or ": [
+      "FNA2002", 
+      "ACC2002"
+    ]
+  }, 
+  "ACC3601": {
+    " or ": [
+      "FNA1002", 
+      "ACC1002"
+    ]
+  }, 
+  "FIN3101A": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "TS4401": "Cohort 2006 and before: (1) Completed at least 100MCs including 56MCs of TS major requirement and (2) Obtained one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Must be TS majors. Cohort 2007 onwards: Completed 110MCs including 60MCs of TS major requirements with a minimum CAP of 3.5.", 
+  "BLD3003": "MNO1001", 
+  "PC2239": "Departmental Approval", 
+  "CP3101A": "CS2103", 
+  "ES2331": "ES1531", 
+  "FIN3101B": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "MA1301": "Pass in O-level Additional Mathematics or AO-level or H1 Mathematics", 
+  "EL4255": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EL. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "HR2002": "For Engineering students only", 
+  "EG4301": "Year 4", 
+  "PC4264": "PC3241", 
+  "LAM3201": "LAM2201", 
+  "MKT3418B": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003", 
+      "TR2201"
+    ]
+  }, 
+  "FST5203": {
+    " or ": [
+      "FST3101", 
+      "LSM3232"
+    ]
+  }, 
+  "MKT3418A": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003", 
+      "TR2201"
+    ]
+  }, 
+  "SW3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "SW3550": "Students should: have completed a minimum of 24 MC in Social Work; and have declared Social Work as their Major.", 
+  "MKT3402A": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "TM3101": {
+    " or ": [
+      "TM2101", 
+      "ME2101E"
+    ]
+  }, 
+  "MKT3402B": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "NM3220": {
+    " and ": [
+      "NM2102", 
+      "NM2219"
+    ]
+  }, 
+  "NM3221": {
+    " or ": [
+      "NM2216", 
+      "CS3240"
+    ]
+  }, 
+  "LAR1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "NM3227": {
+    " or ": [
+      "NM2217", 
+      "CS1101", 
+      "CS1101S", 
+      "CS1010", 
+      "CS1010E"
+    ]
+  }, 
+  "NM3228": "NM2210", 
+  "NM3229": "NM2210", 
+  "UIS4922R": "USP Student", 
+  "CM2142": {
+    " or ": [
+      "CM1131", 
+      "FST1101", 
+      "CM1401"
+    ]
+  }, 
+  "CH3226": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CH3227": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE \u2018O\u2019 Level, or (b) Chinese Language at GCE \u2018AO\u2019 Level (at GCE \u2018A\u2019 Level examination); OR 2) At least a pass for (a) Chinese at GCE \u2018A\u2019 Level, or (b) Higher Chinese at GCE \u2018A\u2019 Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE \u2018A\u2019 Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE \u2018A\u2019 Level, or (b) Chinese Language and Literature (H3CLL) at GCE \u2018A\u2019 Level. 5) Equivalent qualifications may be accepted.", 
+  "EU4401": "Cohort 2006 and before: (i) Complete at least 100MCs including 56MCs of EU/LA [French or German]/recognised modules and (ii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. For EU majors only. Cohort 2007 onwards: Completed 110MCs including 60MCs of EU major requirements with a minimum CAP of 3.5.", 
+  "LSM4253": {
+    " or ": [
+      "LSM2251", 
+      "LSM3252"
+    ]
+  }, 
+  "CL3202": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CL3203": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "LSM1202": "LSM1301", 
+  "CL3205": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "HY4225": "Cohort 2006 and before: Must have completed a minimum of 80MCs. Must major in HY. Cohort 2007 onwards: Completed 80MCs, including 28MCs in HY, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "TE3801": {
+    " or ": [
+      "EE2021E", 
+      "TE2003"
+    ]
+  }, 
+  "MKT2401B": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "EL4401": "Cohort 2006 and before: (1) Completed at least 100MCs including 56MCs of EL major requirements, and (2) Obtained one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Must be EL majors. Cohort 2007 onwards: Completed 110MCs including 60MCs of EL major requirements with a minimum CAP of 3.5.", 
+  "MA5210": {
+    " or ": [
+      "MA3209", 
+      "MA3215", 
+      "MA3251", 
+      "MA4266"
+    ]
+  }, 
+  "ULT2299D": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "EE4104": "EE2011", 
+  "MNO3301": {
+    " or ": [
+      "MNO1001", 
+      "BH1001", 
+      "BZ1001", 
+      "BK2002", 
+      "HR2001", 
+      "HR2101", 
+      "HR3111", 
+      "HR3308"
+    ]
+  }, 
+  "MNO3303": {
+    " or ": [
+      "MNO1001", 
+      "BH1001", 
+      "BZ1001", 
+      "BK2002", 
+      "HR2001", 
+      "HR2101", 
+      "HR3111", 
+      "HR3308"
+    ]
+  }, 
+  "ME3291": {
+    " and ": [
+      "MA1505", 
+      "MA1506"
+    ]
+  }, 
+  "LAJ3201": "LAJ2203", 
+  "ES1000": "Placement through the Qualifying English Test.", 
+  "LAJ3203": "LAJ2203", 
+  "LAJ3202": {
+    " and ": [
+      "LAJ3201", 
+      "LAJ3203"
+    ]
+  }, 
+  "BSP2005": "BSP2001", 
+  "TS5212R": "Must be registered as a Graduate Student in the University or with the approval of the Department", 
+  "MA4292": "Departmental approval", 
+  "MA3289": "Departmental approval", 
+  "MA3288": "Departmental approval", 
+  "CH4281": "Cohort 2006 and before: CL3281 and completed 80MCs including minimum 56MCs of 14 CH or CL modules. Cohort 2007 onwards: CL3281 and completed 80MCs, including 28MCs in CH or CL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "BN4201": "BN3201", 
+  "NUR3115": "NUR3105", 
+  "BN4203": "BN3201", 
+  "CS4220": {
+    " or ": [
+      "CS2220", 
+      "LSM2104"
+    ]
+  }, 
+  "CS4222": {
+    " or ": [
+      "CS3103", 
+      "CG3204L"
+    ]
+  }, 
+  "PL4214": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CG1103": "CG1101", 
+  "UPI2206": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "PL4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.2. Cohort 2007 onwards: Completed 100MCs, including 60MCs in PL, with a minimum CAP of 3.5.", 
+  "PL4218": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LAV4202": "LAV4201", 
+  "MS4880A": "Cohort 2006 and before: Completed at least 80MCs, of which at lest 28MCs must be from MS. Cohort 2007 onwards: Completed 80MCs, including 28MCs in MS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EN4223": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EN. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CE5105": "CE2112", 
+  "NM4227": "Cohort 2006 and before: Read and passed a minimum of 80 MCs Cohort 2007 onwards: (Not applicable to SOC/SDE/ENG students) Completed 80 MCs , including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track (For SOC/SDE/ENG students) Completed 80 MCs and obtain a minimum CAP of 3.5", 
+  "CE5107": {
+    " and ": [
+      "CE2112", 
+      "CE3116"
+    ]
+  }, 
+  "NM4221": "Cohort 2006 and before: Read & passed a minimum of 80 MCs Cohort 2007 onwards: Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EN4226": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EN. Cohort 2007 onwards:Completed 80MCs, including 28MCs in EN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PL3287": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3236"
+    ]
+  }, 
+  "PL3286": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3242"
+    ]
+  }, 
+  "CS5230": "CS3231", 
+  "CS5231": {
+    " and ": [
+      "CS1231", 
+      "CS2105", 
+      "CS2106"
+    ]
+  }, 
+  "CS5233": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "MA1102R", 
+          "MA1505", 
+          "MA1505C", 
+          "MA1521"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506"
+        ]
+      }, 
+      {
+        " or ": [
+          "ST1232", 
+          "ST2131", 
+          "ST2334"
+        ]
+      }
+    ]
+  }, 
+  "CE5513": "CE2155", 
+  "SP2251": {
+    " or ": [
+      "PC1144", 
+      "PC1432", 
+      "CM1101", 
+      "CM1131", 
+      "PC1321", 
+      "GEK1509"
+    ]
+  }, 
+  "MUA3128": "MUA3127", 
+  "CS4340": {
+    " and ": [
+      "CS3343", 
+      {
+        " or ": [
+          "CS4243", 
+          "CS4247", 
+          "CS4342"
+        ]
+      }
+    ]
+  }, 
+  "LAM3202": "LAM3201", 
+  "LSM4225": "LSM2102", 
+  "FST4199": "At least an overall CAP of 3.50, on fulfillment of 100MC or more; and major requirements under the B.Appl.Sc. programme. Food Science and Technology Major.", 
+  "LSM4223": {
+    " or ": [
+      "LSM3232", 
+      "LSM3225"
+    ]
+  }, 
+  "LSM4222": "LSM3223", 
+  "LSM4221": {
+    " or ": [
+      "LSM3211", 
+      "LSM3221"
+    ]
+  }, 
+  "PR2102": "PR1103", 
+  "PC3130": {
+    " and ": [
+      {
+        " or ": [
+          "PC2130", 
+          "PC2130B"
+        ]
+      }, 
+      {
+        " or ": [
+          {
+            " and ": [
+              "MA1505", 
+              "MA1506"
+            ]
+          }, 
+          "PC2130"
+        ]
+      }, 
+      "PC2174"
+    ]
+  }, 
+  "CM3221": "CM2121", 
+  "CS2100R": "Co-read with host module in current semester or pass host module in previous semester. Student selection process is enforced.", 
+  "QF3101": {
+    " and ": [
+      {
+        " or ": [
+          "MA1104", 
+          "MA1506"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2222", 
+          "QF2101"
+        ]
+      }
+    ]
+  }, 
+  "MUH4202": "MUH2116", 
+  "CS3247": {
+    " and ": [
+      "CS3241", 
+      "PC1221"
+    ]
+  }, 
+  "LAT4202": "LAT4201", 
+  "PC5202": "PC4241", 
+  "EC3303": {
+    " and ": [
+      {
+        " or ": [
+          "EC1101E", 
+          "EC1301", 
+          "EC1310"
+        ]
+      }, 
+      {
+        " or ": [
+          "EC2303", 
+          "EC2231", 
+          "DSC1007", 
+          "MQ2205", 
+          "GM2303", 
+          "MA2216", 
+          "BZ1008", 
+          "BK1004"
+        ]
+      }
+    ]
+  }, 
+  "EC3304": {
+    " or ": [
+      "EC3303", 
+      "EC3231", 
+      "SA3101", 
+      "ST3131"
+    ]
+  }, 
+  "CS3242": {
+    " and ": [
+      "MA1521", 
+      "MA1101R"
+    ]
+  }, 
+  "PC5206": {
+    " and ": [
+      {
+        " or ": [
+          "PC4130", 
+          "PC4201"
+        ]
+      }, 
+      "PC5201"
+    ]
+  }, 
+  "CS3240": {
+    " or ": [
+      "CS1020", 
+      "NM2217"
+    ]
+  }, 
+  "QF3312": "SP1001 - Career Planning & Preparation; students must have completed 3 regular semesters of study, have declared Quantitative Finance as first major and have completed a minimum of 32 MCs in Quantitative Finance major at time of application.", 
+  "IS4260": "Pass 80 MCs and [CS2250 or (IS1103 and IS1105)]", 
+  "FST5202": {
+    " or ": [
+      "FST3101", 
+      "LSM3232"
+    ]
+  }, 
+  "IE2130": {
+    " and ": [
+      {
+        " or ": [
+          "MA1505", 
+          "MA1506", 
+          "SA1101"
+        ]
+      }, 
+      "ST1131", 
+      "ST1131A", 
+      "ST1232", 
+      "ST2334"
+    ]
+  }, 
+  "CS2106": {
+    " or ": [
+      "CS2100", 
+      "EE2007", 
+      "EE2024"
+    ]
+  }, 
+  "GEK1011": "Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "LAF2201": "LAF1201", 
+  "AR3102": {
+    " and ": [
+      "AR2101", 
+      "AR2102"
+    ]
+  }, 
+  "CM1191": "H2/A-level Chemistry or its equivalent or by permission", 
+  "PL3234": "PL1101E", 
+  "EL5880BR": "Must be registered as a Graduate student in the university or with the approval of the Department", 
+  "PL3236": "PL1101E", 
+  "LAG4202": "LAG4201", 
+  "CG3204L": "EE3204", 
+  "PL3231": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132"
+    ]
+  }, 
+  "PL3232": "PL1101E", 
+  "PL3233": "PL1101E", 
+  "EM1201": "Open only to students enrolled in the Bachelor of Music Programme from AY2009/10 onwards. Students who score Band C in the YSTCM English Placement Test or students who have passed Foundation English Course 2 are required to read this module.", 
+  "UPC2207": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "EM1202": "Open only to students enrolled in the Bachelor of Music programme from AY2009/10 onwards. Students who score Band B in the YSTCM English Placement Test or students who have passed English for Academic Purposes (Music) 1 are required to read this module.", 
+  "PL3239": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132"
+    ]
+  }, 
+  "CS1020E": "CS1010E", 
+  "CS3243R": "Co-read with host module in current semester or pass host module in previous semester. Student selection process is enforced.", 
+  "GEK1513": "basic knowledge of mathematics and physics at the GCE O-level.", 
+  "TE2003": "TE2002", 
+  "TE2002": {
+    " or ": [
+      "TE2102", 
+      "TG1401"
+    ]
+  }, 
+  "TS2240": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "EC4341": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3341/EC3205 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3341/EC3205", 
+  "EL1101E": "Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "LAH3202": "LAH3201", 
+  "PC3267": {
+    " or ": [
+      "PC2131", 
+      "PC2267", 
+      "EE2011"
+    ]
+  }, 
+  "EL4216": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EL. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "ME3251E": "ME2151E", 
+  "QF4201": "QF3101", 
+  "EN2202": {
+    " or ": [
+      "EN1101E", 
+      "EN2101E", 
+      "GEK1000"
+    ]
+  }, 
+  "EN2201": {
+    " or ": [
+      "EN1101E", 
+      "EN2101E", 
+      "GEK1000"
+    ]
+  }, 
+  "MA4199": "Only for students matriculated from 2002/2003, subject to faculty and departmental requirements", 
+  "UIS3922R": "USP Student", 
+  "MA4235": "MA3233", 
+  "MS3550": "This module is open to Malay Studies Major students only. Students should have completed a minimum of 24 MC in Malay Studies; and have declared Malay Studies as their Major.", 
+  "ST4232": "ST2132", 
+  "RE3222": "RE3102", 
+  "CS4347": {
+    " and ": [
+      {
+        " or ": [
+          "MA1505", 
+          "MA1521", 
+          "MA1102R"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506"
+        ]
+      }
+    ]
+  }, 
+  "ST4238": {
+    " or ": [
+      "MA3238", 
+      "ST3236"
+    ]
+  }, 
+  "FIN3131": {
+    " or ": [
+      "FNA3102", 
+      "FIN3102", 
+      "FIN3102A", 
+      "FIN3102B", 
+      "FIN3102C"
+    ]
+  }, 
+  "FIN3130": "FIN3102", 
+  "IS3243": "Pass 60 MCs and [CS2250 or IS1105]", 
+  "EE4432": "EE2021", 
+  "PL4207": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3235, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PC3312": "SP1001 - Career Planning & Preparation; students must have completed 3 regular semesters of study, have declared Physics as first major and have completed a minimum of 32 MCs in Physics major at time of application.", 
+  "CH1101E": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "FDP2002": "A-level Physics", 
+  "FDP2001": "A-level mathematics", 
+  "ST2132": {
+    " or ": [
+      "MA2216", 
+      "ST2131", 
+      "ST2334"
+    ]
+  }, 
+  "LSM4243": "LSM2103", 
+  "EN5880AR": "Must be registered as a Graduate student with the university or with the approval of the department.", 
+  "SW4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.20. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in SW, with a minimum CAP of 3.5.", 
+  "EN3241": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: (i) EN1101E or EN2101E or GEK1000, AND (ii) EN2201 or EN2202 or EN2203 or EN2204", 
+  "LAT1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "MA4229": {
+    " and ": [
+      {
+        " or ": [
+          "MA2101", 
+          "MA2101S"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA3110", 
+          "MA3110S"
+        ]
+      }
+    ]
+  }, 
+  "ME4231": "ME2135", 
+  "SE4218": "Cohort 2006 and before: 80MCs, of which at least 32MCs should fulfil the SE shared major requirement. Cohort 2007 onwards: Completed 80MCs, including 28MCs in SE or 28MCs in MS or 28MCs in SN, with a minimum CAP of 3.5 or be on Honours track.", 
+  "NUR4101": "NUR3109", 
+  "CN3124E": {
+    " or ": [
+      "TC2112", 
+      "CN2122E"
+    ]
+  }, 
+  "NUR4102": "BSc (Nursing)", 
+  "EE3030A": "At least level 2 standing", 
+  "RE2107": "RE1104", 
+  "RE2104": "RE1101", 
+  "LAB2201": "LAB1201", 
+  "ST3239": {
+    " or ": [
+      "MA2216", 
+      "ST2131", 
+      "ST2334"
+    ]
+  }, 
+  "PC5228": "PC4130", 
+  "EE4001": "Level 4 Standing", 
+  "PL3288": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3232", 
+      "PL3233"
+    ]
+  }, 
+  "ST3236": {
+    " and ": [
+      {
+        " or ": [
+          "MA1101", 
+          "MA1101R", 
+          "MA1311", 
+          "MA1508"
+        ]
+      }, 
+      {
+        " or ": [
+          "ST2131", 
+          "MA2216"
+        ]
+      }
+    ]
+  }, 
+  "CN4121E": "CN3135E", 
+  "ST3232": {
+    " or ": [
+      "ST2132", 
+      "ST2334"
+    ]
+  }, 
+  "MUA1150": "MUA1180", 
+  "SC4222": "Cohort 2006 and before: Completed 80 MCs of which 28 MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80 MCs of which 28 MCs must be in Sociology modules with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MUA1156": "MUA1180", 
+  "EN3249": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: (i) EN1101E or EN2101E or GEK1000, AND (ii) EN2201 or EN2202 or EN2203 or EN2204", 
+  "LSM3232": {
+    " or ": [
+      "LSM2101", 
+      "LSM2102", 
+      "LSM2103"
+    ]
+  }, 
+  "TG3101B": "Level 3 standing AND approval from the Director, BTech.", 
+  "PC4232": {
+    " or ": [
+      "PC3246", 
+      "PC4248", 
+      "PC3274"
+    ]
+  }, 
+  "LSM4262": "LSM2251", 
+  "LAM2201": "LAM1201", 
+  "MA1505": "GCE \u2018A\u2019 Level Mathematics or H2 Mathematics or MA1301", 
+  "MA4291": "Departmental approval", 
+  "ESP4901": "Level 4 standing", 
+  "MA2213": {
+    " and ": [
+      {
+        " or ": [
+          "MA1102R", 
+          "MA1312", 
+          "MA1507", 
+          "MA1505", 
+          "MA1521", 
+          "EG1402", 
+          "EE1401", 
+          "EE1461"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1311", 
+          "MA1508", 
+          "MA1506"
+        ]
+      }
+    ]
+  }, 
+  "LAR3202": "LAR3201", 
+  "MA2216": {
+    " or ": [
+      "MA1102", 
+      "MA1102R", 
+      "MA1312", 
+      "MA1507", 
+      "MA1505", 
+      "MA1505C", 
+      "MA1521"
+    ]
+  }, 
+  "MA2214": {
+    " or ": [
+      "MA1101", 
+      "MA1101R", 
+      "MA1306", 
+      "MA1311", 
+      "MA1508", 
+      "MA1506", 
+      "GM1306", 
+      "GM1308", 
+      "CS1231", 
+      "CS1231S", 
+      "CS1301"
+    ]
+  }, 
+  "ME3232": "ME2135", 
+  "ME3233": "ME2135", 
+  "JS4209": "Cohort 2006 and before: LAJ2202 or placement test AND students in 2001 cohort and after must have completed 80MCs, of which at least 28MCs should fulfil the JS shared major requirement. Cohort 2007 onwards: LAJ2202 or placement test AND completed 80MCs, including 28MCs in JS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LAK3202": "LAK3201", 
+  "CS5272": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "CS1104", 
+          "CS2100"
+        ]
+      }
+    ]
+  }, 
+  "IEM1201E": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes modules.", 
+  "IEM1201G": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed the CELC English for Academic Purposes modules.", 
+  "IEM1201F": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes modules.", 
+  "PC4199": "At least an overall CAP of 3.50, on fulfillment of 100 MC or more; and major requirements under the B.Sc. programme.", 
+  "CM5238": "CM3231", 
+  "IEM1201B": "Students must have passed/been exempted from NUS Qualifying English Test (QET) or have passed the CELC English for Academic Purposes (EAP 1 &amp; EAP 2) modules.", 
+  "ME4246": "ME2142", 
+  "IEM1201L": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes (EAP) modules.", 
+  "EC4332": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3332/EC3224 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3332/EC3224", 
+  "EC4333": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3333/EC3209 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3333/EC3209", 
+  "IEM1201K": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes (EAP) modules.", 
+  "IEM1201J": "Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes modules.", 
+  "SC4224": "Cohort 2006 and before: Completed 80 MCs of which 28 MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80 MCs of which 28 MCs must be in Sociology modules with a minimum CAP of 3.5 or be on the Honours track.", 
+  "SC4225": "Cohort 2006 and before: Completed 80MCs of which 28MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80MCs of which 28MCs must be in Sociology modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EE6135": "EE5306", 
+  "MLE1101": "A Level Physics or H1 Physics or H2 Physics or [PC1221 and PC1222]", 
+  "SC4221": "Cohort 2006 and before: Completed 80 MCs of which 28 MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80 MCs of which 28 MCs must be in Sociology modules with a minimum CAP of 3.5 or be on the Honours track.", 
+  "XFA4402": "Cohort 2004 to 2006: (1) Passed EC4101/EC4151 or EC4102/EC4152 and (2) Complete at least 100 MCs including at least 56MCs of EC major requirements and (3) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: (1) Passed EC4101/EC4151 or EC4102/EC4152 and 2. Completed 110MCs including 60MCs of EC major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "SC4223": "Cohort 2006 and before: Completed 80 MCs of which 28 MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80 MCs of which 28 MCs must be in Sociology modules with a minimum CAP of 3.5 or be on the Honours track.", 
+  "FST2201": "LSM1101", 
+  "HY4211": "Cohort 2006 and before: Must have completed a minimum of 80 MC. Must major in HY. Cohort 2007 onwards: Completed 80MC, including 28 MC in HY, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PH4202": "Cohort 2006 and before: Completed 80MCs, of which at least 28MCs are PH shared major requirements. Cohort 2007 onwards: Completed 80MCs, including 28 MCs in PH or 28 MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LSM4265": {
+    " and ": [
+      "LSM2251", 
+      "LSM3255"
+    ]
+  }, 
+  "HY4215": "Cohort 2006 and before: Must have completed a minimum of 80MCs. Must major in HY or SE. Cohort 2007 onwards: Completed 80MCs, including 28MCs in HY or 28MCs in SE, with a minimum CAP of 3.5 or be on the Honours track", 
+  "LAC1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "PS3257": "Completed 20 MCs in Political Science", 
+  "PL4401": "Cohort 2006 and before: (1) Complete at least 100MCs including 56MCs of PL major requirements and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of PL major requirements with a minimum CAP of 3.5.", 
+  "DSC5211C": "DSC5211A", 
+  "PH4205": "Cohort 2006 and before:Completed 80MCs, of which at least 28MCs are PH shared major. PH2205 or PH3205. Cohort 2007 onwards:Completed 80MCs, including 28MCs in PH, with a minimum CAP of 3.5 or be on the Honours track.PH2301 or PH2302.", 
+  "DSC5211A": "Knowledge in Operations Management and Supply Chain Management Knowledge of Calculus and Probability", 
+  "EN1101E": "Exempted from or passed the NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "MA2288": "Departmental approval", 
+  "PL3281A": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3233"
+    ]
+  }, 
+  "PS3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "PS3258": {
+    " or ": [
+      "PS2102B", 
+      "PS2102", 
+      "PS3257"
+    ]
+  }, 
+  "HY4401": "Cohort 2006 and before: (1) Complete at least 100MCs including 56MCs of major requirements and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5 Cohort 2007 onwards: Completed 110MCs including 60MCs of HY major requirements with a minimum CAP of 3.5.", 
+  "GE4401": "Cohort 2006 and before: Completed at least 100MCs including 56MCs of GE major requirements; and obtained a minimum CAP of 4.0 or minimum SJAP of 4.0 and CAP of 3.5. Cohorts 2007 and 2008: Completed 110MCs including 60MCs of GE major requirements with a minimum CAP of 3.5. Cohort 2009 onwards: Completed 110MCs including 60MCs of GE major requirements with a minimum CAP of 3.5. \u00bf GE3240 Geographical Research: Developing Ideas", 
+  "EE4218": "EE2020", 
+  "NUR1108": "NUR1107", 
+  "RE3201": "RE2104", 
+  "UIS4923": "USP Student", 
+  "CE3155": "EG1109", 
+  "PC3193": "PC2193", 
+  "CS3201": {
+    " and ": [
+      "CS2103", 
+      {
+        " or ": [
+          "CS2301", 
+          "IS2101"
+        ]
+      }
+    ]
+  }, 
+  "EE4605": {
+    " or ": [
+      "EE3731C", 
+      "BN2401"
+    ]
+  }, 
+  "RE2201": "ST1131", 
+  "EE4603": "EE2023", 
+  "EC3312": {
+    " and ": [
+      {
+        " or ": [
+          "EC2101", 
+          "EC2151"
+        ]
+      }, 
+      {
+        " or ": [
+          "BK1004", 
+          "EC2303", 
+          "EC2231", 
+          "GM2303", 
+          "MA2216", 
+          "MQ2205"
+        ]
+      }
+    ]
+  }, 
+  "PL4228": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132, PL3235, PL3236 and at least 2 other core modules (PL3232 - PL3234), with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PL4229": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 \u2013 PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CN3109": {
+    " and ": [
+      "CN3121", 
+      "CN3132"
+    ]
+  }, 
+  "CN3108": {
+    " and ": [
+      "CN2108", 
+      "CN2116", 
+      "CN2125", 
+      "CN3124"
+    ]
+  }, 
+  "MA2108": {
+    " or ": [
+      "MA1102", 
+      "MA1102R", 
+      "MA1505", 
+      "MA1505C", 
+      "MA1507", 
+      "MA1521"
+    ]
+  }, 
+  "PL4223": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PC5210": {
+    " and ": [
+      "PC3274", 
+      "PC4130"
+    ]
+  }, 
+  "PL4226": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PL4227": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MA2101": {
+    " or ": [
+      "MA1101", 
+      "MA1101R", 
+      "MA1506", 
+      "MA1508", 
+      "GM1302", 
+      "GM1308"
+    ]
+  }, 
+  "IS2101": {
+    " or ": [
+      "ET1000", 
+      "ES1102", 
+      "EG1471", 
+      "ES1000", 
+      "IS2101"
+    ]
+  }, 
+  "IS2103": {
+    " or ": [
+      "CS1020", 
+      "CS1102", 
+      "CS1102C", 
+      "CS1102S"
+    ]
+  }, 
+  "IS3260": "Pass 60 MCs and (CS1020 Data Structures and Algorithms I or its equivalent)", 
+  "IS2104": "Students can only take this module after completing 40 MCs", 
+  "CH4222": "Cohort 2006 and before: Completed 80MCs including minimum 56MCs of 14 CH or CL modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in CH or CL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EL4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Completed at least 100MCs including 56MCs of major requirements and obtained a minimum CAP of 3.20. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in EL, with a minimum CAP of 3.5.", 
+  "CS4244": "CS3243", 
+  "CH5242R": "Admission to a graduate programme in Chinese Studies, or 120 MCs (or equivalent) and permission of the Department.", 
+  "BN3501": {
+    " or ": [
+      "MA1506", 
+      "PC1432", 
+      "CN2122", 
+      "ME2134", 
+      "BN2202"
+    ]
+  }, 
+  "DSC3222M": "Student should have completed all levels 1000 and 2000 foundation modules.", 
+  "LAC4202": "LAC4201", 
+  "EN4401": "Cohort 2006 and before: (1) Completed at least 100MCs including 56MCs of EN major requirements, and (2) Obtained one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Must be EN majors. Cohort 2007 onwards: Completed 110MCs including 60MCs of EN major requirements with a minimum CAP of 3.5.", 
+  "IE4220": {
+    " and ": [
+      "IE2100", 
+      "IE2110"
+    ]
+  }, 
+  "RE3106": "RE2106", 
+  "EE4501": "EE2022", 
+  "IS3230": "Pass 60 MCs and [(IS1103 and IS1105) and (CS2105 or IS1112) ]", 
+  "UIS4923R": "USP Student", 
+  "MS4401": "Cohort 2006 and before: (1) Completed at least 100MCs including 56MCs of major requirements and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of MS major requirements with a minimum CAP of 3.5.", 
+  "EE4509": "EE2021", 
+  "ME4213E": "ME3112E", 
+  "ZB4199": "Students majoring in computational biology", 
+  "EN3229": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: (i) EN1101E or EN2101E or GEK1000, AND (ii) EN2201 or EN2202 or EN2203 or EN2204", 
+  "CM1502": "'A' level pass in Chemistry or equivalent", 
+  "HY4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2. Cohort 2007 onwards: Completed 100MCs, including 60MCs in HY, with a minimum CAP of 3.5.", 
+  "TS4880B": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in TS. Cohort 2007 onwards: Completed 80MCs, including 28MCs in TS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LAF3203": "LAF3201", 
+  "LAF3202": "LAF3201", 
+  "TS3242": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "EE3407E": {
+    " or ": [
+      "EE2005E", 
+      "EE2021E"
+    ]
+  }, 
+  "TS3243": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "CN4249": {
+    " and ": [
+      "LSM1401", 
+      "CN2108", 
+      "CN3108"
+    ]
+  }, 
+  "CN4248": {
+    " and ": [
+      "CN2116", 
+      "CN3132"
+    ]
+  }, 
+  "LSM4199": "For Life Sciences major students with overall CAP of 3.50 or more are eligible to enrol for this module.", 
+  "CS3202": "CS3201", 
+  "ME2114": "ME2113", 
+  "EN3222": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: (i) EN1101E or EN2101E or GEK1000, AND (ii) EN2201 or EN2202 or EN2203 or EN2204", 
+  "FIN4112G": {
+    " and ": [
+      "FIN3102", 
+      "FIN3103"
+    ]
+  }, 
+  "BSP2001": {
+    " or ": [
+      "BSP1005", 
+      "BH1005", 
+      "BZ1006", 
+      "BK1008"
+    ]
+  }, 
+  "EC3341": {
+    " and ": [
+      {
+        " or ": [
+          "EC2101", 
+          "EC2151"
+        ]
+      }, 
+      {
+        " or ": [
+          "EC2102", 
+          "EC2152"
+        ]
+      }
+    ]
+  }, 
+  "EE4210": {
+    " or ": [
+      "EE3204", 
+      "CS2105"
+    ]
+  }, 
+  "GE3227": "GE2228", 
+  "CN4121": {
+    " and ": [
+      "CN2116", 
+      "CN3124", 
+      "CN3132", 
+      "CN3135", 
+      "CN3421", 
+      "EG2401"
+    ]
+  }, 
+  "EE4213": "EE3206", 
+  "FIN4112K": "FIN3102", 
+  "MKT2401A": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "CS2010": {
+    " or ": [
+      "CS1020", 
+      "CS1020E", 
+      "CG1103"
+    ]
+  }, 
+  "EE4212": {
+    " or ": [
+      "EE3206", 
+      "EE3731C"
+    ]
+  }, 
+  "PR4206": {
+    " and ": [
+      "PR3102", 
+      "PR3301"
+    ]
+  }, 
+  "DSC3229": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "EL5270R": "Must be registered as a Graduate Student in the University or with the approval of the Department", 
+  "QF5203": "Departmental approval", 
+  "SW4216": "Cohort 2006 and before: (i) Completed a minimum of 80MCs, of which student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3103 in the semester they intend to read the SW4000 modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in SW of which (i) student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3104 in the semester they intend to read the SW4000 modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "SW4213": "Cohort 2006 and before: (i) Completed a minimum of 80 MCs, of which student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3103 in the semester they intend to read the SW4000 modules. Cohort 2007 onwards: Completed 80 MCs, including 28 MCs in SW of which (i) student must have passed SW1101E, SW2101, SW2104, SW2105 and (ii) passed or are concurrently reading SW3104 in the semester they intend to read the SW4000 modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PC4262": "PC3231", 
+  "ME4212": "ME2114", 
+  "MUA2128": "MUA2127", 
+  "CM3301": "GEK1542", 
+  "ACC3614": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004"
+    ]
+  }, 
+  "ACC3615": {
+    " or ": [
+      "ACC3601", 
+      "FNA3123", 
+      "ACC3606"
+    ]
+  }, 
+  "EN4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Completed at least 100MCs including 56MCs of major requirements and obtained a minimum CAP of 3.20. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in EN, with a minimum CAP of 3.5.", 
+  "PC2289": "Departmental Approval", 
+  "PC2288": "Departmental Approval", 
+  "ACC3612": {
+    " and ": [
+      {
+        " or ": [
+          "FNA2004", 
+          "FIN2004"
+        ]
+      }, 
+      "BSP1004"
+    ]
+  }, 
+  "ACC3613": {
+    " or ": [
+      "FNA3121", 
+      "ACC3603"
+    ]
+  }, 
+  "NM3880A": "Any IF/NM or recognised modules.", 
+  "PR3289": {
+    " or ": [
+      "PR2288", 
+      "PR2289"
+    ]
+  }, 
+  "PR3288": {
+    " or ": [
+      "PR2288", 
+      "PR2289"
+    ]
+  }, 
+  "ES1501B": {
+    " or ": [
+      "ES1000", 
+      "ES1102"
+    ]
+  }, 
+  "ES1501C": {
+    " or ": [
+      "ES1000", 
+      "ES1102"
+    ]
+  }, 
+  "ES1501A": {
+    " or ": [
+      "ES1000", 
+      "ES1102"
+    ]
+  }, 
+  "MA1312": "MA1301", 
+  "SC4401": "Cohort 2006 and before: (1) Complete at least 100MCs including 56MCs of SC major requirement and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of SC major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "EN5242R": "Must be registered as a Graduate student in the university or with the approval of the Department.", 
+  "CH2141": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "GEK1508": "At least a GCE \u2018O\u2019 Level pass in Physics", 
+  "SE4401": "Cohort 2006 and before: 1) Complete at least 100 MCs including 56 MCs of SE major requirement and (2) Obtain one of the following minimum standards at the point of registration (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5 Cohort 2007 onwards: Complete 110MCs including 60MCs of SE major requirement with a minimum CAP of 3.5.", 
+  "ESE5404": "ESE4 standing or higher", 
+  "LAL2201": "LAL1201", 
+  "ST3241": "ST3131", 
+  "ES1531": {
+    " or ": [
+      "ES1000", 
+      "ES1102", 
+      "ES1531"
+    ]
+  }, 
+  "LSM1401": "For Bioengineering, Chemical Engineering, Environmental Engineering programs, Pharmacy and Chemistry major. Pass in A-Level or H2 Chemistry.", 
+  "IE4100": "ISE B.Eng. 4 standing", 
+  "NM4102": "Cohort 2006 and before: (1) For NM majors only. (2) Read and passed a minimum of 80MCs, and (3) NM2102 for Cohort 2005 onwards. Cohort 2007 onwards: (1) Completed 80MCs, including 28MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (2) NM2102.", 
+  "MLE4101": {
+    " and ": [
+      "MLE2103", 
+      "MLE2104", 
+      "MLE2105", 
+      "MLE3101"
+    ]
+  }, 
+  "ES1102": "Placement through the Qualifying English Test or a pass in ES1000.", 
+  "EC4371": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3371/EC3223 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track . EC3101/EC3151, EC3102/EC3152 and EC3371/EC3223", 
+  "PC5213": {
+    " or ": [
+      "PC4267", 
+      "PC4268"
+    ]
+  }, 
+  "NUR3114": "NUR1104", 
+  "NM4224": "Cohort 2006 and before: Read and passed a minimum of 80 MCs Cohort 2007 onwards: (Not applicable to SOC/SDE/ENG students) 1. Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track (For SOC/SDE/ENG students) 2. Completed 80 MCs and obtain a minimum CAP of 3.5", 
+  "SSU2001": "Completed (or concurrently reading) Senior seminar requirements of the College curriculum (not applicable for pilot phase)", 
+  "LAB3201": "LAB2201", 
+  "PL4217": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3232, with a minimum CAP of 3.5 or be on the Honours track. Although useful, PL3235 is not critical for this module.", 
+  "PR4102": "PR4101", 
+  "PR4105": "PR1101", 
+  "PR4104": "PR3105", 
+  "PC2131": {
+    " and ": [
+      {
+        " or ": [
+          "PC1143", 
+          "PC1432"
+        ]
+      }, 
+      {
+        " and ": [
+          "MA1505", 
+          "MA1506"
+        ]
+      }
+    ]
+  }, 
+  "PC2130": {
+    " and ": [
+      {
+        " or ": [
+          "PC1144", 
+          "PC1432"
+        ]
+      }, 
+      {
+        " or ": [
+          {
+            " and ": [
+              "MA1505", 
+              "MA1506"
+            ]
+          }, 
+          "MA1507"
+        ]
+      }
+    ]
+  }, 
+  "SN4401": "Cohort 2006 and before: (i) Completed at least 100MCs including 56MCs of major requirements and (ii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5 Cohort 2007 onwards: Completed 110MCs including 60MCs of SN major requirements with a minimum CAP of 3.5.", 
+  "PH4401": "Cohort 2006 and before: (i) Complete at least 100MCs including 56MCs of PH major requirements and (ii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of PH major requirements with a minimum CAP of 3.5.", 
+  "SE5233R": "For SE Honours students with a minimum CAP of 3.20", 
+  "CH5222": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "EE2011": {
+    " and ": [
+      "MA1505", 
+      "MA1506"
+    ]
+  }, 
+  "EE3001": "Level 3 standing", 
+  "MA4266": "MA3209", 
+  "EE2012": {
+    " and ": [
+      "MA1505", 
+      "MA1506"
+    ]
+  }, 
+  "PL4224": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132, and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CH2252": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "PC4243": "PC3233", 
+  "PR4199": "Completion of Level 3000 modules and subject to departmental approval.", 
+  "PL4219": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MA1101R": "GCE 'A' level Mathematics or H2 Mathematics or MA1301", 
+  "CH5225": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "LSM4264": "LSM3254", 
+  "CS5226": "CS3223", 
+  "CS4231": {
+    " or ": [
+      "CS3230", 
+      "CS3210"
+    ]
+  }, 
+  "PC4253": {
+    " or ": [
+      "PC3235", 
+      "PC3241", 
+      "PC3242"
+    ]
+  }, 
+  "EU4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in EU / LA [French/ German] / recognised modules, with a minimum CAP of 3.5.", 
+  "CS5222": {
+    " and ": [
+      "CS2106", 
+      {
+        " or ": [
+          "CS3220", 
+          "CS4223"
+        ]
+      }
+    ]
+  }, 
+  "MA1104": {
+    " or ": [
+      "MA1102", 
+      "MA1102R", 
+      "MA1505", 
+      "MA1505C", 
+      "MA1521", 
+      "EE1401", 
+      "EE1461", 
+      "EG1402"
+    ]
+  }, 
+  "CN4227E": {
+    " or ": [
+      "TC3111", 
+      "CN3121E"
+    ]
+  }, 
+  "CS2020": {
+    " or ": [
+      "CS1010", 
+      "CS1101S"
+    ]
+  }, 
+  "PC4240": "PC3235", 
+  "CN4215R": {
+    " and ": [
+      "CN2125", 
+      "CN3132"
+    ]
+  }, 
+  "MUA4203": "MUA4105", 
+  "FIN3102A": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "NM4212": "Cohort 2006 and before: NM2101 and read and passed a minimum of 80MCs. Cohort 2007 onwards: (1) Completed 80MCs, including 28MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (2) NM2101.", 
+  "NM4215": "Cohort 2006 and before: (1) Read and passed a minimum of 80 MCs (2) NM2219 Principles of Communication Management Cohort 2007 onwards: (1) NM2219 Principles of Communication Management (2) Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MA3312": "SP1001 - Career Planning & Preparation; students must have completed 3 regular semesters of study, have declared Mathematics or Applied Mathematics as first major and have completed a minimum of 32 MCs in Mathematics or Applied Mathematics major at time of application.", 
+  "NM4218": "Cohort 2006 and before: Read & passed a minimum of 80 MCs Cohort 2007 onwards: (Not applicable to SOC students) Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (For SOC students) Completed 80 MCs and obtain a minimum CAP of 3.5.", 
+  "MLE4101R": {
+    " and ": [
+      "MLE2103", 
+      "MLE2104", 
+      "MLE2105", 
+      "MLE3101"
+    ]
+  }, 
+  "ME4105": "For students admitted to a specialisation", 
+  "LAB4201": "LAB3202", 
+  "LSM4234": {
+    " and ": [
+      "LSM2102", 
+      "LSM2103"
+    ]
+  }, 
+  "SC4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.20. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in SC, with a minimum CAP of 3.5.", 
+  "LAT4201": "LAT3202", 
+  "LSM4231": "LSM2103", 
+  "CS5239": "CS1020", 
+  "NUR3116": "NUR3105", 
+  "IE3100E": "Level 3 Standing", 
+  "CE5106": "CE2112", 
+  "LAG3202": "LAG3201", 
+  "LAG3203": "LAG3201", 
+  "EE4431": {
+    " or ": [
+      "EE3431C", 
+      "EE3406"
+    ]
+  }, 
+  "EE4410A": "EE3408C", 
+  "MA1508": "A' level or H2 Mathematics or equivalent", 
+  "NM4226": "Cohort 2006 and before: 1. Read and passed a minimum of 80 MCs Cohort 2007 onwards: (Not applicable to SOC/SDE/ENG students) Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track (For SOC/SDE/ENG students) Completed 80 MCs and obtain a minimum CAP of 3.5.", 
+  "PH3217": "One PH module", 
+  "IE3100R": {
+    " and ": [
+      "IE2100", 
+      "IE2110", 
+      "IE2140", 
+      "IE2101"
+    ]
+  }, 
+  "MA1506": {
+    " or ": [
+      "MA1102R", 
+      "MA1505", 
+      "MA1521"
+    ]
+  }, 
+  "PC1221": "'O' level pass in Physics", 
+  "CN3132": {
+    " and ": [
+      "CN1111", 
+      "CN2125"
+    ]
+  }, 
+  "NM4220": "Cohort 2006 and before: (1) NM2219 (2) NM2220 (3) NM3220; and (4) read and pass a minimum of 80MCs. Cohort 2007 onwards: (1) Completed 80MCs, including 28MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (2) NM2219, (3) NM2220, (4) NM3220.", 
+  "CS3233": "CS2010", 
+  "CS3230": {
+    " and ": [
+      "CS2010", 
+      {
+        " or ": [
+          "CS1231", 
+          "MA1100"
+        ]
+      }
+    ]
+  }, 
+  "LAK3203": "LAK3201", 
+  "SP3175": "SP2174", 
+  "MUA3120": "MUA3119", 
+  "CS3234": {
+    " or ": [
+      "CS1231", 
+      "MA1100"
+    ]
+  }, 
+  "JS4214": "Cohort 2006 and before: Students in 2001 cohort and after must have completed 80MCs, of which at least 28MCs should fulfil the JS shared major requirement. Cohort 2007 onwards: Completed 80MCs, including 28MCs in JS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LAM1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "EC3314": {
+    " and ": [
+      {
+        " or ": [
+          "EC2104", 
+          "MA1101R", 
+          "MA1102R", 
+          "MA1505", 
+          "MA1506", 
+          "MA1507"
+        ]
+      }, 
+      {
+        " and ": [
+          "EC2101", 
+          "EC2102"
+        ]
+      }
+    ]
+  }, 
+  "CH5225R": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "PC5212": {
+    " or ": [
+      "PC4201", 
+      "PC4214"
+    ]
+  }, 
+  "ESE4401": {
+    " and ": [
+      "ESE2401", 
+      "ESE3401"
+    ]
+  }, 
+  "IT2002": {
+    " or ": [
+      "CS1010", 
+      "IF2206", 
+      "IT1002"
+    ]
+  }, 
+  "IT2001": {
+    " or ": [
+      "CS1010", 
+      "GEK1511", 
+      "IT1001", 
+      "IT1002"
+    ]
+  }, 
+  "CS3245": "CS2010", 
+  "CH4226": "Cohort 2006 and before: Completed 80MCs including minimum 56MCs of 14 CH or CL modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in CH or CL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EN3880A": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: EN2203 or EN2204.", 
+  "CM4241": "CM3242", 
+  "IS3240": "Pass 60 MCs and [EC1101 or EC1101E or EC1301 or EC1310 or EC1311 or GCE \u2018A\u2019 Level Economics or BSP1005 ]", 
+  "SP3202": "GEK1542", 
+  "LAK4202": "LAK4201", 
+  "EN4247": "Completed 80MCs, including 28MCs in EN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CS5247": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506"
+        ]
+      }
+    ]
+  }, 
+  "CE5207": "CE3121", 
+  "NUR4104": {
+    " and ": [
+      "NUR4101", 
+      "NUR4102", 
+      "NUR4103"
+    ]
+  }, 
+  "CS5246": {
+    " and ": [
+      "CS2103", 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506", 
+          "ST1232", 
+          "ST2131", 
+          "ST2334"
+        ]
+      }
+    ]
+  }, 
+  "TG3101A": "Level 3 standing AND approval from the Director, BTech.", 
+  "LAI1732": "LAI 1731", 
+  "EE3208E": {
+    " or ": [
+      "EE2007E", 
+      "EE2024E"
+    ]
+  }, 
+  "PR5252": "Acceptance in the Pharm.D. program or by permission", 
+  "MKT3439": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "FIN4119": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "GE4219": "Cohort 2006 and before: Completed at least 80MCs and for GE, MS and SE majors only. Cohort 2007 onwards: Completed at least 80MCs, including 28MCs in GE or 28MCs in MS or 28MCs in SE, with a minimum CAP of 3.5 or be on the Honours Track", 
+  "CE3116": "CE2112", 
+  "ME4101": "COMPLETED 100 MC OF DEGREE REQUIREMENT.", 
+  "EC3381": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "PS4401": "Cohort 2001: Completed 100 MCs with a minimum CAP of 4.00 and for PS majors only. Cohort 2002 & 2003: (i) Complete at least 100 MCs and (ii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP (based on 56 MCs of PS major requirement) of 4.0 and CAP of 3.5. For PS majors only. Cohort 2004-2006: (i) Complete at least 100 MCs including 56 MCs of PS major requirement and (ii) Obtain one of the following minimum standards at the point of registration (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. For PS majors only. Cohort 2007-2008: Completed 110MCs, including 60 MCs of PS major requirements with a minimum CAP of 3.5 or be on the Honours track. Cohort 2009 onwards: Completed 110MCs including 60MCs of PS major with a minimum SJAP of 4.0 and CAP of 3.5. Please refer to: http://www.fas.nus.edu.sg/pol/students/ugradreq.htm for more information on the PS major requirement.", 
+  "PR5250": "Acceptance in the Pharm.D. program or by permission", 
+  "CS4232R": "Co-read with host module in current semester or pass host module in previous semester. Student selection process is enforced.", 
+  "PR5251": "Acceptance in the Pharm.D. program or by permission", 
+  "CS5219": "CS3212", 
+  "CN4118E": {
+    " or ": [
+      "CN3132E", 
+      "CN4111E", 
+      "CN3135E"
+    ]
+  }, 
+  "INM3550": "(1) For NM Major only, (2) Read and pass a minimum of 80 MCs AND (3) Must read NM3550 concurrently", 
+  "CH5244R": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "PL3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "EL4201": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in EL, and EL3201. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EL, and EL3201, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EN2271": {
+    " or ": [
+      "EL1101E", 
+      "EN1101E", 
+      "EN2101E", 
+      "TS1101E", 
+      "GEK1011", 
+      "GEK1000", 
+      "GEM1003"
+    ]
+  }, 
+  "PC2130B": {
+    " or ": [
+      "PC1144", 
+      "PC1432", 
+      "PC1433"
+    ]
+  }, 
+  "CN4118R": {
+    " and ": [
+      "CN3108", 
+      "CN3121", 
+      "CN3124", 
+      "CN3132", 
+      "CN3135", 
+      "CN3421"
+    ]
+  }, 
+  "SC5102R": {
+    " or ": [
+      "SC5101", 
+      "SC3209"
+    ]
+  }, 
+  "CM1121": "'A' level or H2 pass in Chemistry or equivalent or CM1417", 
+  "EC3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "GE3550B": "Students should: 1) have completed a minimum of 24 MCs in Geography; and 2) have declared Geography as their major", 
+  "CS3343": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "NM2208", 
+          "NM2217"
+        ]
+      }
+    ]
+  }, 
+  "ACC3605": {
+    " and ": [
+      {
+        " or ": [
+          "FNA1002", 
+          "ACC1002"
+        ]
+      }, 
+      "BSP1004"
+    ]
+  }, 
+  "GE3550A": {
+    " or ": [
+      "GE2227", 
+      "GE3238"
+    ]
+  }, 
+  "TP5026": "CE4 standing or higher", 
+  "CS3103L": "CS3103", 
+  "TS1101E": "Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "CE4247": "CE3132", 
+  "LAC3201": {
+    " or ": [
+      "LAC2201", 
+      "LAC2202"
+    ]
+  }, 
+  "LAC3202": "LAC3201", 
+  "PF3203": "PF2101", 
+  "CS1231": "A-level Mathematics or H2 Mathematics or MA1301", 
+  "PF3201": {
+    " and ": [
+      "PF2103", 
+      "PF2104"
+    ]
+  }, 
+  "TP5028": "CE4 standing or higher", 
+  "PR1102": "CM1417", 
+  "ID3105": {
+    " and ": [
+      "ID2105", 
+      "ID2106"
+    ]
+  }, 
+  "PL3252": {
+    " and ": [
+      "PL1101E", 
+      "PL3235"
+    ]
+  }, 
+  "MNO3313K": "MNO1001", 
+  "PL3250": {
+    " and ": [
+      "PL1101E", 
+      "PL3233"
+    ]
+  }, 
+  "FIN3129": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "NM4881A": "Cohort 2006 and before: Read and passed a minimum of 80MCs. Cohort 2007 onwards: Completed 80MCs, including 28MCs in NM, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CS2103T": "CS1020", 
+  "LAV2201": "LAV1201", 
+  "RE4210": "RE4212", 
+  "RE4213": "RE4212", 
+  "MKT2413": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "FST2288": "By permission.", 
+  "FST2289": "FST2288", 
+  "CN2108": {
+    " and ": [
+      "CN2121", 
+      "CN2122", 
+      "LSM1401"
+    ]
+  }, 
+  "CP4101": "Attain at least 70% of the MC requirement for the respective degree", 
+  "MA4233": "MA3220", 
+  "MUA2176": "MUA2175", 
+  "EL3880E": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "LSM3224": {
+    " and ": [
+      "LSM2101", 
+      "LSM2103"
+    ]
+  }, 
+  "LSM3225": {
+    " or ": [
+      "LSM2101", 
+      "LSM2102", 
+      "LSM2103"
+    ]
+  }, 
+  "LSM3223": "LSM2103", 
+  "MUA3174": "Audio Mixing", 
+  "FIN3103A": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "ACC3603": {
+    " and ": [
+      {
+        " or ": [
+          "FNA1002", 
+          "ACC1002"
+        ]
+      }, 
+      {
+        " or ": [
+          "FNA2002", 
+          "ACC2002"
+        ]
+      }
+    ]
+  }, 
+  "BN4101R": "Stage 4 standing", 
+  "CH4224": "Cohort 2006 and before: Completed 80MCs including minimum 56MCs of 14 CH or CL modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in CH or CL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "TS4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Completed at least 100MCs including 56MCs of major requirement and obtained a minimum CAP of 3.2. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in TS, with a minimum CAP of 3.5.", 
+  "PL3281C": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3233"
+    ]
+  }, 
+  "CM2192A": {
+    " or ": [
+      "CM1191", 
+      "FST1101"
+    ]
+  }, 
+  "SW3101": "SW1101E", 
+  "EC3361": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "UIS3921": "USP Student", 
+  "MUA3206": "MUA3205", 
+  "MA3238": {
+    " and ": [
+      {
+        " or ": [
+          "MA1101", 
+          "MA1101R", 
+          "MA1311", 
+          "MA1508", 
+          "GM1302"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2216", 
+          "ST2131"
+        ]
+      }
+    ]
+  }, 
+  "NM4200": "Cohort 2006 and before: Read and passed a minimum of 80 MCs Cohort 2007 onwards: Completed 80 MCs, including 28 MCs in NM, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CH5242": "Admission to a graduate programme in Chinese Studies, or 120 MCs (or equivalent) and permission of the Department.", 
+  "ME4261E": "ME3162E", 
+  "EG2401": {
+    " or ": [
+      "EG1413", 
+      "ES1531"
+    ]
+  }, 
+  "CH5244": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "PC3236": {
+    " and ": [
+      "MA1505", 
+      {
+        " or ": [
+          "MA1506", 
+          "PC2174"
+        ]
+      }
+    ]
+  }, 
+  "NM3204": "Any IF/NM or recognised modules.", 
+  "CH3243": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE `O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "CL1101E": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "IS3221": {
+    " or ": [
+      "CS2250", 
+      {
+        " and ": [
+          "IS1103", 
+          "IS1105"
+        ]
+      }
+    ]
+  }, 
+  "SN3275": {
+    " or ": [
+      "SN2275", 
+      "SN2291"
+    ]
+  }, 
+  "ME3221": "ME2121", 
+  "CM2121": "CM1121", 
+  "UIS3921R": "USP Student", 
+  "MA3215": {
+    " and ": [
+      {
+        " or ": [
+          "MA1104", 
+          "MA1104S", 
+          "MA2221", 
+          "MA1507", 
+          "MA1505", 
+          "MA2311"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1311", 
+          "MA1506", 
+          "MA1508"
+        ]
+      }
+    ]
+  }, 
+  "ME4255": "ME2151", 
+  "SW3103A": {
+    " and ": [
+      "SW1101E", 
+      "SW2101", 
+      "SW2104", 
+      "SW2105"
+    ]
+  }, 
+  "ME4253": "ME2151", 
+  "HY4209": "Cohort 2006 and before: Must have completed a minimum of 80 MC. Must major in HY. Cohort 2007 onwards: Completed 80MC, including 28 MC in HY, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "DSC4211G": "DSC2006", 
+  "RE3105": "RE3103", 
+  "PS4219": "Cohort 2006 and before: Completed at least 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "AR4104": {
+    " and ": [
+      "AR3101", 
+      "AR3102"
+    ]
+  }, 
+  "SE3224": "As the emphasis of the class is on practical approaches to art as a way of appreciating and understanding Southeast Asian Studies, students should ideally have genuine interests in drawing, painting, and the creative arts.", 
+  "EE3013C": {
+    " or ": [
+      "EG1108", 
+      "CG1108", 
+      "EE1002"
+    ]
+  }, 
+  "JS4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.2. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in JS, with a minimum CAP of 3.5.", 
+  "HY4205": "Cohort 2006 and before: Must have completed a minimum of 80 MC. Must major in HY. Cohort 2007 onwards: Completed 80MC, including 28 MC in HY, with a minimum CAP of 3.5 or be on the Honours track", 
+  "MNO3321": {
+    " and ": [
+      "MNO1001", 
+      "MNO2007"
+    ]
+  }, 
+  "CN4211R": {
+    " and ": [
+      "CN2121", 
+      "CN2116"
+    ]
+  }, 
+  "IE4229": "IE2110", 
+  "LAF4202": "LAF4201", 
+  "LAF4203": "LAF4202", 
+  "PS3265": "PS1101E", 
+  "GEM1003": "Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules.", 
+  "BHD4001A": "Varies depending on topics of research", 
+  "LAH2201": "LAH1201", 
+  "BSP3001C": "All level 1000 and 2000 foundation modules", 
+  "BHD4001B": "Varies depending on topics of research", 
+  "PH4213": "Cohort 2006 and before: Completed 80MCs, of which at least 28MCs are PH shared major requirements. For EU major students only: Completed at least 80MCs of which at least 28MCs must be EU/LA [French/German]/ recognised modules (must have read at least one PH module). Cohort 2007 onwards: Completed 80MCs, including 28MCs in PH or 28MCs in EU/ LA (French/ German)/ recognised modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PH4212": "Cohort 2006 and before: Completed 80MCs, of which at least 28MCs are PH shared major requirements. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PH, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CS4236": {
+    " and ": [
+      "CS2107", 
+      "CS3230"
+    ]
+  }, 
+  "NM5212R": "(a) For CNM major who has accumulated 120 MCs (b) For CNM, FASS, and SoC graduate students", 
+  "ES2007S": {
+    " or ": [
+      "ES1000", 
+      "ES1102", 
+      "ES2007S"
+    ]
+  }, 
+  "CP3208": "SoC students who have passed at least 60 MCs and with approval from respective department.", 
+  "CP3209": "CS2309", 
+  "IEM2201D": "(i) Students must have passed/been exempted from the NUS Qualifying English Test (QET) or have passed CELC English for Academic Purposes modules. (ii) Students must have passed a IEM1201 module.", 
+  "IEM2201J": "IEM1201", 
+  "LAC3204": "Higher Chinese at GCE 'O' Level, GCE 'AO' Level Chinese or equivalent", 
+  "IEM2201H": "I&E I", 
+  "CP3200": "Students can only take this module after completing 70 MCs. Student Selection process will be enforced", 
+  "CE3165": "CE2155", 
+  "MNO4319": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "PC5203": {
+    " and ": [
+      "PC4130", 
+      "PC4240"
+    ]
+  }, 
+  "MUT3211": {
+    " and ": [
+      "MUT 1121", 
+      "MUT 1122", 
+      "MUT 2117", 
+      "MUT 2118"
+    ]
+  }, 
+  "RE4804": "RE4182", 
+  "CS5218": {
+    " or ": [
+      "CS3212", 
+      "CS4212"
+    ]
+  }, 
+  "LAG1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "CS3243": {
+    " and ": [
+      "CS2010", 
+      {
+        " or ": [
+          "CS1231", 
+          "MA1100"
+        ]
+      }
+    ]
+  }, 
+  "EC4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. [Passed EC4101/EC4151 or EC4102/EC4152] and complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, with 60MCs in EC that include EC4101 or EC4102, and with CAP of at least 3.5.", 
+  "PF4304": {
+    " and ": [
+      "PF1102", 
+      "PF1104"
+    ]
+  }, 
+  "CN3135": "CN2122", 
+  "LSM3243": "LSM1101", 
+  "EN5253R": "Must be registered as a Graduate student in the university or with the approval of the Department.", 
+  "MA5220": {
+    " and ": [
+      "MA3205", 
+      "MA4207"
+    ]
+  }, 
+  "CS3241": "CS1020", 
+  "CH5660": "Subject to the approval from HOD", 
+  "SP2174": "SP2173", 
+  "TS2236": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "LAV3201": "LAV2201", 
+  "CM3232": {
+    " or ": [
+      "CM2132", 
+      "CM2167"
+    ]
+  }, 
+  "LAV3202": "LAV3201", 
+  "EE3331C": "EE2023", 
+  "PC1432": "Students from FOE ( i.e. Civil Eng, Chemical Eng, Environmental Eng, Computer Eng, Electrical Eng, Engineering, Mechanical Eng, bioengineering, Industrial &amp; Systems Eng and Material Science &amp; Eng) or 'A' level or H2 pass in Physics or PC1221 &amp; PC1222", 
+  "PC1431": "Students from FOE ( i.e. Civil Eng, Chemical Eng, Environmental Eng, Computer Eng, Electrical Eng, Engineering, Mechanical Eng, bioengineering, Industrial &amp; Systems Eng and Material Science &amp; Eng) or 'A' level or H2 pass in Physics or PC1221 &amp; PC1222", 
+  "EE3032": "EE2024", 
+  "FST3181": "Food Science & Technology Major", 
+  "PR2105": {
+    " and ": [
+      "CM1417", 
+      "LSM1301"
+    ]
+  }, 
+  "CS2281": "CS1020", 
+  "MNO3313J": "MNO1001", 
+  "EE5508": "EE3431C", 
+  "CG2271": "CG1102", 
+  "EC4361": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3361/EC3208 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3361/EC3208", 
+  "LAT2201": "LAT1201", 
+  "ESE4408": {
+    " and ": [
+      "ESE3101", 
+      "ESE3201", 
+      "ESE3301", 
+      "ESE3401"
+    ]
+  }, 
+  "PS4217A": "Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "ME4262E": "ME3162E", 
+  "LAB1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "PS4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.2 Cohort 2007 onwards: Completed 100MCs, including 60MCs in PS, with a minimum CAP of 3.5. Please refer to http://www.fas.nus.edu.sg/pol/stud ents/ugradreq.htm for more information on the PS major requirement.", 
+  "FST2102A": {
+    " and ": [
+      "CM1191", 
+      "FST1101"
+    ]
+  }, 
+  "EC2101": {
+    " or ": [
+      "EC1101E", 
+      "EC1301", 
+      "EC1310", 
+      "USE2301", 
+      "BSP1005", 
+      "BH1005", 
+      "BZ1006"
+    ]
+  }, 
+  "EE4110": "EE2011", 
+  "USE2309": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "EC2102": {
+    " or ": [
+      "EC1101E", 
+      "EC1301", 
+      "EC1310", 
+      "USE2301", 
+      "BSP1005", 
+      "BSP2001", 
+      "BH2001", 
+      "BZ2001"
+    ]
+  }, 
+  "UIS3922": "USP Student", 
+  "USE2306": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "BN2102": "MA1506", 
+  "MA6212": "Departmental approval", 
+  "ES2002": "ES2002", 
+  "PL5221R": {
+    " and ": [
+      {
+        " or ": [
+          "PL2101Y", 
+          "PL2131"
+        ]
+      }, 
+      "PL2132"
+    ]
+  }, 
+  "CM1161": "'A' level or H2 pass in Chemistry or equivalent", 
+  "BN3401": "EE2009", 
+  "MA6219": "MA5219", 
+  "LAR2201": "LAR1201", 
+  "GEM2509": "A-level Mathematics", 
+  "FIN2004": {
+    " or ": [
+      "EG1422", 
+      "FIN2004"
+    ]
+  }, 
+  "EN5883R": "Must be registered as a Graduate Student in the University or with the approval of the Department", 
+  "GEM2505": "O level pass in Physics or Mathematics", 
+  "CS5321": "CS4236", 
+  "GEM2501": "Basic knowledge of mathematics and physics at GCE O level", 
+  "EC4102": "Cohort 2006 and before: Min avg grade point for EC3101/EC3151 and EC3102/EC3152 together of 4.0. Note: If student do not have the current pre-requisites for EC4101/EC4151 and EC4102/EC4152, but have: 1. passed at least 14 EC modules (or 56MCs) (inclusive of EC3101/EC3151 and EC3102/EC3152), and; 2. obtained an SJAP (avg grade of all EC modules) of at least 3.5, then student may submit an appeal for the pre-requisite waiver using CORS. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a min CAP of 3.5 or be on the Honours track. Min avg grade point for EC3101/EC3151 and EC3102/EC3152 together of 4.0. Note: If student do not have the current pre-requisites for EC4101/EC4151 and EC4102/EC4152, but have: 1. passed at least 14 EC modules (or 56MCs) (inclusive of EC3101/EC3151 and EC3102/EC3152), and; 2. obtained an SJAP (avg grade of all EC modules) of at least 3.5, then student may submit an appeal for the pre-requisite waiver using CORS.", 
+  "EC4101": "Cohort 2006 and before: Min avg grade point for EC3101/EC3151 and EC3102/EC3152 together of 4.0. Note: If student do not have the current pre-requisites for EC4101/EC4151 and EC4102/EC4152, but have: 1. passed at least 14 EC modules (or 56MCs) (inclusive of EC3101/EC3151 and EC3102/EC3152), and; 2. obtained an SJAP (avg grade of all EC modules) of at least 3.5, then student may submit an appeal for the pre-requisite waiver using CORS. Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a min CAP of 3.5 or be on the Honours track. Min avg grade point for EC3101/EC3151 and EC3102/EC3152 together of 4.0. Note: If student do not have the current pre-requisites for EC4101/EC4151 and EC4102/EC4152, but have: 1. passed at least 14 EC modules (or 56MCs) (inclusive of EC3101/EC3151 and EC3102/EC3152), and; 2. obtained an SJAP (avg grade of all EC modules) of at least 3.5, then student may submit an appeal for the pre-requisite waiver using CORS.", 
+  "EC3353": {
+    " or ": [
+      "EC2101", 
+      "EC2151", 
+      "EC1311"
+    ]
+  }, 
+  "EC3352": {
+    " and ": [
+      "EC2101", 
+      "EC2102"
+    ]
+  }, 
+  "EC3351": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "ID3106": {
+    " and ": [
+      "ID2105", 
+      "ID2106"
+    ]
+  }, 
+  "GE3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "FST4103": "FST3104", 
+  "FST4102": "FST3103", 
+  "CG2007": "EE2020", 
+  "FIN4129": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "MKT4419": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "CS3249": "CS1020", 
+  "LAG2201": "LAG1201", 
+  "CH4401": "Cohort 2006 and before: (1) Complete at least 100MCs including 56MCs of CH/CL major requirements and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of CH/CL major requirements with a minimum CAP of 3.5.", 
+  "PC3246": {
+    " or ": [
+      "PC2130", 
+      "PC2132"
+    ]
+  }, 
+  "PS4882E": "Cohort 2006 and before: Completed 80MC, including 28MCs in the Major. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track..", 
+  "PS4882F": "Must have read PS3257 Political Inquiry and PS2237 Introduction to International Relations. Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PC3241": {
+    " or ": [
+      "PC2131", 
+      "PC2231", 
+      "PC3235", 
+      "MLE2104", 
+      "PC2133", 
+      "EE2005"
+    ]
+  }, 
+  "ST3244": "ST1131", 
+  "MUA4205": {
+    " or ": [
+      "MUA4203", 
+      "MUA4204"
+    ]
+  }, 
+  "NUR2107": "NUR2116", 
+  "DSC3214": "DSC2003", 
+  "ST3242": "ST2132", 
+  "DSC3216": {
+    " or ": [
+      "ST1131A", 
+      "ST1131", 
+      "ST1232", 
+      "MA2216", 
+      "ST2131", 
+      "ST2334", 
+      "EE2003", 
+      "ME2491"
+    ]
+  }, 
+  "CN4208E": {
+    " or ": [
+      "CN2116E", 
+      "TC2112", 
+      "CN2122E"
+    ]
+  }, 
+  "MUA2183": "MUA2182", 
+  "GE4212": "Cohort 2006 and before: Completed at least 80MCs and for GE majors only. Must have read and passed GE1101E or at least one of the following modules: GE2219, GE2220, GE2228, GE2229, GE3221, and GE3227. Cohort 2007 onwards: Must have read and passed GE1101 or at least one of the following modules: GE2219, GE2220, GE2228, GE2229, GE3221 and GE3227. Completed at least 80MCs, including 28MCs in GE, with a minimum CAP of 3.5 or be on the Honours Track.", 
+  "LSM3262": {
+    " or ": [
+      "LSM1104", 
+      "LSM1201"
+    ]
+  }, 
+  "FIN4113": {
+    " and ": [
+      "FIN3101", 
+      "ST1131A"
+    ]
+  }, 
+  "BLD3004": "MNO2007", 
+  "IE4100E": "Level 4 Standing", 
+  "EL5211R": "Must be registered as a Graduate Student in the University or with the approval of the Department", 
+  "LSM3264": "LSM1101", 
+  "GE4218": "Cohort 2006 and before: Completed at least 80MCs and for GE majors only. Cohort 2007 onwards: Completed at least 80MCs, including 28MCs in GE, with a minimum CAP of 3.5 or be on the Honours Track.", 
+  "USR4001A": "Students should be at least in their second year of study, preferably third year.", 
+  "TS3237": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "MNO3329": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "ST3131": {
+    " or ": [
+      "ST2131", 
+      "MA2216", 
+      "ST2334"
+    ]
+  }, 
+  "ESP2110": {
+    " and ": [
+      "ESP1104", 
+      "ESP1107"
+    ]
+  }, 
+  "CE5883A": "CE 2134", 
+  "CN2125E": {
+    " or ": [
+      "TC2112", 
+      "CN2122E"
+    ]
+  }, 
+  "FIN3117": {
+    " and ": [
+      {
+        " or ": [
+          "FNA2004", 
+          "FIN2004"
+        ]
+      }, 
+      {
+        " or ": [
+          "FNA3102", 
+          "FIN3102"
+        ]
+      }
+    ]
+  }, 
+  "EC3371": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "EE3208": {
+    " or ": [
+      "CG2007", 
+      "EE2024"
+    ]
+  }, 
+  "FIN3113": {
+    " or ": [
+      "FNA1002", 
+      "FNA1002X", 
+      "ACC1002", 
+      "ACC1002X", 
+      "BH1002", 
+      "BZ1002", 
+      "BK1003", 
+      "FNA1002E", 
+      "BH1002E"
+    ]
+  }, 
+  "IS3222": "Pass 60 MCs and [CS2250 or (IS1103 and IS1105)]", 
+  "EE3304": "EE3331C", 
+  "IS3220": "Pass 60 MCs and [CS2250 or (IS1103 and IS1105)]", 
+  "MUA2187": "MUA2186", 
+  "PC3239": "Departmental Approval.", 
+  "PC3238": {
+    " or ": [
+      "PC2174", 
+      {
+        " and ": [
+          "MA1505", 
+          "MA1506"
+        ]
+      }, 
+      "PC3236"
+    ]
+  }, 
+  "EC3373": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "PR5221": "PR3104", 
+  "FIN3118": {
+    " or ": [
+      "FNA3101", 
+      "FIN3101"
+    ]
+  }, 
+  "FIN3102B": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "MA4207": {
+    " or ": [
+      "MA3110", 
+      "MA3110S", 
+      "MA3205", 
+      "MA3219"
+    ]
+  }, 
+  "EE3104C": "EE2011", 
+  "EC4401": "Cohort 2001: [Passed EC4101/EC4151 or EC4102/EC4152] and must have completed a minimum of 100 MC with CAP = 4.0 or better. Cohort 2002 & 2003: (1) Passed EC4101/EC4151 or EC4102/EC4152 and; (2) Complete at least 100MCs and; (3) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP (based on at least 56MCs of EC major requirements) of 4.0 and CAP of 3.5. Cohort 2004 to 2006: (1) Passed EC4101/EC4151 or EC4102/EC4152 and; (2) Complete at least 100MCs including at least 56MCs of EC major requirements and; (3) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: (1) Passed EC4101/EC4151 or EC4102/EC4152 and; (2) Completed 110MCs including 60MCs of EC major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "QF4199": "Only for students majoring in Quantitative Finance and who matriculated from 2004/2005, subject to faculty and departmental requirements.", 
+  "UIS3923": "USP Student", 
+  "MA3252": {
+    " or ": [
+      "MA1101", 
+      "MA1101R", 
+      "MA1306", 
+      "MA1311", 
+      "MA1508", 
+      "MA1506", 
+      "GM1306"
+    ]
+  }, 
+  "PL3235": "PL1101E", 
+  "CM4199B": "At least an overall CAP of 3.50, on fulfillment of 100MC or more; and major requirements under the B.Sc. programme. (Only for students entering NUS in or after 2002 )", 
+  "UIS3943": "USP Student", 
+  "PF3103": "PF2101", 
+  "CM4199A": "At least an overall CAP of 3.50, on fulfillment of 100MC or more; and major requirements under the B.Sc. programme. ( Only for students entering NUS in or after 2002 )", 
+  "MA3259": {
+    " or ": [
+      "MA2216", 
+      "MA3233", 
+      "MA3501", 
+      "ST2131", 
+      "ST2334", 
+      "LSM2241"
+    ]
+  }, 
+  "UIS3944": "USP Student", 
+  "PL3237": "PL1101E", 
+  "MNO2302": {
+    " or ": [
+      "MNO1001", 
+      "BH1001", 
+      "BZ1001", 
+      "BK2002", 
+      "HR2001", 
+      "HR2101", 
+      "HR3111", 
+      "HR3308"
+    ]
+  }, 
+  "CH4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirement and obtain a minimum CAP of 3.2. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in CH or CL, with a minimum CAP of 3.5", 
+  "NM5201R": "(a) For CNM major who has accumulated 120 MCs (b) For CNM, FASS, and SoC graduate students.", 
+  "MUA2192": "Open to Voice Majors", 
+  "UPC2208": "Not applicable to USP First-Tier modules.", 
+  "EE2011E": "TE2002", 
+  "MUA1171": "Prerequisite: Basic Recording 1", 
+  "LSM3214": {
+    " and ": [
+      "LSM2101", 
+      "LSM3212"
+    ]
+  }, 
+  "LAL1201": "This module is meant for students with no prior knowledge of the target language. Students with prior knowledge (including spoken proficiency) must contact CLS to take a placement test.", 
+  "MUA2174": "Acoustics and Psychoacoustics", 
+  "LSM3211": {
+    " or ": [
+      "LSM2101", 
+      "LSM2103"
+    ]
+  }, 
+  "FIN4112H": {
+    " and ": [
+      "FIN3102", 
+      "FIN3103"
+    ]
+  }, 
+  "JS4401": "Cohort 2006 and before: (1) Complete at least 100MCs including 56MCs of JS major requirement and (2) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of JS major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "CM2264": "CM1101", 
+  "GEM3900": "Ideally, a student should have completed the University Town Residential Programme of five modules before pursuing Independent Study. However, due to the diverse student population at Tembusu, the prerequisite is that students should have completed at least one Senior Seminar. This ensures that a student has gained some familiarity with the exploration of topics in an inter-disciplinary, multi-disciplinary or trans-disciplinary fashion. The student should approach a College Fellow to work out an agreed topic, readings, and assignments for the module. Part of this conversation should be to specify in what sense the topic and/or approach are interdisciplinary, multi-disciplinary or trans-disciplinary in character. A formal ISM contract is to be submitted to the Director of Studies for approval. Evaluation is based on 100% Continuous Assessment and must be worked out between the student and the supervisor prior to seeking the College\u2019s approval. In the course of the semester, between 4 and 6 meetings between student and supervisor are expected. The student is expected to play an active role in setting the agenda and preparing for these meetings.", 
+  "PC1144": "'A' level or H2 pass in Physics or PC1221 & PC1222", 
+  "EE2020": {
+    " or ": [
+      "EE1002", 
+      "CG1108", 
+      "EG1108"
+    ]
+  }, 
+  "EE2021": {
+    " or ": [
+      "EE1002", 
+      "EG1108", 
+      "CG1108"
+    ]
+  }, 
+  "EE2022": {
+    " or ": [
+      "EE1002", 
+      "EG1108", 
+      "CG1108"
+    ]
+  }, 
+  "CM2263": "CM1101", 
+  "CM4222": "CM3221", 
+  "SW2106": "Students from 2008 cohort onwards and majoring in Social Work.", 
+  "SW2105": "SW1101E", 
+  "CM4227": {
+    " and ": [
+      {
+        " or ": [
+          "CM1121", 
+          "CM1401"
+        ]
+      }, 
+      {
+        " or ": [
+          "LSM1101", 
+          "LSM1401"
+        ]
+      }
+    ]
+  }, 
+  "SW2101": "SW1101E", 
+  "CM2111": "CM1111", 
+  "LSM3213": {
+    " and ": [
+      "LSM2102", 
+      "LSM2103"
+    ]
+  }, 
+  "ST2334": {
+    " or ": [
+      "MA1306", 
+      "MA1102", 
+      "MA1102R", 
+      "MA1505", 
+      "MA1505C", 
+      "MA1521", 
+      "MA1312", 
+      "MA1507"
+    ]
+  }, 
+  "CG1108": "H1 Physics or H2 Physics or \u2018A\u2019 Level Physics or PC1222 Fundamentals of Physics II", 
+  "LSM3212": "LSM2101", 
+  "EC4303": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3304/EC3237 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3304/EC3237", 
+  "JS2101": "JS1101E", 
+  "PR4201": "PR1103", 
+  "NM4208": "Cohort 2006 and before: NM2220 and NM3217, and read and passed a minimum of 80MCs. Cohort 2007 onwards: (1) Completed 80MCs, including 28MCs in NM, with a minimum CAP of 3.5 or be on the Honours track. (2) NM2220 and NM3217.", 
+  "MA3111S": "Departmental approval", 
+  "PR5212": "PR3101", 
+  "FIN3103B": {
+    " or ": [
+      "FNA2004", 
+      "FIN2004", 
+      "BH2004", 
+      "BZ2004", 
+      "BK2004"
+    ]
+  }, 
+  "PC1325": "At least a 'O' level pass in Physics", 
+  "MA3266": {
+    " and ": [
+      {
+        " or ": [
+          "MA1101R", 
+          "MA1506", 
+          "MA1508"
+        ]
+      }, 
+      "MA1104", 
+      "MA3220"
+    ]
+  }, 
+  "PL4202": "Completed 80 MCs of which student must have passed PL1101E, PL2131 and PL2132, and 4 out of the 5 core modules (PL3232 - PL3236), with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CS1020": "CS1010", 
+  "ACC2002": {
+    " or ": [
+      "EG1422", 
+      "ACC2002"
+    ]
+  }, 
+  "PH3241": {
+    " or ": [
+      "PH2241", 
+      "PH2242", 
+      "PH3210"
+    ]
+  }, 
+  "QF5202": "Departmental approval", 
+  "CM2161": "CM1161", 
+  "CE3101": "CE2 standing or higher", 
+  "PH4550": "Cohort 2006 and before: At least 60 MCs of PH modules. Minimum grade of B+ for PH2110 Logic (students will apply to Department to read this module and qualified applicants will be selected through an interview). Cohort 2007 onwards: Completed 80MCs, including 28MCs in PH, with a minimum CAP of 3.5 or be on the Honours track. Minimum grade of B+ for PH2110 Logic (students will apply to Department to read this module and qualified applicants will be selected through an interview).", 
+  "MUA2120": "MUA2119", 
+  "CL3281": {
+    " or ": [
+      "CL2280", 
+      "CL2281"
+    ]
+  }, 
+  "CS2102R": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "CS1231", 
+          "MA1100"
+        ]
+      }
+    ]
+  }, 
+  "SC4203": "Cohort 2006 and before: Completed 80MCs of which 28MCs must be in Sociology modules Cohort 2007 onwards: Completed 80MCs of which 28MCs must be in Sociology modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MKT4416": {
+    " or ": [
+      "MKT2401", 
+      "MKT2401A", 
+      "MKT2401B"
+    ]
+  }, 
+  "MKT4411": {
+    " or ": [
+      "MKT2401", 
+      "MKT2401A", 
+      "MKT2401B"
+    ]
+  }, 
+  "MKT4413": "MKT2401", 
+  "CS3223": {
+    " and ": [
+      "CS2010", 
+      {
+        " or ": [
+          "CS2102", 
+          "CS2102S"
+        ]
+      }
+    ]
+  }, 
+  "IE2290": "Stage 2 standing", 
+  "CS3225": {
+    " and ": [
+      "CS2010", 
+      {
+        " or ": [
+          "CS2220", 
+          "LSM2104"
+        ]
+      }
+    ]
+  }, 
+  "LAR4202": "LAR4201", 
+  "TC2401": "TC1401", 
+  "RE3211": "RE2105", 
+  "BN2203": "BIE Stage 2 standing", 
+  "RE3212": "RE3104", 
+  "CM3296": {
+    " or ": [
+      "CM2132", 
+      "CM2167"
+    ]
+  }, 
+  "CH2273": "Must obtain: 1) at least a B4 for (a) Higher Chinese at GCE 'O' level, or (b) Chinese Language at GCE 'AO' level (at GCE'A' level examination); OR 2) at least a pass for (a) Chinese at GCE 'A' level, or (b) Higher Chinese at GCE 'A' level; OR 3) at least C grade for Chinese Language (H1CL) at GCE 'A' level; OR 4) at least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' level. 5) Equivalent qualifications may be accepted.", 
+  "ME2135": "ME2134", 
+  "EE2024": "EE2020", 
+  "CL2281": "1) Exempted from NUS Qualifying English Test, or passed NUS Qualifying English Test, or exempted from further CELC Remedial English modules; AND 2) Grade 'B4' and above in Higher Chinese (HCL) at GCE 'O' Level or Chinese (CL) at GCE 'AO' Level; OR Grade 'C' and above in Chinese Language (H1CL) at GCE 'A' Level.", 
+  "PL4880I": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3235, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CS4880": "Students in their 3rd year of study in science, technology or business", 
+  "CM1417": "'O' Level pass in Chemistry or equivalent", 
+  "TS2217": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "EC3396": {
+    " and ": [
+      {
+        " or ": [
+          "EC2102", 
+          "EC2152", 
+          "EC3101", 
+          "EC3151"
+        ]
+      }, 
+      {
+        " or ": [
+          "EC2104", 
+          "MA1301", 
+          "MA1311", 
+          "MA1312", 
+          "MA1421", 
+          "EC3311", 
+          "EC3221"
+        ]
+      }
+    ]
+  }, 
+  "CM3265": "CM1121", 
+  "CM3264": "CM1121", 
+  "CM3262": "CM2263", 
+  "CM3261": {
+    " or ": [
+      "CM3241", 
+      "CM2142", 
+      "CM2166"
+    ]
+  }, 
+  "SN4261": "Cohort 2006 and before: Completed at least 80MCs, of which at least 28MCs must be from SN major. Cohort 2007 onwards: Completed 80MCs, including 28MCs in SN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "LL4061": "NUS Compulsory Core Curriculum or its equivalent", 
+  "SN4262": "Cohort 2006 and before: Completed at least 80MCs, of which 28MCs must be from SN major Cohort 2007 onwards: Completed 80MCs, including 28MCs in SN, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CL2103": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "MKT3429": "Vary according to project topic. In general, however, students will have to have completed the core modules of the BBA/BBA(Acc) curriculum.", 
+  "MUH3204": "MUH 2115 & MUH 2116 (for YSTCM students) or consent from the instructor (for non-YSTCM students)", 
+  "EE4307": "EE3331C", 
+  "EE4306": "EE3331C", 
+  "MKT3420": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003", 
+      "TR2201"
+    ]
+  }, 
+  "MA3227": {
+    " and ": [
+      "MA2213", 
+      {
+        " or ": [
+          "MA1104", 
+          "MA1506", 
+          "MA1507", 
+          "MA1505", 
+          "MA2311"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2101", 
+          "MA2101S"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2216", 
+          "ST2131", 
+          "ST2334"
+        ]
+      }
+    ]
+  }, 
+  "MA1102R": "GCE 'A' level Mathematics or H2 Mathematics or MA1301", 
+  "ST4199": "At least one major at B.Sc./B.Appl.Sc. level; and minimum overall CAP of 3.50 on completion of 100 MCs or more.", 
+  "ESP1104": "'A' level Physics or equivalent", 
+  "MLE2103": "MLE2102", 
+  "EE3131C": "EE2023", 
+  "LSM2202A": {
+    " and ": [
+      "LSM1101", 
+      "LSM1102"
+    ]
+  }, 
+  "MNO4313E": {
+    " or ": [
+      "MNO1001", 
+      "HR2001", 
+      "HR2101", 
+      "HR3111", 
+      "HR3308"
+    ]
+  }, 
+  "ESE4502": "ESE4 standing", 
+  "CM4268": "CM3221", 
+  "CM4223": "CM3221", 
+  "CS2103": "CS1020", 
+  "CS2102": {
+    " and ": [
+      "CS1020", 
+      {
+        " or ": [
+          "CS1231", 
+          "MA1100"
+        ]
+      }
+    ]
+  }, 
+  "CS2101": {
+    " or ": [
+      "ES1000", 
+      "ES1102"
+    ]
+  }, 
+  "CS2100": "CS1010", 
+  "CS2107": "CS1010", 
+  "NM4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2. Cohort 2007 onwards: Completed 100MCs, including 60MCs in NM, with a minimum CAP of 3.5.", 
+  "CS2105": {
+    " and ": [
+      {
+        " or ": [
+          "CS1020", 
+          "CS1020E", 
+          "CS1102", 
+          "CS1102C", 
+          "CS1102S"
+        ]
+      }, 
+      {
+        " or ": [
+          "CS1104", 
+          "CS2100"
+        ]
+      }
+    ]
+  }, 
+  "SC4101": "Cohort 2006 and before: Completed 80MCs of which 28MCs must be in Sociology modules. Cohort 2007 onwards: Completed 80MCs of which 28MCs must be in Sociology modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EN3265": "Cohort 2011 and before: EN1101E or EN2101E or GEK1000. Cohort 2012 onwards: (i) EN1101E or EN2101E or GEK1000, AND (ii) EN2201 or EN2202 or EN2203 or EN2204", 
+  "MA2289": "Departmental approval", 
+  "UIS4921": "USP Student", 
+  "EL3202": {
+    " or ": [
+      "EL2102", 
+      "EL2202"
+    ]
+  }, 
+  "DSC4213": "DSC1007", 
+  "ST2131": {
+    " or ": [
+      "MA1102", 
+      "MA1102R", 
+      "MA1312", 
+      "MA1507", 
+      "MA1505", 
+      "MA1505C", 
+      "MA1521"
+    ]
+  }, 
+  "EL3207": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "EL3204": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "EL2211": {
+    " or ": [
+      "EL1101E", 
+      "GEK1011"
+    ]
+  }, 
+  "IS4150": "Pass 80 MCs and IS2150", 
+  "CH4244": "Cohort 2006 and before: Completed 80MCs including minimum 56MCs of 14 CH or CL modules. Cohort 2007 onwards: Completed 80MCs, including 28MCs in CH or CL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CM3193": "CM3181", 
+  "IEM2201F": "IEM1201", 
+  "CM3194": "CM3181", 
+  "CE4258": "CE3155", 
+  "PC4242": "PC3231", 
+  "CH5222R": "Graduate students in Chinese Studies, or 120 MCs (or equivalent) and permission of Department", 
+  "DSC2008": "DSC1007", 
+  "CE5308": "CE5307", 
+  "ACC3611": {
+    " and ": [
+      {
+        " or ": [
+          "FNA1002", 
+          "ACC1002"
+        ]
+      }, 
+      "BSP1004"
+    ]
+  }, 
+  "UIS4924": "USP Student", 
+  "CN4247R": {
+    " and ": [
+      "CN2116", 
+      "LSM1401"
+    ]
+  }, 
+  "IS4240": "Pass 80 MCs and [(CS2102 or CS2102S) and (CS2250 or (IS1103 and IS1105) and (ST1131 or ST2334)]", 
+  "TS3245": "TS1101E", 
+  "FST3201": "Food Science & Technology Major", 
+  "IS4243": "Pass 80 MCs and [CS2250 or (IS1103 and IS1105)]", 
+  "MKT3413": "MKT1003", 
+  "LSM3272": "LSM1103", 
+  "PL3249": {
+    " and ": [
+      "PL1101E", 
+      "PL3232", 
+      "PL3233"
+    ]
+  }, 
+  "PH3301": {
+    " or ": [
+      "PH2301", 
+      "GEK2038"
+    ]
+  }, 
+  "MLE2104": {
+    " or ": [
+      "MLE1101", 
+      "MLE2101", 
+      "EG1109"
+    ]
+  }, 
+  "MLE2105": {
+    " or ": [
+      "MLE1101", 
+      "MLE2101"
+    ]
+  }, 
+  "MA3111": {
+    " and ": [
+      {
+        " or ": [
+          "MA1104", 
+          "MA1507"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2108", 
+          "MA2108S"
+        ]
+      }
+    ]
+  }, 
+  "MA3110": {
+    " or ": [
+      "MA2108", 
+      "MA2108S"
+    ]
+  }, 
+  "MUA4232": "MUA4231", 
+  "CN2116": {
+    " and ": [
+      "CN1111", 
+      "CN2125"
+    ]
+  }, 
+  "NM4401": "Cohort 2006 and before: (i) Pass NM4101/NM4102; (ii) Complete at least 100MCs including 56MCs of NM major requirements and (iii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 OR (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: (1) Pass NM4101 or NM4102; (2) Completed 110MCs including 60MCs of NM major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "SW4401": "Cohort 2006 and before: (i) Complete at least 100MCs including 56MCs of SW major requirement and (ii) Obtain one of the following minimum standards at the point of registration: (a) minimum CAP of 4.0 or (b) minimum SJAP of 4.0 and CAP of 3.5. Cohort 2007 onwards: Completed 110MCs including 60MCs of SW major requirements with a minimum SJAP of 4.0 and CAP of 3.5.", 
+  "EE3501E": {
+    " or ": [
+      "EE2005E", 
+      "EE2021E"
+    ]
+  }, 
+  "EE3501C": {
+    " or ": [
+      "CG1108", 
+      "EE2022"
+    ]
+  }, 
+  "TE4001": "Level 4 Standing.", 
+  "LSM3256": {
+    " and ": [
+      "LSM1103", 
+      "LSM1104"
+    ]
+  }, 
+  "LSM3255": "LSM2251", 
+  "PL3241": {
+    " and ": [
+      "PL1101E", 
+      "PL2131"
+    ]
+  }, 
+  "ME3251": "ME2151", 
+  "LSM1104": "LSM1301", 
+  "CE5604": "CE2155", 
+  "LSM1101": "GCE \u2018A\u2019 Level or H2 Biology or equivalent, or LSM1301", 
+  "LSM1103": "GCE \u2018A\u2019 Level or H2 Biology or equivalent, or LSM1301", 
+  "LSM1102": "GCE \u2018A\u2019 Level or H2 Biology or equivalent, or LSM1301.", 
+  "MUA3187": "MUA3186", 
+  "FIN3120B": "FIN3101", 
+  "NM3551": "Students must: have declared a Major, completed a minimum of 24 MC in that Major, and have a CAP of at least 3.5.", 
+  "PF3303": "PF2104", 
+  "LAB4202": "LAB4201", 
+  "IT1006": "A-Levels/H2 Mathematics or equivalent.", 
+  "CS3230R": "Co-read host module. Student selection process is enforced.", 
+  "CH6262": "Subject to the approval from HOD", 
+  "GE4222": "Cohort 2007 onwards: Completed 80 MC, including 28 MCs in GE, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CP3880": {
+    " and ": [
+      {
+        " or ": [
+          "IS2101", 
+          "CG1413"
+        ]
+      }, 
+      {
+        " or ": [
+          "CS2103", 
+          "IS2103", 
+          "IS2150"
+        ]
+      }, 
+      {
+        " or ": [
+          "IS3102", 
+          {
+            " and ": [
+              "CS3201", 
+              "CS3202"
+            ]
+          }, 
+          {
+            " and ": [
+              "CS3281", 
+              "CS3282"
+            ]
+          }, 
+          "IS4102", 
+          {
+            " and ": [
+              "CS4201", 
+              "CS4202"
+            ]
+          }, 
+          {
+            " and ": [
+              "CS4203", 
+              "CS4204"
+            ]
+          }, 
+          "CG2001"
+        ]
+      }
+    ]
+  }, 
+  "MA5204": "MA3201", 
+  "EE2023": "MA1506", 
+  "UIS4922": "USP Student", 
+  "GEK1524": "O-level in Physics or Physical Sciences", 
+  "PL3240": {
+    " and ": [
+      "PL1101E", 
+      "PL3235"
+    ]
+  }, 
+  "RE4223": "RE4222", 
+  "UIS4924R": "USP Student", 
+  "PR3103": "PR2104", 
+  "PR3104": "Pass PR1101 or LSM1101 or LSM1201 or LSM1301 or CM1121 or GCE 'A' level or H2 Biology or equivalent.", 
+  "PR3105": {
+    " and ": [
+      "PX3108", 
+      {
+        " or ": [
+          "PP2107", 
+          "PA2107"
+        ]
+      }
+    ]
+  }, 
+  "MLE4207": "MLE2101", 
+  "PR3107": "PR1103", 
+  "NM3215": "Any NM or recognised modules", 
+  "IS4226": "Pass 80 MCs and [CS2250 or (IS1103 and IS1105)]", 
+  "NM3217": {
+    " and ": [
+      "NM2219", 
+      "NM2220"
+    ]
+  }, 
+  "EC4351": "Cohort 2006 and before: EC3101/EC3151, EC3102/EC3152 and EC3351/EC3206 Cohort 2007 onwards: Completed 80MCs, including 28MCs in EC, with a minimum CAP of 3.5 or be on the Honours track. EC3101/EC3151, EC3102/EC3152 and EC3351/EC3206", 
+  "NM3211": "NM2220 Introduction to Media Writing. Read and pass a minimum of 80 MCs.", 
+  "PH4660": "Cohort 2006 and before: To be offered subject to the agreement of the Supervisor and Department. Complete at least 100MCs including 56MCs of major requirements and obtain a minimum CAP of 3.2. Please refer to http://www.fas.nus.edu.sg/philo/modules.htm for more information on the PH major requirement. Cohort 2007 onwards: To be offered subject to the agreement of the Supervisor and Department. Completed 100MCs, including 60MCs in PH, with a minimum CAP of 3.5.", 
+  "PL3281B": {
+    " and ": [
+      "PL1101E", 
+      "PL2131", 
+      "PL2132", 
+      "PL3233"
+    ]
+  }, 
+  "JS4227": "Cohort 2006 and before: Students in 2001 cohort and after must have completed 80MCs, of which at least 28MCs should fulfil the JS shared major requirement. Cohort 2007 onwards: Completed 80MCs, including 28MCs in JS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "JS4225": "Cohort 2006 and before: Students in 2001 cohort and after must have completed 80MCs, of which at least 28MCs should fulfil the JS shared major requirement. Cohort 2007 onwards: Completed 80MCs, including 28MCs in JS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "NM3219": {
+    " and ": [
+      "NM2219", 
+      "NM2220"
+    ]
+  }, 
+  "LSM4244": "LSM2103", 
+  "UIT2206": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "LSM4241": "LSM3231", 
+  "USP3509": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "USP3508": "Not applicable to USP First-Tier modules.", 
+  "ME4261": "ME3162", 
+  "ME4262": {
+    " and ": [
+      "ME2162", 
+      "ME3162"
+    ]
+  }, 
+  "TS4213": "Cohort 2006 and before: For TS students: Completed at least 80MCs including a minimum of 28MCs in TS. For EL students: Completed at least 80MCs including a minimum of 28MCs in EL. Cohort 2007 onwards: For TS students: Completed 80MCs, including 28MCs in TS, with a minimum CAP of 3.5 or be on the Honours track. For EL students: Completed 80MCs including 28MCs in EL, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "MUA1191": "MUA 1190", 
+  "ME4265": "ME 2113", 
+  "MA3201": {
+    " and ": [
+      {
+        " or ": [
+          "MA2202", 
+          "MA2202S"
+        ]
+      }, 
+      {
+        " or ": [
+          "MA2101", 
+          "MA2101S"
+        ]
+      }
+    ]
+  }, 
+  "TS4217": "Cohort 2006 and before: Completed at least 80MCs including a minimum of 28MCs in TS. Cohort 2007 onwards: Completed 80MCs, including 28MCs in TS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EE1003": "A-level Math, and A-level Physics", 
+  "PS4209": "Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PS4208": "Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EE4114": "EE3131C", 
+  "IE4230": {
+    " and ": [
+      "IE2130", 
+      "IE3101"
+    ]
+  }, 
+  "PS4203": "Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PS4202": "Cohort 2006 and before: Completed 80MCs and for PS Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "AR3324": {
+    " or ": [
+      "BU2484", 
+      "PF2102"
+    ]
+  }, 
+  "PS4205": "Cohort 2006 and before: Completed 80MCs and for PS or SE Majors only. Cohort 2007 onwards: Completed 80MCs, including 28MCs in PS or 28MCs in SE, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PH5430R": "Cohort 2006 and before: Completed 80MCs, of which at least 28MCs are PH shared major Cohort 2007 onwards: Completed 80MCs, including 28MCs in PH, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "PC1222": "'O' level pass in Physics", 
+  "CH3248": "Must obtain: 1) At least a B4 for (a) Higher Chinese at GCE 'O' Level, or (b) Chinese Language at GCE 'AO' Level (at GCE 'A' Level examination); OR 2) At least a pass for (a) Chinese at GCE 'A' Level, or (b) Higher Chinese at GCE 'A' Level; OR 3) At least C grade for Chinese Language (H1CL) at GCE 'A' Level; OR 4) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE 'A' Level, or (b) Chinese Language and Literature (H3CLL) at GCE 'A' Level. 5) Equivalent qualifications may be accepted.", 
+  "TS3235": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "TS3234": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "TS3233": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "NM4201": "Cohort 2006 and before 1. Read and passes a minimum of 80 MCs 2. NM2219 3. NM2220 4. NM3220 Cohort 2007 onwards 1. Completed 80 MCs including 28 MCs in NM, with a minimum cap of 3.5 or be on the Honours Track 2. NM2219 3. NM2220 4. NM3220", 
+  "PC1143": "'A' level or H2 pass in Physics or PC1221 & PC1222", 
+  "MUA2191": "MUA 2190", 
+  "ME3102": "ME3101", 
+  "MUA2193": "Open to Voice Majors", 
+  "ID2106": {
+    " and ": [
+      "ID1105", 
+      "ID1106"
+    ]
+  }, 
+  "CS4247": "CS3241", 
+  "TS3238": {
+    " or ": [
+      "TS1101E", 
+      "GEM1003"
+    ]
+  }, 
+  "PL4205": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3234, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "CN3124": "CN2122", 
+  "BN4202": {
+    " or ": [
+      "CN2122", 
+      "ME2134", 
+      "BN2202"
+    ]
+  }, 
+  "CL2241": "Must obtain: (i) At least a B4 for (a) Higher Chinese at GCE \u2018O\u2019 Level, or (b) Chinese Language at GCE \u2018AO\u2019 Level (at GCE \u2018A\u2019 Level examination); OR (ii) At least a pass for (a) Chinese at GCE \u2018A\u2019 Level, or (b) Higher Chinese at GCE \u2018A\u2019 Level; OR (iii) At least C grade for Chinese Language (H1CL) at GCE \u2018A\u2019 Level; OR (iv) At least a pass for (a) Chinese Language and Literature (H2CLL) at GCE \u2018A\u2019 Level, or (b) Chinese Language and Literature (H3CLL) at GCE \u2018A\u2019 Level. (v) Equivalent qualifications may be accepted.", 
+  "MUA3264": "Pre-requisite of 5 MCs of Professional Development modules", 
+  "CN4227R": "CN3121", 
+  "CS3882": "Read and passed 80 MCs of modules. Students from Engineering, Science, and FASS with sufficient computing background and have read and passed 80 MCs of module may also apply to read. Student selection process will be enforced.", 
+  "PL4208": "Completed 80 MCs of which student must have passed PL1101E, PL2131, PL2132 and 4 out of the 5 core modules (PL3232 - PL3236), in which one must be PL3236, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "EG1310": {
+    " or ": [
+      "EG1108", 
+      "EE1002"
+    ]
+  }, 
+  "CM3291": {
+    " and ": [
+      "CM2111", 
+      "CM2121", 
+      "CM2102"
+    ]
+  }, 
+  "UQF2101F": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "UQF2101E": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "UQF2101B": "Not applicable to USP First-Tier modules. USP Advanced modules (Course-Based Modules, CBMs) may state general pre-requisite skills/knowledge. Prerequisites should not make reference to NUS modules.", 
+  "CM4215": {
+    " or ": [
+      "CM3211", 
+      "CM3212", 
+      "CM3268"
+    ]
+  }, 
+  "MUT3205": {
+    " or ": [
+      "MUT 1121", 
+      "MUT 1122"
+    ]
+  }, 
+  "AR4102": {
+    " and ": [
+      "AR3101", 
+      "AR3102"
+    ]
+  }, 
+  "LL4025": "For law students: NUS Compulsory Core Curriculum For non-law students: Open to Philosophy, Political Science, and USP students.", 
+  "EE4302": "EE3331C", 
+  "MUT3209": "MCM 1-IV and Introduction to Professional Studies", 
+  "CS4215": {
+    " and ": [
+      "CS2010", 
+      "CS2104"
+    ]
+  }, 
+  "CG1413": "Open only to students enrolled in the Bachelor of Engineering (Computer Engineering) programme from AY2009/10 onwards. Students who are required to read ES1000 and/or EAP modules (ET1000/EG1471/ES1102) must pass it/them before taking CG1413.", 
+  "CS4217": "CS3213", 
+  "NM2102": "NM2101", 
+  "MKT3412": {
+    " or ": [
+      "MKT1003", 
+      "BH1003", 
+      "BZ1003", 
+      "BK2003"
+    ]
+  }, 
+  "NM2101": "Cohort 2008-09 and earlier: Nil. Cohort 2009-10 onwards: Obtain a grade of B- or above in NM1101E Communications, New Media and Society (applies to students from ALL faculties except School of Computing). Students who fail to meet the B- criterion in NM1101E will have the opportunity to take a departmentconducted test, which will act as an alternative prerequisite.", 
+  "MNO2009": "MNO1001", 
+  "ACC4612A": "ACC3613", 
+  "MLE4203": {
+    " and ": [
+      "MLE3104", 
+      "BN3301"
+    ]
+  }, 
+  "LSM2203": {
+    " or ": [
+      "LSM1101", 
+      "LSM1102", 
+      "LSM1103"
+    ]
+  }, 
+  "MUA3130": "MUA3129", 
+  "MNO2007": "MNO1001", 
+  "CS3281": "CS2103", 
+  "CM3225": "CM2121", 
+  "EC3102": {
+    " and ": [
+      {
+        " or ": [
+          "EC2102", 
+          "EC2152"
+        ]
+      }, 
+      {
+        " or ": [
+          "EC2101", 
+          "EC2151"
+        ]
+      }
+    ]
+  }, 
+  "CN2116E": {
+    " or ": [
+      "TC1101", 
+      "CN1111E"
+    ]
+  }, 
+  "EC3101": {
+    " or ": [
+      "EC2101", 
+      "EC2151"
+    ]
+  }, 
+  "MNO4313D": "MNO1001", 
+  "MUA1192": "Open to Voice Majors", 
+  "ID4104": "ID3104", 
+  "PL3242": "PL1101E", 
+  "SC4883": "Cohort 2006 and before: Completed 80MCs of which 28MCs must be in Sociology modules Cohort 2007 onwards: Completed 80MCs of which 28MCs must be in Sociology modules, with a minimum CAP of 3.5 or be on the Honours track.", 
+  "FST2106": {
+    " and ": [
+      "FST1101", 
+      "LSM1101"
+    ]
+  }
+}
