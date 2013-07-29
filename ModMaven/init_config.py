@@ -3,7 +3,8 @@ import jinja2
 import sys
 import os
 import json
-import urllib2
+from google.appengine.api import urlfetch
+
 
 # Google DataStore
 from google.appengine.ext import ndb
@@ -20,6 +21,7 @@ FACEBOOK_APP_ID = "211279135690183"
 FACEBOOK_APP_SECRET = "0a49fe29d02a7995563486ac95ba5a50"
 IVLE_LAPI_KEY = "nR7o7vzmqBA3BAXxPrLLD"
 SESSIONS_SECRET = "QR2YKc1ktlIvd9SvAI01PUFKVY7vso5sfSrDir5ebDbUoC3X7mgp2wNZkWCzlfVG"
+CURRENT_SEM = ["2013/2014", "1"]
 
 # Set up webapp2 Sessions
 config = {}
@@ -42,6 +44,24 @@ class User(ndb.Model):
     access_token = ndb.StringProperty("at", required=True)
     ivle_token = ndb.StringProperty("it")
     mods_done = ndb.JsonProperty("md")
+    taken_mods = ndb.JsonProperty("tm")
+
+class Module(ndb.Model):
+    users = ndb.JsonProperty("user", required=True)
+
+class Reply(ndb.Model):
+    """Datastore Model Class for replies to posts"""
+    created = ndb.DateTimeProperty(auto_now_add=True)
+    answer = ndb.TextProperty(required=True)
+    answeringUser = ndb.StringProperty(required=True)
+
+class Post(ndb.Model):
+    """Datastore Model Class for Posts"""
+    moduleName=ndb.StringProperty(required=True)
+    created = ndb.DateTimeProperty(auto_now_add=True)
+    question = ndb.TextProperty(required=True)
+    askingUser = ndb.StringProperty(required=True)
+    replies = ndb.StructuredProperty(Reply, repeated=True)
 
 
 class Handler(webapp2.RequestHandler):
@@ -62,14 +82,14 @@ class Handler(webapp2.RequestHandler):
         if self.session.get("user"):
             # User is logged in
 
-            # for debugging            # print "Retreived from session", self.session.get("user")
+            # for debugging
+            # print "Retreived from session", self.session.get("user")
 
             return self.session.get("user")
         else:
             # for debugging
             #print "In cookie", self.session.get("user")
 
-            # Either user just logged in or logged in for the first time
             # Either user just logged in or logged in for the first time
             cookie = facebook.get_user_from_cookie(self.request.cookies,
                                                    FACEBOOK_APP_ID,

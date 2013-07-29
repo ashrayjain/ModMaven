@@ -22,36 +22,9 @@ fbLoaded = function(){
                 $.get('/logout');
                 clearInterval(intervalID);
             }
-            else {
-
-            }
             console.log(response);
         }, true);
     };
     var intervalID = setInterval(loggedInChk, 10000); // Check every 10 secs
 
 };
-
-
-// Check if correct permissions granted
-var permissionsOk = function(permsNeeded) {
-    FB.api('/me/permissions', function(response) {
-        var permsArray = response.data[0];
-        var permsToPrompt = [];
-        for (var i in permsNeeded) {
-            if (permsArray[permsNeeded[i]] == null) {
-                permsToPrompt.push(permsNeeded[i]);
-            }
-        }
-        if (permsToPrompt.length > 0){
-            FB.login(function(){}, {scope: permsToPrompt.join(',')});
-        }
-    });
-};
-
-var  postify = function (){
-    FB.api('me/modmaven:consider', 'post', {'module' : url}, function (response) {
-        console.log(response);
-    });
-};
-

@@ -1,5 +1,5 @@
 function closePopup(popup) {
-    if (popup.location.href !== undefined && popup.location.href.indexOf("http://localhost:8080/ivle") === 0){
+    if (popup.location.href !== undefined && popup.location.href.indexOf("http://nusmodmaven.appspot.com/ivle") === 0){
         var urlParams;
         var match,
             pl = /\+/g,  // Regex for replacing addition symbol with a space

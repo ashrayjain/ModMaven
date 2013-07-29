@@ -72,3 +72,11 @@ a.dropdown-toggle{outline: none}
 .node {
     cursor: pointer;
 }
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
