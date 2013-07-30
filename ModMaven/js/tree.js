@@ -23,10 +23,22 @@ function drawTree(data){
     var parentWidth = $('#Tree').parent().width();
     var canvas = d3.select('#Tree')
         .append("svg")
+        .attr("id", "svg")
         .attr("width", parentWidth)
         .attr("height", newHeight+250)
+        .attr("viewBox", "0 0 "+parentWidth+" "+(newHeight+250))
+        .attr("preserveAspectRatio", "xMidYMid")
         .append("g")
         .attr("transform", "translate(25,25)");
+
+    var aspect = $("#svg").width() / $("#svg").height();
+
+    $(window).on("resize",function () {
+        parentWidth = $('#Tree').parent().width();
+        d3.select("#svg")
+            .attr("width", parentWidth)
+            .attr("height", Math.round(parentWidth / aspect));
+    }).trigger("resize");
 
     /*var borderRect = canvas.append("rect")
      .attr("width", parentWidth)
