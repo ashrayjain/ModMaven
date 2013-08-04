@@ -18,18 +18,17 @@ function drawTree(data){
     };
     childCount(0, data);
     console.log(noLevels);
-    var newHeight = noLevels * 90; // 20 pixels per line
+    var newHeight = noLevels * 100 + (noLevels-1)*10;
 
     var parentWidth = $('#Tree').parent().width();
     var canvas = d3.select('#Tree')
         .append("svg")
         .attr("id", "svg")
         .attr("width", parentWidth)
-        .attr("height", newHeight+250)
-        .attr("viewBox", "0 0 "+parentWidth+" "+(newHeight+250))
+        .attr("height", newHeight)
+        .attr("viewBox", "0 0 "+parentWidth+" "+newHeight)
         .attr("preserveAspectRatio", "xMidYMid")
-        .append("g")
-        .attr("transform", "translate(25,25)");
+        .append("g");
 
     var aspect = $("#svg").width() / $("#svg").height();
 
@@ -49,7 +48,7 @@ function drawTree(data){
      .attr("opacity", 0.65);
      */
     var tree = d3.layout.tree()
-        .size([parentWidth-50, newHeight]);
+        .size([parentWidth-150, newHeight-102]);
 
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
@@ -60,12 +59,12 @@ function drawTree(data){
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + d.x + "," + (d.y+25) + ")";
+            return "translate(" + (d.x+75) + "," + (d.y+51) + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x, d.y+25];
+            return [d.x+75, d.y+51];
         });
     var x, y;
     canvas.selectAll(".link")

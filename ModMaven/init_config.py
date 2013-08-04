@@ -44,10 +44,11 @@ class User(ndb.Model):
     access_token = ndb.StringProperty("at", required=True)
     ivle_token = ndb.StringProperty("it")
     mods_done = ndb.JsonProperty("md")
-    taken_mods = ndb.JsonProperty("tm")
+
 
 class Module(ndb.Model):
-    users = ndb.JsonProperty("user", required=True)
+    users = ndb.JsonProperty("u", required=True)
+
 
 class Reply(ndb.Model):
     """Datastore Model Class for replies to posts"""
@@ -118,10 +119,10 @@ class Handler(webapp2.RequestHandler):
 
                 # Start a session for the user
                 self.session["user"] = dict(
-                    name=user.name,
+                    name=user.name.split(None, 1)[0],
                     profile_url=user.profile_url,
                     id=user.key.id(),
-                    access_token=user.access_token
+                    access_token=user.access_token,
                 )
                 return self.session.get("user")
                 # User didn't complete FB authentication

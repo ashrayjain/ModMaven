@@ -19,7 +19,7 @@ fbLoaded = function(){
         console.log("Called");
         FB.getLoginStatus(function (response) {
             if (response.status !== 'connected') {
-                $.get('/logout');
+                $.get('/logout', function(){console.log("Logged Out.");});
                 clearInterval(intervalID);
             }
             console.log(response);
