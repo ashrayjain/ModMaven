@@ -71,12 +71,15 @@ class RequestTree(Handler):
 
     def __personalizeTree__(self, tree):
         if self.current_user:
+            newtree = copy.deepcopy(tree)
             user = User.get_by_id(self.current_user['id'])
             if user.mods_done:
-                tree['done'] = True if tree['name'] in user.mods_done else False
-                self.__getVal__(tree, user.mods_done)
-                self.__prune__(tree)
-        return tree
+                newtree['done'] = True if newtree['name'] in user.mods_done else False
+                self.__getVal__(newtree, user.mods_done)
+                self.__prune__(newtree)
+            return newtree
+        else:
+            return tree
 
     def __prune__(self, tree):
         if tree['children']:
@@ -145,13 +148,13 @@ class ModTaken(Handler):
         else:
             modAdded = Module(id=mod, users={self.current_user['id']:""})
         modAdded.put()
-        print modAdded.users
+        #print modAdded.users
 
     def delete(self):
         mod = Module.get_by_id(self.request.get('mod').split("modName=")[1].split("&", 1)[0])
         del mod.users[self.current_user['id']]
         mod.put()
-        print mod.users
+        #print mod.users
 
 
 class AddPost(Handler):

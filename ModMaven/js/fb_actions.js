@@ -54,7 +54,7 @@ function onClickShowInterest(actionID, token){
             access_token: token
         },
         function (success_response) {
-            console.log(success_response);
+            //console.log(success_response);
             if (success_response.hasOwnProperty("error")) {
                 $.get('/logout');
                 permissionsOk(["publish_actions"], token, actionID, onClickShowInterest);
@@ -121,7 +121,7 @@ function switchInterest(actionID, token){
 }
 
 function initializeInterestButton(token) {
-    console.log("Access Token: " + token);
+    //console.log("Access Token: " + token);
     if (token === "") {
         loading.css('visibility', 'hidden');
         $('#login-required').css('display', '');
@@ -198,7 +198,7 @@ function getFriendLikers(token, data){
                     }
                 }
             }
-            console.log(friendLikers);
+            //console.log(friendLikers);
             var firstrow = $("#firstrow");
             if (friendLikers.length === 0) {
                 firstrow.html("<td>No Friends have considered this module.</td>")

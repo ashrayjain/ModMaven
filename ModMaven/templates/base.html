@@ -26,6 +26,7 @@
             }, 50);
         } else {
             if (callback) {
+                console.log("Called");
                 callback();
             }
         }
@@ -35,7 +36,7 @@
         FB.init({appId: '{{ FacebookAppID }}', status: true, cookie: true});
         $(document).ready(function(){
             fbLoaded();
-            console.log("Init Complete");
+            //console.log("Init Complete");
             fbApiInit = true;
         });
     };

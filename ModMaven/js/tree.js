@@ -17,7 +17,6 @@ function drawTree(data){
         }
     };
     childCount(0, data);
-    console.log(noLevels);
     var newHeight = noLevels * 100 + (noLevels-1)*10;
 
     var parentWidth = $('#Tree').parent().width();
