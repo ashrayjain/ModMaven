@@ -1,41 +1,59 @@
-function drawTree(modName, data){
+function drawTree(data){
+
     d3.selectAll("svg")
         .remove();
+
+    // compute the new height
+    var noLevels = 1;
+
+    var childCount = function (level, n) {
+        if((level + 1) > noLevels){
+            noLevels = level + 1;
+        }
+        if (n.children && n.children.length > 0) {
+            n.children.forEach(function (d) {
+                childCount(level + 1, d);
+            });
+        }
+    };
+    childCount(0, data);
+    console.log(noLevels);
+    var newHeight = noLevels * 90; // 20 pixels per line
+
+    var parentWidth = $('#Tree').parent().width();
     var canvas = d3.select('#Tree')
         .append("svg")
-        .attr("width", $('#Tree').parent().width())
-        .attr("height", 1000)
+        .attr("width", parentWidth)
+        .attr("height", newHeight+250)
         .append("g")
-        .attr("transform", "translate(50,50");
+        .attr("transform", "translate(25,25)");
 
-    var borderRect = canvas.append("rect")
-        .attr("width", $('#Tree').parent().width())
-        .attr("height", 1200)
-        .attr("stroke", "black")
-        .attr("stroke-width", 2.5)
-        .attr("fill", "grey")
-        .attr("opacity", 0.65);
-
+    /*var borderRect = canvas.append("rect")
+     .attr("width", parentWidth)
+     .attr("height", 1000)
+     .attr("stroke", "black")
+     .attr("stroke-width", 2.5)
+     .attr("fill", "grey")
+     .attr("opacity", 0.65);
+     */
     var tree = d3.layout.tree()
-        .size([$('#Tree').parent().width(), 750]);
+        .size([parentWidth-50, newHeight]);
 
-    //var id="{{modName}}"
-    //tree.children(function(d) { console.log(d[id].prereqs); return d[id].prereqs;})
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
-    //console.log(nodes);
+
     var node = canvas.selectAll(".node")
         .data(nodes)
         .enter()
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + d.x + "," + (d.y + 100) + ")";
+            return "translate(" + d.x + "," + (d.y+25) + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x, d.y + 100];
+            return [d.x, d.y+25];
         });
     var x, y;
     canvas.selectAll(".link")
@@ -61,9 +79,16 @@ function drawTree(modName, data){
         .attr("nodeValue", function (d) {
             return d.name;
         })
-        .attr("fill", "steelblue");
+        .attr("fill", function(d){
+            if(d['done']){
+                return "red";
+            }
+            else{
+                return "steelblue";
+            }
+        });
 
-    node.append("text")
+    var labels = node.append("text")
         .text(function (d) {
             return d.name;
         })
@@ -84,7 +109,7 @@ function drawTree(modName, data){
         .transition()
         .delay(1000)
         .duration(1000)
-        .attr("opacity", 1)
+        .attr("opacity", 1);
 
     node.selectAll("text")
         .transition()
@@ -93,10 +118,17 @@ function drawTree(modName, data){
         .style("fill", "black")
         .style("opacity", 1)
         .each("end",function(){
-            rectangles.on("mouseout", function () {
+            node.on("mouseout", function () {
                 node.selectAll("rect")
                     .transition()
-                    .attr("fill", "steelblue")
+                    .attr("fill", function(d){
+                        if(d['done']){
+                            return "red";
+                        }
+                        else{
+                            return "steelblue";
+                        }
+                    })
                     .attr("height", 70)
                     .attr("y", -35)
                     .attr("x", -50)
@@ -106,14 +138,32 @@ function drawTree(modName, data){
                     .transition()
                     .style("opacity",1);
             });
-            rectangles.on("mouseover", function (d, i) {
+            node.on("mouseover", function (d, i){
                 node.selectAll("rect")
                     .transition()
-                    .attr("opacity", 0.1);
+                    .attr("fill", function(d){
+                        if(d['done']){
+                            return "red";
+                        }
+                        else{
+                            return "steelblue";
+                        }
+                    })
+                    .attr("height", 70)
+                    .attr("y", -35)
+                    .attr("x", -50)
+                    .attr("width", 100)
+                    .attr("opacity", 0.3);
                 node.selectAll("text")
                     .transition()
-                    .style("opacity", 0.1);
+                    .style("opacity", 0.3);
                 d3.select(this)
+                    .select("text")
+                    .transition()
+                    .style("opacity", 1);
+
+                d3.select(this)
+                    .select("rect")
                     .transition()
                     .attr("fill", "green")
                     .attr("height", 100)
@@ -121,41 +171,72 @@ function drawTree(modName, data){
                     .attr("x", -75)
                     .attr("width", 150)
                     .attr("opacity", 0.8);
-                var currNode = this.parentNode;
-                d3.select(currNode)
-                    .select("text")
-                    .transition()
-                    .style("opacity",1);
 
-                rectangles.on("click", function(d, i){
+                node.on("click", function (d, i) {
+                    var modaldivs = $('.modal-header, .modal-body, .modal-footer');
+                    var bar = $('#loading-bar');
+                    modaldivs.css('display', 'none');
+                    bar.css('display', '');
+                    var modal = $('#myModal');
+                    modal.css({
+                        'background': 'transparent none',
+                        'box-shadow': 'none',
+                        'border': 'none',
+                        'top': '40%'
+                    })
+                        .modal('show');
 
-                    var currMod = d3.select(currNode).text();
-                    console.log(currMod);
+                    var currMod = d3.select(this).text();
                     $.getJSON('/getmod?modName=' + currMod, function (data) {
                         var modalLabel = $("#myModalLabel");
-                        if($.isEmptyObject(data)){
+                        var footerLink = $("#knowmore");
+                        if ($.isEmptyObject(data)) {
 
                             modalLabel.text(currMod);
                             modalLabel.parent().attr('href', '#');
+                            footerLink.attr('href', '#');
 
                             $(".modal-body p")
                                 .text("No Information Available");
                         }
                         else {
-                            modalLabel.text(data['label']);
-                            modalLabel.parent().attr('href', '/modpage?modName='+currMod);
+                            modalLabel.text(currMod+" - "+data["ModuleTitle"]);
+                            modalLabel.parent().attr('href', '/modpage?modName=' + currMod);
+                            footerLink.attr('href', '/modpage?modName=' + currMod);
 
-                            var modalBody = data['description'];
-                            if (typeof data['prerequisite'] == "string" && data['prerequisite'].length > 9){
-                                modalBody+= '<br><br><b>Prerequisite: </b><br>'+data['prerequisite'];
+                            if (data["ModuleDescription"] !== undefined) {
+                                var modalBody = data["ModuleDescription"];
+                            }
+                            else {
+                                var modalBody = "Not Available";
+                            }
+                            if (typeof data['Prerequisite'] == "string" && data['Prerequisite'].length > 9) {
+                                modalBody += '<br><br><b>Prerequisite: </b><br>' + data['Prerequisite'];
                             }
                             $(".modal-body p")
                                 .html(modalBody);
                         }
-                        $('#myModal').modal('show');
+                        modal
+                            .addClass('notransition')
+                            .css({
+                                'top': '-25%',
+                                'background': '',
+                                'box-shadow': '',
+                                'border': '',
+                                'opacity': '0'
+                            });
+                        modaldivs.css('display', '');
+                        bar.css('display', 'none');
+                        setTimeout(function(){
+                            modal
+                                .removeClass('notransition')
+                                .css({
+                                    'top': '10%',
+                                    'opacity': '1'
+                                });
+                        }, 10);
                     });
                 });
             });
         });
-    //console.log(rectangles);
 }

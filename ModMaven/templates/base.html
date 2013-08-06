@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# modmaven: http://ogp.me/ns/fb/modmaven#">
     <title>{% block title %}{% endblock %}</title>
+    <meta property="fb:app_id" content="{{ FacebookAppID }}"/>
+    {% block meta %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -18,10 +20,27 @@
 <!-- FB Stuff -->
 <div id="fb-root"></div>
 <script type="text/javascript">
+    function fbEnsureInit(callback) {
+        if (!window.fbApiInit) {
+            setTimeout(function () {
+                fbEnsureInit(callback);
+            }, 50);
+        } else {
+            if (callback) {
+                callback();
+            }
+        }
+    }
+
     window.fbAsyncInit = function() {
         FB.init({appId: '{{ FacebookAppID }}', status: true, cookie: true});
-        fbLoaded();
+        $(document).ready(function(){
+            fbLoaded();
+            console.log("Init Complete");
+            fbApiInit = true;
+        });
     };
+
     // Load the SDK asynchronously
     (function(d){
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -37,53 +56,79 @@
 <div class="container-fluid">
     <div class = "navbar">
         <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
-                <ul class="nav pull-right" style="top: 22px">
-                    {% if CurrentUser %}
-                        <li><a href="{{ CurrentUser.profile_url }}" target="_blank" style="outline:none">
-                            <img style="position:relative; left: 18px; bottom:10px;"
-                                 src="https://graph.facebook.com/{{ CurrentUser.id }}/picture"/>
-                        </a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <table style="position: relative; bottom: 6px;">
-                                    <tr><td style="font-size: 16px; color: #777777; padding-bottom: 5px;">
-                                        Welcome,
-                                    </td></tr>
-                                    <tr><td style="font-size: 23px;">
-                                        {{ CurrentUser.name }}<b class="caret"></b>
-                                    </td></tr>
-                                </table>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a>
-                                    <button class="btn btn-primary">Verify IVLE</button>
-                                    <button class="btn btn-danger" onclick="fbLogout()">Logout
-                                    </button>
-                                </a></li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li><a>
-                            <button class="btn btn-primary"
-                                    onclick="FB.login()">
-                                <div id="fb-btn-txt" style="font-size: 20px; padding: 3px">
-                                    Login with Facebook
-                                </div>
-                            </button>
-                        </a></li>
-                    {% endif %}
-                </ul>
-            </div>
+            <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
+            <ul class="nav pull-right" style="top: 22px">
+                {% if CurrentUser %}
+                    <li><a href="{{ CurrentUser.profile_url }}" target="_blank" style="outline:none">
+                        <img style="position:relative; left: 18px; bottom:10px;"
+                             src="https://graph.facebook.com/{{ CurrentUser.id }}/picture"/>
+                    </a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <table style="position: relative; bottom: 6px;">
+                                <tr><td style="font-size: 16px; color: #777777; padding-bottom: 5px;">
+                                    Welcome,
+                                </td></tr>
+                                <tr><td style="font-size: 23px;">
+                                    {{ CurrentUser.name }}<b class="caret"></b>
+                                </td></tr>
+                            </table>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a>
+                                <button class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
+                                <button class="btn btn-danger" onclick="fbLogout()">Logout
+                                </button>
+                            </a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li><a>
+                        <button class="btn btn-primary"
+                                onclick="FB.login();">
+                            <div id="fb-btn-txt" style="font-size: 20px; padding: 3px">
+                                Login with Facebook
+                            </div>
+                        </button>
+                    </a></li>
+                {% endif %}
+            </ul>
         </div>
     </div>
-    <div id="main-body" class="container-fluid">
-        {% block main_content %}{% endblock %}
-    </div>
+    {% block main_content %}{% endblock %}
 </div>
 
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
+<script src="../js/ivle.js"></script>
+<script type="text/javascript">
+    var verificationDialog = null;
+    var popupClose = null;
+    function ivleVerify() {
+        if (verificationDialog == null || verificationDialog.closed) {
+            var w = 255;
+            var h = 210;
+            var left = (screen.width / 2) - (w / 2);
+            var top = (screen.height / 3) - (h / 2);
+
+            verificationDialog = window.open(
+                    'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://nusmodmaven.appspot.com/ivle',
+                    'IVLEVerificationDialog',
+                    'dependent, toolbar=no, location=no, directories=no, ' +
+                            'status=no, menubar=no, scrollbars' +
+                            '=no, resizable=no, copyhistory=no' +
+                            ', width=' + w + ', height=' + h +
+                            ', top=' + top + ', left=' + left);
+
+            popupClose = setInterval(function () {
+                closePopup(verificationDialog);
+            }, 500);
+        }
+        else {
+            verificationDialog.focus();
+        }
+    }
+
+</script>
 <script src="../js/bootstrap.min.js"></script>
 {% block js %}
 {% endblock %}

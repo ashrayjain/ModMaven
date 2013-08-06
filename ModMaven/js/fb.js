@@ -13,7 +13,6 @@ fbLoaded = function(){
         if(response.authResponse){window.location.reload();}
     });
 
-
     // Keep verifying asynchronously,
     // if user is still logged in
     var loggedInChk = function(){
@@ -23,6 +22,7 @@ fbLoaded = function(){
                 $.get('/logout');
                 clearInterval(intervalID);
             }
+            console.log(response);
         }, true);
     };
     var intervalID = setInterval(loggedInChk, 10000); // Check every 10 secs
