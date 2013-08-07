@@ -69,6 +69,7 @@ class RequestTree(Handler):
         self.response.out.write(json.dumps({}))
         return
 
+
     def __personalizeTree__(self, tree):
         if self.current_user:
             newtree = copy.deepcopy(tree)
@@ -185,14 +186,41 @@ class AddPost(Handler):
         modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
         modPosts = [post] + list(modPosts)
         self.render("modulepage.html",
-                    modName=modName,
-                    modTitle=data[modName]["ModuleTitle"],
-                    modDesc=data[modName]["ModuleDescription"] if "ModuleDescription" in data[modName] else "Not Available",
-                    modPosts=modPosts,
-                    isModpost=True,
-                    CurrentUser=self.current_user,
-                    postSuccess=True,
-                    FacebookAppID=FACEBOOK_APP_ID )
+                        modName=modName,
+                        modTitle=data[modName]["ModuleTitle"],
+                        modDesc=data[modName]["ModuleDescription"] if "ModuleDescription" in data[modName] else "Not Available",
+                        modPosts=modPosts,
+                        isModpost=True,
+                        CurrentUser=self.current_user,
+                        postSuccess=True,
+                        FacebookAppID=FACEBOOK_APP_ID )
+
+class AddReply(Handler):
+    def post(self):
+        modName = self.request.get('module').upper()
+        modquestion = self.request.get('modpost')
+        ans = self.request.get('answerBox')
+        CurrentUserName = self.current_user['name']
+        reply = Reply(answer=ans,answeringUser=CurrentUserName)
+        posts = Post.query(Post.moduleName==modName).fetch()
+        for post in posts :
+            if post.question==modquestion:
+                post.replies.append(reply)
+                post.put()
+        #postkey = ndb.Key('Post',postkeystring[11:-1])
+        #post = postkey.get()
+        modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+        self.render("modulepage.html",
+                        modName=modName,
+                        modTitle=data[modName]["title"],
+                        modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
+                        modPosts=modPosts,
+                        isModpost=True,
+                        CurrentUser=self.current_user,
+                        postSuccess=True,
+                        FacebookAppID=FACEBOOK_APP_ID )
+
+
 
 
 class AddReply(Handler):
