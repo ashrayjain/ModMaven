@@ -2,7 +2,7 @@
 {% block title %}{{ modName }} - {{modTitle}}{% endblock %}
 {% block meta %}
     <meta property="og:type" content="modmaven:module"/>
-    <meta property="og:url" content="http://nusmodmaven.appspot.com/modpage?modName={{ modName }}"/>
+    <meta property="og:url" content="http://ash.pagekite.me/modpage?modName={{ modName }}"/>
     <meta property="og:title" content="{{ modName }} - {{ modTitle }}"/>
     <meta property="og:image" content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png"/>
     <meta property="og:description" content="{{ modDesc }}"/>
@@ -21,80 +21,28 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span12">
-            <hr class="color-head" style="margin-top: 5px; margin-bottom: 20px; border-color: #777777">
-        </div>
-    </div>
-    <div class="row-fluid">
         <div id="pills-container">
+            <hr class="color-head" style="margin-top: 5px; border-color: #777777">
             <ul class="nav nav-pills" id="pills">
                 <li{% if not postSuccess %} class="active"{% endif %}><a href="#Info" data-toggle="pill">Information</a></li>
                 <li><a href="#Tree" data-toggle="pill">Tree</a></li>
                 <li><a href="#Stats" data-toggle="pill">Statistics</a></li>
                 <li{% if postSuccess %} class="active"{% endif %}><a href="#Disc" data-toggle="pill">Discussion</a></li>
             </ul>
+            <hr class="color-head" style="border-color: #777777">
             <div class="pill-content">
                 <div id="Info" class="pill-pane{% if not postSuccess %} active{% endif %}">
                     <h4>{{modTitle}}</h4>
                     <p class="lead">{{modDesc}}</p>
                 </div>
-                <div id="Tree" class="pill-pane">
+                <div id="Tree" class="pill-pane" style="margin-top: ">
                     {% include 'modal.html' %}
                 </div>
                 <div id="Stats" class="pill-pane">
-                    <p>StatsTabContent</p>
+                    {% include 'stats.html' %}
                 </div>
                 <div id="Disc" class="pill-pane{% if postSuccess %} active{% endif %}">
-                    {% if CurrentUser %}
-                        {% if postSuccess %}
-                            <div class="alert alert-success">
-                                Your post has been successfully submitted.
-                            </div>
-                        {% endif %}
-                        <form name="modPost-form" action="/addModPost/" method="post">
-                            <fieldset>
-                                <label><h5>Make a post: </h5></label>
-                                <input type='hidden' name='module' value='{{ modName }}'/>
-                                <textarea name="PostContent" id="NewPost" class="input-xxlarge"
-                                          rows="3"></textarea><br/>
-                                <button type="submit" class="btn btn-primary">Post</button>
-                            </fieldset>
-                        </form>
-                        {% if isModpost %}
-                        <div class="row-fluid" id="modulePosts">
-                            <p class="lead">Current Discussion:</p>
-                            <p>{{modPosts}}</p>
-                            {% for modPost in modPosts %}
-                                <p class="lead">{{modPost.question}}<br/><small>Posted by {{modPost.askingUser}} at {{modPost.created}}</small></p>
-                                {% for reply in modPost.replies %}
-                                    <blockquote>
-                                    {{reply.answer}}<br/><small>Answered by {{reply.answeringUser}} at {{reply.created}}</small>
-                                    </blockquote>
-                                {% endfor %}
-                                <form name="postReply-form" action="/addPostReply/" method="post">
-                                    <fieldset>
-                                        <input type='hidden' name='module' value='{{modName}}' />
-                                        <input type='hidden' name='modpost' value='{{modPost.question}}' />
-                                        <textarea name="answerBox" id="answerBox" class="input-xlarge" placeholder="Answer this question.."></textarea>
-                                        <button type="submit" class="btn btn-primary">Reply</button>
-                                    </fielset>
-                                </form>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                        <p class="lead">Be the first to post!</p>
-                        {% endif %}
-                        {% else %}
-                        <p class="text-info"> You need to be logged in to view this content</p>
-                        {% endif %}
-                        </div>
-
-                        {% else %}
-                            <p class="lead">Be the first to post!</p>
-                        {% endif %}
-                    {% else %}
-                        <p class="text-info"> You need to be logged in to view this content</p>
-                    {% endif %}
+                    {% include 'discussion.html' %}
                 </div>
             </div>
         </div>
@@ -105,12 +53,27 @@
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="../js/tree.js"></script>
     <script type="text/javascript">
+        String.prototype.format = function () {
+            var i = 0, args = arguments;
+            return this.replace(/{}/g, function () {
+                return typeof args[i] != 'undefined' ? args[i++] : '';
+            });
+        };
         $(document).ready(function () {
+            var treeShown = false;
+            var statsShown = false;
             fbEnsureInit(initializeInterestButton("{{ CurrentUser.access_token }}"));
             $('a[data-toggle="pill"]').on('shown', function (e) {
-                if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree") {
+                if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false) {
                     $.getJSON('/gettree?modName={{ modName }}', function (data) {
                         drawTree(data);
+                        treeShown = true;
+                    });
+                }
+                else if ($(e.target).text() === "Statistics" && $(e.relatedTarget).text() !== "Statistics" && statsShown === false) {
+                    $.getJSON('/getusers?modName={{ modName }}', function (data) {
+                        getFriendLikers("{{ CurrentUser.access_token }}", data);
+                        statsShown = true;
                     });
                 }
             });

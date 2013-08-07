@@ -1,20 +1,9 @@
 function closePopup(popup) {
-    if (popup.location.href !== undefined && popup.location.href.indexOf("http://nusmodmaven.appspot.com/ivle") === 0){
-        var urlParams;
-        var match,
-            pl = /\+/g,  // Regex for replacing addition symbol with a space
-            search = /([^&=]+)=?([^&]*)/g,
-            decode = function (s) {
-                return decodeURIComponent(s.replace(pl, " "));
-            },
-            query = popup.location.search.substring(1);
-
-        urlParams = {};
-        while (match = search.exec(query))
-            urlParams[decode(match[1])] = decode(match[2]);
+    if (popup.location.href !== undefined && popup.location.href.indexOf("http://ash.pagekite.me/ivle") === 0){
         clearInterval(popupClose);
-        console.log("Sent");
-        $.post('/ivle', urlParams);
+        //console.log("Sent");
+        $.post('/ivle', {token: (popup.location.href.split("token=")[1]).split("&")[0]});
         popup.close();
+        $("#ivle-alert").alert('close');
     }
 }

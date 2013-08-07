@@ -17,16 +17,26 @@ function drawTree(data){
         }
     };
     childCount(0, data);
-    console.log(noLevels);
-    var newHeight = noLevels * 90; // 20 pixels per line
+    var newHeight = noLevels * 100 + (noLevels-1)*10;
 
     var parentWidth = $('#Tree').parent().width();
     var canvas = d3.select('#Tree')
         .append("svg")
+        .attr("id", "svg")
         .attr("width", parentWidth)
-        .attr("height", newHeight+250)
-        .append("g")
-        .attr("transform", "translate(25,25)");
+        .attr("height", newHeight)
+        .attr("viewBox", "0 0 "+parentWidth+" "+newHeight)
+        .attr("preserveAspectRatio", "xMidYMid")
+        .append("g");
+
+    var aspect = $("#svg").width() / $("#svg").height();
+
+    $(window).on("resize",function () {
+        parentWidth = $('#Tree').parent().width();
+        d3.select("#svg")
+            .attr("width", parentWidth)
+            .attr("height", Math.round(parentWidth / aspect));
+    }).trigger("resize");
 
     /*var borderRect = canvas.append("rect")
      .attr("width", parentWidth)
@@ -37,7 +47,7 @@ function drawTree(data){
      .attr("opacity", 0.65);
      */
     var tree = d3.layout.tree()
-        .size([parentWidth-50, newHeight]);
+        .size([parentWidth-150, newHeight-102]);
 
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
@@ -48,12 +58,12 @@ function drawTree(data){
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + d.x + "," + (d.y+25) + ")";
+            return "translate(" + (d.x+75) + "," + (d.y+51) + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x, d.y+25];
+            return [d.x+75, d.y+51];
         });
     var x, y;
     canvas.selectAll(".link")
@@ -69,19 +79,40 @@ function drawTree(data){
     var rectangles = node.append("rect")
         .attr("width", 0)
         .attr("height", 0)
-        .attr("x", -50)
-        .attr("y", -35)
+        .attr("x", function(d) {
+            if (d.name=='or'||d.name=='and') {
+                return -25;
+            }
+            else 
+                return -50;
+        })
+        .attr("y", function(d) {
+            if (d.name=='or'||d.name=='and') {
+                return -17.5;
+            }
+            else 
+                return -35;
+        })
         .attr("rx", 20)
         .attr("ry", 20)
         .attr("stroke", "black")
         .attr("stroke-width", 1.5)
-        .attr("opacity", 1)
+        .attr("opacity", function(d) {
+            if (d.name=='or'||d.name=='and') {
+                return 0.3;
+            }
+            else 
+                return 1;
+        })
         .attr("nodeValue", function (d) {
             return d.name;
         })
         .attr("fill", function(d){
             if(d['done']){
                 return "red";
+            }
+            else if (d.name=='or' || d.name=='and') {
+                return "white";
             }
             else{
                 return "steelblue";
@@ -101,8 +132,20 @@ function drawTree(data){
     node.selectAll("rect")
         .transition()
         .duration(2000)
-        .attr("width", 100)
-        .attr("height", 70)
+        .attr("width", function(d) {
+            if (d.name=='or'||d.name=='and') {
+                return 50;
+            }
+            else 
+                return 100;
+        })
+        .attr("height", function(d) {
+            if (d.name=='or'||d.name=='and') {
+                return 35;
+            }
+            else 
+                return 70;
+        })
         .ease("elastic");
 
     canvas.selectAll("path")
@@ -125,34 +168,90 @@ function drawTree(data){
                         if(d['done']){
                             return "red";
                         }
+                        else if(d.name=='and' || d.name=='or'){
+                            return "white";
+                        }
                         else{
                             return "steelblue";
                         }
                     })
-                    .attr("height", 70)
-                    .attr("y", -35)
-                    .attr("x", -50)
-                    .attr("width", 100)
-                    .attr("opacity", 1);
+                    .attr("height", function(d) {
+                        if (d.name=='or'||d.name=='and') {
+                            return 35;
+                        }
+                        else 
+                            return 70;
+                    })  
+                    .attr("y", function(d) {
+                        if (d.name=='or'||d.name=='and') {
+                            return -17.5;
+                        }
+                        else 
+                            return -35;
+                    })
+                    .attr("x", function(d) {
+                        if (d.name=='or'||d.name=='and') {
+                            return -25;
+                        }
+                        else 
+                            return -50;
+                    })
+                    .attr("width", function(d) {
+                        if (d.name=='or'||d.name=='and') {
+                            return 50;
+                        }
+                        else 
+                            return 100;
+                    })
+                    .attr("opacity", function (d) {
+                        if(d.name=='and' || d.name=='or')
+                            return 0.3;
+                        else
+                            return 1;
+                    });
                 node.selectAll("text")
                     .transition()
-                    .style("opacity",1);
+                    .style("opacity", 1);
             });
             node.on("mouseover", function (d, i){
+                if(d.name!='and' && d.name!='or') { 
                 node.selectAll("rect")
                     .transition()
                     .attr("fill", function(d){
                         if(d['done']){
                             return "red";
                         }
+                        else if(d.name=='and' || d.name=='or') {
+                            return "white";
+                        }
                         else{
                             return "steelblue";
                         }
                     })
-                    .attr("height", 70)
-                    .attr("y", -35)
-                    .attr("x", -50)
-                    .attr("width", 100)
+                    .attr("height", function (d){
+                        if(d.name=='and' || d.name=='or')
+                            return 35;
+                        else 
+                            return 70;
+                    })
+                    .attr("y", function (d){
+                        if(d.name=='and' || d.name=='or')
+                            return -17.5;
+                        else 
+                            return -35;
+                    })
+                    .attr("x", function (d){
+                        if(d.name=='and' || d.name=='or')
+                            return -25;
+                        else 
+                            return -50;
+                    })
+                    .attr("width", function (d){
+                        if(d.name=='and' || d.name=='or')
+                            return 50;
+                        else 
+                            return 100;
+                    })
                     .attr("opacity", 0.3);
                 node.selectAll("text")
                     .transition()
@@ -171,7 +270,8 @@ function drawTree(data){
                     .attr("x", -75)
                     .attr("width", 150)
                     .attr("opacity", 0.8);
-
+                
+                
                 node.on("click", function (d, i) {
                     var modaldivs = $('.modal-header, .modal-body, .modal-footer');
                     var bar = $('#loading-bar');
@@ -237,6 +337,7 @@ function drawTree(data){
                         }, 10);
                     });
                 });
+            }
             });
         });
 }

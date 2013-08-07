@@ -72,12 +72,15 @@ class RequestTree(Handler):
 
     def __personalizeTree__(self, tree):
         if self.current_user:
+            newtree = copy.deepcopy(tree)
             user = User.get_by_id(self.current_user['id'])
-            tree['done'] = True if tree['name'] in user.mods_done else False
-            self.__getVal__(tree, user.mods_done)
-            self.__prune__(tree)
-            print tree
-        return tree
+            if user.mods_done:
+                newtree['done'] = True if newtree['name'] in user.mods_done else False
+                self.__getVal__(newtree, user.mods_done)
+                self.__prune__(newtree)
+            return newtree
+        else:
+            return tree
 
     def __prune__(self, tree):
         if tree['children']:
@@ -138,15 +141,21 @@ class RequestModList(Handler):
 
 
 class ModTaken(Handler):
-    def get(self):
-        userID = self.request.get('user')
-        modUrl = self.request.get('mod')
-        modAdded = Module.get_by_id(modUrl)
+    def post(self):
+        mod = self.request.get('mod').split("modName=")[1].split("&", 1)[0]
+        modAdded = Module.get_by_id(mod)
         if modAdded:
-            modAdded['users'] += [userID]
+            modAdded.users[self.current_user['id']] = ""
         else:
-            modAdded = Module(id=modUrl, users=[userID])
-            modAdded.put()
+            modAdded = Module(id=mod, users={self.current_user['id']:""})
+        modAdded.put()
+        #print modAdded.users
+
+    def delete(self):
+        mod = Module.get_by_id(self.request.get('mod').split("modName=")[1].split("&", 1)[0])
+        del mod.users[self.current_user['id']]
+        mod.put()
+        #print mod.users
 
 
 class AddPost(Handler):
@@ -159,6 +168,7 @@ class AddPost(Handler):
         post = Post(moduleName=modName, askingUser=CurrentUserName, question=postcontent)
         post.put()
         modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+        modPosts = [post] + list(modPosts)
         self.render("modulepage.html",
                         modName=modName,
                         modTitle=data[modName]["ModuleTitle"],
@@ -197,6 +207,44 @@ class AddReply(Handler):
 
 
 
+class AddReply(Handler):
+    def post(self):
+        modName = self.request.get('module').upper()
+        modquestion = self.request.get('modpost')
+        ans = self.request.get('answerBox')
+        CurrentUserName = self.current_user['name']
+        reply = Reply(answer=ans,answeringUser=CurrentUserName)
+        posts = Post.query(Post.moduleName==modName).fetch()
+        for post in posts :
+            if post.question==modquestion:
+                post.replies.append(reply)
+                post.put()
+        #postkey = ndb.Key('Post',postkeystring[11:-1])
+        #post = postkey.get()
+        modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
+        self.render("modulepage.html",
+                    modName=modName,
+                    modTitle=data[modName]["ModuleTitle"],
+                    modDesc=data[modName]["ModuleDescription"] if "ModuleDescription" in data[
+                        modName] else "Not Available",
+                    modPosts=modPosts,
+                    isModpost=True,
+                    CurrentUser=self.current_user,
+                    postSuccess=True,
+                    FacebookAppID=FACEBOOK_APP_ID)
+
+
+class GetUsers(Handler):
+    def get(self):
+        self.response.headers['Content-Type'] = "application/json"
+        mod = Module.get_by_id(self.request.get("modName"))
+        self.response.out.write(json.dumps({} if mod == None else mod.users))
+
+class ChkIVLE(Handler):
+    def get(self):
+        self.response.out.write("1" if User.get_by_id(self.current_user['id']).ivle_token else "0")
+
+
 app = webapp2.WSGIApplication([('/modpage/?', ModPage),
                                ('/modlist/?', RequestModList),
                                ('/addModPost/?', AddPost),
@@ -205,8 +253,9 @@ app = webapp2.WSGIApplication([('/modpage/?', ModPage),
                                ('/getmod/?', RequestMod),
                                ('/ivle/?', IVLEVerify),
                                ('/gettree/?', RequestTree),
-                               ('/addModPost/?', AddPost),
+                               ('/getusers/?', GetUsers),
                                ('/addPostReply/?', AddReply),
+                               ('/chkIVLE', ChkIVLE),
                                ('/.*', MainPage)
                               ],
                               config=config,

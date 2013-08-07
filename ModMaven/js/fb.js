@@ -1,7 +1,7 @@
 // FB.logout() with error handling and session management
 fbLogout = function() {
     FB.getLoginStatus(function(response){
-        console.log(response.status);
+        //console.log(response.status);
         if(response.status === "connected"){FB.logout();}
         $.get('/logout', function(){window.location.reload();});
     }, true);
@@ -16,13 +16,13 @@ fbLoaded = function(){
     // Keep verifying asynchronously,
     // if user is still logged in
     var loggedInChk = function(){
-        console.log("Called");
+        //console.log("Called");
         FB.getLoginStatus(function (response) {
             if (response.status !== 'connected') {
-                $.get('/logout');
+                $.get('/logout', function(){});
                 clearInterval(intervalID);
             }
-            console.log(response);
+            //console.log(response);
         }, true);
     };
     var intervalID = setInterval(loggedInChk, 10000); // Check every 10 secs

@@ -3,16 +3,24 @@ import prereqs_parser
 import urllib2
 
 
+print "Data loading..."
+modData_NUSmods = json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/1/modules.json"))
+print "Data Loaded!"
+modData = {}
+modlist = []
+
+
 def traverseDict(root):
     """Return Tree for given mod with given prereqs"""
     children = []
-    for entry in root.values()[0]:
+    items = root.items()
+    for entry in items[0][1]:
         #print entry
         if isinstance(entry, dict):
             children += traverseDict(entry)
         elif entry in modData:
             children.append(getTree(entry))
-    return children
+    return [{"name": items[0][0][1:-1], "children": children}]
 
 
 def mergeSem2(mod, module):
@@ -48,12 +56,6 @@ def addMod(mod, module, sem):
     modData[mod].update(Timetable={sem: module['Timetable'] if "Timetable" in module else "Not Available."})
     modlist.append(mod)
 
-
-print "Data loading..."
-modData_NUSmods = json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/1/modules.json"))
-print "Data Loaded!"
-modData = {}
-modlist = []
 
 for module in modData_NUSmods:
     addMod(module['ModuleCode'], module, "Sem1")

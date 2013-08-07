@@ -1,3 +1,7 @@
+var friendLikers = new Array();
+var statsLoadingBar = $("#stats-loading-bar");
+var loading = $('#loading-gif');
+
 // Check if correct permissions granted
 function permissionsOk(permsNeeded, token, actionID, callback) {
     FB.api(
@@ -15,10 +19,23 @@ function permissionsOk(permsNeeded, token, actionID, callback) {
             }
             if (permsToPrompt.length > 0){
                 FB.login(function(response){
-                    if (response.authResponse) {
-                        console.log(response.authResponse.accessToken);
-                        callback(actionID, response.authResponse.accessToken);
-                    }
+                    FB.api(
+                        '/me/permissions',
+                        function (rechk_response) {
+                            var permsArray = rechk_response.data[0];
+                            var permsToPrompt = [];
+                            for (var i in permsNeeded) {
+                                if (permsArray[permsNeeded[i]] == null) {
+                                    permsToPrompt.push(permsNeeded[i]);
+                                }
+                            }
+                            if (permsToPrompt.length === 0){
+                                callback(actionID, response.authResponse.accessToken);
+                            }
+                            else{
+                                loading.css('visibility', 'hidden');
+                            }
+                        });
                 }, {scope: permsToPrompt.join(',')});
             }
         });
@@ -37,12 +54,13 @@ function onClickShowInterest(actionID, token){
             access_token: token
         },
         function (success_response) {
+            //console.log(success_response);
             if (success_response.hasOwnProperty("error")) {
                 $.get('/logout');
                 permissionsOk(["publish_actions"], token, actionID, onClickShowInterest);
             }
             else {
-                switchInterest(success_response.id);
+                $.post('/modtaken', {'mod': window.location.href}, function(){switchInterest(success_response.id);});
             }
         }
     );
@@ -65,13 +83,18 @@ function onClickRevokeInterest(actionID, token){
                 permissionsOk(["publish_actions"], token, actionID, onClickRevokeInterest);
             }
             else if (del_response === true) {
-                switchInterest(null);
+                $.ajax({
+                    url: '/modtaken?mod='+window.location.href,
+                    type: 'DELETE',
+                    success: function () {
+                        switchInterest(null);
+                    }
+                });
             }
         }
     );
 }
 
-var loading = $('#loading-gif');
 function switchInterest(actionID, token){
     var interestButton = $('#interest');
     loading.css('visibility', 'hidden');
@@ -98,7 +121,7 @@ function switchInterest(actionID, token){
 }
 
 function initializeInterestButton(token) {
-    console.log("Access Token: " + token);
+    //console.log("Access Token: " + token);
     if (token === "") {
         loading.css('visibility', 'hidden');
         $('#login-required').css('display', '');
@@ -111,12 +134,12 @@ function initializeInterestButton(token) {
             access_token: token,
             fields: 'data'
         },
-        function (action_response) {
+        function (action_response){
             var actionID = null;
             if (action_response.hasOwnProperty("error")) {
                 $.get('/logout');
-                FB.login(function (response) {
-                    if (response.authResponse) {
+                FB.login(function (response){
+                    if (response.authResponse){
                         initializeInterestButton(response.authResponse.accessToken);
                     }
                     else{
@@ -144,5 +167,54 @@ function initializeInterestButton(token) {
             }
         }
     );
+}
+
+function getFriendLikers(token, data){
+    FB.api(
+        '/me/friends',
+        {
+            access_token: token,
+            fields: "id,name,link"
+        },
+        function(response){
+            if (response.hasOwnProperty("error")) {
+                $.get('/logout');
+                FB.login(function (response) {
+                    if (response.authResponse) {
+                        getFriendLikers(response.authResponse.accessToken, data);
+                    }
+                    else {
+                        statsLoadingBar.css('visibility', 'hidden');
+                        //Show Error
+                    }
+                });
+            }
+            else{
+                for (var i = 0, len = response.data.length; i < len; i++) {
+
+                    if (data.hasOwnProperty(response.data[i].id)) {
+                        friendLikers.push(response.data[i]);
+
+                    }
+                }
+            }
+            //console.log(friendLikers);
+            var firstrow = $("#firstrow");
+            if (friendLikers.length === 0) {
+                firstrow.html("<td>No Friends have considered this module.</td>")
+            }
+            else {
+                var user = "<td><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none'>{}</td></tr></table></td>"
+                for (var i = 0; i < friendLikers.length; i++) {
+                    var friend = friendLikers[i];
+                    firstrow.html(firstrow.html() + user.format(friend['link'], friend['id'], friend['name']));
+                }
+
+            }
+            $("#total-users").html("<h5>" + Object.keys(data).length + " User(s)</h5>");
+            statsLoadingBar.css("display", "none");
+            $('#stats-content').css("display", "");
+
+        });
 }
 

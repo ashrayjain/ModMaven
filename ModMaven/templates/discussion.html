@@ -1,0 +1,45 @@
+{% if CurrentUser %}
+    {% if postSuccess %}
+        <div class="alert alert-success">
+            Your post has been successfully submitted.
+        </div>
+    {% endif %}
+    <form name="modPost-form" action="/addModPost/" method="post">
+        <fieldset>
+            <label><h5>Make a post: </h5></label>
+            <input type='hidden' name='module' value='{{ modName }}'/>
+            <textarea name="PostContent" id="NewPost" class="input-xxlarge"
+                      rows="3"></textarea><br/>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </fieldset>
+    </form>
+    {% if isModpost %}
+        <div class="row-fluid" id="modulePosts">
+            <p class="lead">Current Discussion:</p>
+            {% for modPost in modPosts %}
+                <p class="lead">{{ modPost.question }}<br/>
+                    <small>Posted by {{ modPost.askingUser }} at {{ modPost.created }}</small>
+                </p>
+                {% for reply in modPost.replies %}
+                    <blockquote>
+                        {{ reply.answer }}<br/>
+                        <small>Answered by {{ reply.answeringUser }} at {{ reply.created }}</small>
+                    </blockquote>
+                {% endfor %}
+                <form name="postReply-form" action="/addPostReply/" method="post">
+                    <fieldset>
+                        <input type='hidden' name='module' value='{{ modName }}'/>
+                        <input type='hidden' name='modpost' value='{{ modPost.question }}'/>
+                        <textarea name="answerBox" id="answerBox" class="input-xlarge"
+                                  placeholder="Answer this question.."></textarea>
+                        <button type="submit" class="btn btn-primary">Reply</button>
+                    </fieldset>
+                </form>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="lead">Be the first to post!</p>
+    {% endif %}
+{% else %}
+    <p class="text-info"> You need to be logged in to view this content</p>
+{% endif %}

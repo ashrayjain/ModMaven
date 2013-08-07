@@ -16,7 +16,6 @@
 </head>
 <body>
 
-
 <!-- FB Stuff -->
 <div id="fb-root"></div>
 <script type="text/javascript">
@@ -27,6 +26,7 @@
             }, 50);
         } else {
             if (callback) {
+                console.log("Called");
                 callback();
             }
         }
@@ -36,7 +36,7 @@
         FB.init({appId: '{{ FacebookAppID }}', status: true, cookie: true});
         $(document).ready(function(){
             fbLoaded();
-            console.log("Init Complete");
+            //console.log("Init Complete");
             fbApiInit = true;
         });
     };
@@ -76,7 +76,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a>
-                                <button class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
+                                <button id ="ivlebtn" class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
                                 <button class="btn btn-danger" onclick="fbLogout()">Logout
                                 </button>
                             </a></li>
@@ -95,12 +95,28 @@
             </ul>
         </div>
     </div>
+    <div class="row-fluid">
+        <div id="ivle-alert" class="alert alert-error fade in" style="display: none">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            Please <strong><a href="#" onclick="ivleVerify(); return false;">Verify IVLE</a></strong> for getting
+            custom module trees that account for modules you may have already completed.
+            <br>
+            <div style="font-size: 12px;"><em>Note: Changes might take about 5 secs to reflect as IVLE API is very slow to respond!</em></div>
+        </div>
+    </div>
     {% block main_content %}{% endblock %}
 </div>
 
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
 <script src="../js/ivle.js"></script>
 <script type="text/javascript">
+    {% if CurrentUser %}
+    $.get('/chkIVLE', function(response){
+        if (response === "0") {
+            $("#ivle-alert").css("display", "")
+        }
+    });
+    {% endif %}
     var verificationDialog = null;
     var popupClose = null;
     function ivleVerify() {
@@ -111,7 +127,7 @@
             var top = (screen.height / 3) - (h / 2);
 
             verificationDialog = window.open(
-                    'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://nusmodmaven.appspot.com/ivle',
+                    'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://ash.pagekite.me/ivle',
                     'IVLEVerificationDialog',
                     'dependent, toolbar=no, location=no, directories=no, ' +
                             'status=no, menubar=no, scrollbars' +
