@@ -18,19 +18,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
 import facebook
 
 # Constants
-
-# Off:FACEBOOK_APP_ID = "211279135690183"
-#Off:FACEBOOK_APP_SECRET = "0a49fe29d02a7995563486ac95ba5a50"
-#Live:
 FACEBOOK_APP_ID = "579845202048952"
-#Live:
-FACEBOOK_APP_SECRET = "97246d17b224a43c322cbca33bff0261"
-#FACEBOOK_APP_ID= "521397627932396"
-#FACEBOOK_APP_SECRET = "89da48806c04a69e7ddec4d453c78df7"
-
 #FACEBOOK_APP_ID = "211279135690183"
+FACEBOOK_APP_SECRET = "97246d17b224a43c322cbca33bff0261"
 #FACEBOOK_APP_SECRET = "0a49fe29d02a7995563486ac95ba5a50"
-
 IVLE_LAPI_KEY = "nR7o7vzmqBA3BAXxPrLLD"
 SESSIONS_SECRET = "QR2YKc1ktlIvd9SvAI01PUFKVY7vso5sfSrDir5ebDbUoC3X7mgp2wNZkWCzlfVG"
 CURRENT_SEM = ["2013/2014", "1"]
@@ -76,19 +67,6 @@ class Post(ndb.Model):
     askingUser = ndb.StringProperty(required=True)
     replies = ndb.StructuredProperty(Reply, repeated=True)
 
-class Reply(ndb.Model):
-    """Datastore Model Class for replies to posts"""
-    created = ndb.DateTimeProperty(auto_now_add=True)
-    answer = ndb.TextProperty(required=True)
-    answeringUser = ndb.StringProperty(required=True)
-
-class Post(ndb.Model):
-    """Datastore Model Class for Posts"""
-    moduleName=ndb.StringProperty(required=True)
-    created = ndb.DateTimeProperty(auto_now_add=True)
-    question = ndb.TextProperty(required=True)
-    askingUser = ndb.StringProperty(required=True)
-    replies = ndb.StructuredProperty(Reply, repeated=True)
 
 class Handler(webapp2.RequestHandler):
     """Handler Class with Utility functions for Templates"""

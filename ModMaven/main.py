@@ -69,15 +69,14 @@ class RequestTree(Handler):
         self.response.out.write(json.dumps({}))
         return
 
-
     def __personalizeTree__(self, tree):
         if self.current_user:
             newtree = copy.deepcopy(tree)
             user = User.get_by_id(self.current_user['id'])
             if user.mods_done:
                 newtree['done'] = True if newtree['name'] in user.mods_done else False
-                #self.__getVal__(newtree, user.mods_done)
-                #self.__prune__(newtree)
+                self.__getVal__(newtree, user.mods_done)
+                self.__prune__(newtree)
             return newtree
         else:
             return tree
@@ -186,41 +185,14 @@ class AddPost(Handler):
         modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
         modPosts = [post] + list(modPosts)
         self.render("modulepage.html",
-                        modName=modName,
-                        modTitle=data[modName]["ModuleTitle"],
-                        modDesc=data[modName]["ModuleDescription"] if "ModuleDescription" in data[modName] else "Not Available",
-                        modPosts=modPosts,
-                        isModpost=True,
-                        CurrentUser=self.current_user,
-                        postSuccess=True,
-                        FacebookAppID=FACEBOOK_APP_ID )
-
-class AddReply(Handler):
-    def post(self):
-        modName = self.request.get('module').upper()
-        modquestion = self.request.get('modpost')
-        ans = self.request.get('answerBox')
-        CurrentUserName = self.current_user['name']
-        reply = Reply(answer=ans,answeringUser=CurrentUserName)
-        posts = Post.query(Post.moduleName==modName).fetch()
-        for post in posts :
-            if post.question==modquestion:
-                post.replies.append(reply)
-                post.put()
-        #postkey = ndb.Key('Post',postkeystring[11:-1])
-        #post = postkey.get()
-        modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
-        self.render("modulepage.html",
-                        modName=modName,
-                        modTitle=data[modName]["title"],
-                        modDesc=data[modName]["description"] if "description" in data[modName] else "Not Available",
-                        modPosts=modPosts,
-                        isModpost=True,
-                        CurrentUser=self.current_user,
-                        postSuccess=True,
-                        FacebookAppID=FACEBOOK_APP_ID )
-
-
+                    modName=modName,
+                    modTitle=data[modName]["ModuleTitle"],
+                    modDesc=data[modName]["ModuleDescription"] if "ModuleDescription" in data[modName] else "Not Available",
+                    modPosts=modPosts,
+                    isModpost=True,
+                    CurrentUser=self.current_user,
+                    postSuccess=True,
+                    FacebookAppID=FACEBOOK_APP_ID )
 
 
 class AddReply(Handler):
@@ -235,7 +207,7 @@ class AddReply(Handler):
             if post.question==modquestion:
                 post.replies.append(reply)
                 post.put()
-        #postkey = ndb.Key('Post',postkeystring[11:-1])
+            #postkey = ndb.Key('Post',postkeystring[11:-1])
         #post = postkey.get()
         modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
         self.render("modulepage.html",
@@ -249,7 +221,6 @@ class AddReply(Handler):
                     postSuccess=True,
                     FacebookAppID=FACEBOOK_APP_ID)
 
-
 class GetUsers(Handler):
     def get(self):
         self.response.headers['Content-Type'] = "application/json"
@@ -261,18 +232,20 @@ class ChkIVLE(Handler):
         self.response.out.write("1" if User.get_by_id(self.current_user['id']).ivle_token else "0")
 
 
-app = webapp2.WSGIApplication([('/modpage/?', ModPage),
-                               ('/modlist/?', RequestModList),
-                               ('/addModPost/?', AddPost),
-                               ('/modtaken/?', ModTaken),
-                               ('/logout/?', Logout),
-                               ('/getmod/?', RequestMod),
-                               ('/ivle/?', IVLEVerify),
-                               ('/gettree/?', RequestTree),
-                               ('/getusers/?', GetUsers),
-                               ('/addPostReply/?', AddReply),
-                               ('/chkIVLE', ChkIVLE),
-                               ('/.*', MainPage)
-                              ],
-                              config=config,
-                              debug=True)
+app = webapp2.WSGIApplication(
+    [
+        ('/modpage/?', ModPage),
+        ('/modlist/?', RequestModList),
+        ('/addModPost/?', AddPost),
+        ('/modtaken/?', ModTaken),
+        ('/logout/?', Logout),
+        ('/getmod/?', RequestMod),
+        ('/ivle/?', IVLEVerify),
+        ('/gettree/?', RequestTree),
+        ('/getusers/?', GetUsers),
+        ('/addPostReply/?', AddReply),
+        ('/chkIVLE', ChkIVLE),
+        ('/.*', MainPage)
+    ],
+    config=config,
+    debug=True)
