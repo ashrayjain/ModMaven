@@ -75,30 +75,46 @@ class RequestTree(Handler):
             user = User.get_by_id(self.current_user['id'])
             if user.mods_done:
                 newtree['done'] = True if newtree['name'] in user.mods_done else False
-                self.__getVal__(newtree, user.mods_done)
-                self.__prune__(newtree)
+                #self.__getVal__(newtree, user.mods_done)
+                #self.__prune__(newtree)
             return newtree
         else:
             return tree
 
     def __prune__(self, tree):
-        if tree['children']:
+        if tree['name'] == "or" :
             minval=min([child['cost'] for child in tree['children']])
-            tree['children'] = [child for child in tree['children'] if child['cost'] == minval]
-            for child in tree['children']:
-                self.__prune__(child)
+            indices = []
+            for i in range(len(tree['children'])):
+                if tree["children"][i]["cost"] == minval:
+                    indices.append(i)
+            if len(indices) == 1:
+                child = tree["children"][indices[0]]
+                tree["name"] = child["name"]
+                tree["children"] = child["children"]
+                if "done" in child:
+                    tree["done"] = child["done"]
+            else:
+                tree['children'] = [tree["children"][index] for index in indices]
+        for child in tree['children']:
+            self.__prune__(child)
 
     def __getVal__(self, tree, modsDone):
         if tree['children']:
             for child in tree['children']:
                 self.__getVal__(child, modsDone)
-                child['done'] = True if child['name'] in modsDone else False
-            tree['cost'] = min([child['cost'] for child in tree['children']]) + (0 if tree['name'] in modsDone else 1)
-        else:
+                if child['name'] not in ['or', 'and']:
+                    child['done'] = True if child['name'] in modsDone else False
+            if tree["name"] == "and":
+                tree["cost"] = sum([child["cost"] for child in tree['children']])
+            elif tree["name"] == "or":
+                tree["cost"] = min([child["cost"] for child in tree['children']])
+            else:
+                tree["cost"] = tree["children"][0]["cost"] + (0 if tree['name'] in modsDone else 1)
+        elif tree["name"] in data:
             tree['cost'] = 0 if tree['name'] in modsDone else 1
-
-
-
+        else:
+            tree["cost"] = 99
 
 
 class IVLEVerify(Handler):

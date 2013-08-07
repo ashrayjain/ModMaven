@@ -2,13 +2,8 @@ import json
 import prereqs_parser
 import urllib2
 
-
-print "Data loading..."
-modData_NUSmods = json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/1/modules.json"))
-print "Data Loaded!"
 modData = {}
 modlist = []
-
 
 def traverseDict(root):
     """Return Tree for given mod with given prereqs"""
@@ -18,8 +13,9 @@ def traverseDict(root):
         #print entry
         if isinstance(entry, dict):
             children += traverseDict(entry)
-        elif entry in modData:
-            children.append(getTree(entry))
+        else:
+            children.append({"name": entry, "children": []} if entry not in modData else getTree(entry))
+
     return [{"name": items[0][0][1:-1], "children": children}]
 
 
@@ -50,24 +46,36 @@ def getTree(mod):
 
 def addMod(mod, module, sem):
     modData[mod] = module
-    modData[mod]["Prerequisite"] = prereqs_parser.getPrereq(modData[mod]["Prerequisite"],
-                                                            mod) if "Prerequisite" in module else "Not Available."
-    modData[mod].update(ExamDate={sem: module['ExamDate'] if "ExamDate" in module else "No Exam."})
-    modData[mod].update(Timetable={sem: module['Timetable'] if "Timetable" in module else "Not Available."})
+    modData[mod]["Prerequisite"] = prereqs_parser.getPrereq(modData[mod]["Prerequisite"], mod) if "Prerequisite" in module else "Not Available."
+    modData[mod].update(ExamDate={sem: module['ExamDate'] if "ExamDate" in module else "No Exam."} if sem else "Not Applicable.")
+    modData[mod].update(Timetable={sem: module['Timetable'] if "Timetable" in module else "Not Available."} if sem else "Not Applicable.")
     modlist.append(mod)
 
 
-for module in modData_NUSmods:
+print "Data loading...13/14 Sem1"
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/1/modules.json")):
     addMod(module['ModuleCode'], module, "Sem1")
-print "Data loading..."
-modData_NUSmods = json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/2/modules.json"))
 print "Data Loaded!"
-for module in modData_NUSmods:
+
+print "Data loading...13/14 Sem2"
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2013-2014/2/modules.json")):
     if module['ModuleCode'] in modData:
         #print module, modData[module['ModuleCode']]
         mergeSem2(module['ModuleCode'], module)
     else:
         addMod(module['ModuleCode'], module, "Sem2")
+print "Data Loaded!"
+
+print "Data loading...12/13 Sems"
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2012-2013/1/modules.json")):
+    if module['ModuleCode'] not in modData:
+        addMod(module['ModuleCode'], module, None)
+
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2012-2013/2/modules.json")):
+    if module['ModuleCode'] not in modData:
+        addMod(module['ModuleCode'], module, None)
+
+print "Data Loaded!"
 
 for mod in modData:
     modData[mod]["Tree"] = getTree(mod)

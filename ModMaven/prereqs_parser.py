@@ -21,7 +21,7 @@ commaFixRE = re.compile(modString + ', |' + '|'.join(operators))
 
 # Add any Key-words for which NO parsing should be done and the entire
 # pre-req string should be shown instead
-restricted = ['USP', 'Cohort', 'AY20', 'H2 ', 'Qualifying English Test', 'MCs', 'grade', 'Grade']
+restricted = ['USP', 'Cohort', 'AY20', 'H2 ', 'Qualifying English Test', 'MCs', 'grade', 'Grade', 'H1 ', 'A-level']
 restrictedRE = re.compile('|'.join(restricted))
 
 # Add any special Exceptions here in the following format
@@ -123,6 +123,10 @@ def preProcess(prereq, mod):
     if len(commaResult):
         prereq = commaFix(prereq, commaResult)
     prereq = re.sub(mod, "", prereq)
+    prereq = re.sub("MUT ", "MUT", prereq)
+    prereq = re.sub("CE ", "CE", prereq)
+    prereq = re.sub("ME ", "ME", prereq)
+    prereq = re.sub("MUA ", "MUA", prereq)
     return prereq
 
 
@@ -210,11 +214,35 @@ def getPrereq(prereq, mod):
 
     return evaluatedResult
 
-# preclusion_exceptions = {
-#     ""
-# }
-#
-# def getPreclusions(preclusion):
+preclusion_exceptions = {
+    "XX3550": [
+        "SE3550",
+        "MS3550",
+        "EU3550",
+        "GE3550A",
+        "GE3550B",
+        "IEU3550",
+        "ISE3550"
+    ],
+    "XX3311 or XX3312": [
+        "CM3311",
+        "CM3312",
+        "LSM3311",
+        "MA3311",
+        "MA3312",
+        "PC3311",
+        "PC3312",
+        "QF3311",
+        "QF3312",
+        "ST3311",
+        "ST3312",
+        "ZB3311",
+        "PR3312"
+    ]
+}
+
+#def getPreclusions(preclusion):
+    
 #     return evaluatedResult
 
 # 'Parsing Done!'
