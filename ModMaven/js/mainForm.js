@@ -13,7 +13,7 @@ processForm = function(){
         }
         else{
             $("#errormessage").text("");
-            drawTree(data);
+            drawTree(data, false);
         }
         $('#loading-gif').css("visibility", "hidden");
     });

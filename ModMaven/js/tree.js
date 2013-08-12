@@ -1,53 +1,98 @@
-function drawTree(data){
+var interact,
+    SVGWidth,
+    SVGHeight = 550;
 
+function zoomIn(){
+    if (interact.scale() < 2.6 ){
+        var translation = interact.translate();
+        translation = [
+            (SVGWidth) / 2 + translation[0],
+            75 + translation[1]
+        ];
+        d3.select("#drawarea")
+            .attr("transform", "translate(" + translation + ")" +
+                " scale(" + (interact.scale()+0.15) + ")");
+        interact.scale(interact.scale()+0.15);
+    }
+}
+function zoomOut(){
+    if (interact.scale() > 0.3) {
+        var translation = interact.translate();
+        translation = [
+            (SVGWidth) / 2 + translation[0],
+            75 + translation[1]
+        ];
+        d3.select("#drawarea")
+            .attr("transform", "translate(" + translation + ")" +
+                " scale(" + (interact.scale()-0.15) + ")");
+        interact.scale(interact.scale()-0.15);
+    }
+
+}
+function drawTree(data, toggle) {
+
+    function getWidth(toggle){
+        if (toggle === true) return 0;
+        else return 60;
+    }
+
+    $("#zoom-btns").css("display", "");
+    SVGWidth = $("#Tree").width() - getWidth(toggle);
     d3.selectAll("svg")
         .remove();
 
-    // compute the new height
-    var noLevels = 1;
-
-    var childCount = function (level, n) {
-        if((level + 1) > noLevels){
-            noLevels = level + 1;
-        }
-        if (n.children && n.children.length > 0) {
-            n.children.forEach(function (d) {
-                childCount(level + 1, d);
-            });
-        }
-    };
-    childCount(0, data);
-    var newHeight = noLevels * 104 + (noLevels-1)*10;
-
-    var parentWidth = $('#Tree').parent().width();
     var canvas = d3.select('#Tree')
-        .append("svg")
-        .attr("id", "svg")
-        .attr("width", parentWidth)
-        .attr("height", newHeight)
-        .attr("viewBox", "0 0 "+parentWidth+" "+newHeight)
-        .attr("preserveAspectRatio", "xMidYMid")
-        .append("g");
+            .append("svg")
+            .attr("id", "svg")
+            .attr("width", SVGWidth)
+            .attr("height", SVGHeight)
+            .attr("style", "cursor: move; z-index: -999;"),
+        border = canvas.append("rect")
+            .attr("width", SVGWidth)
+            .attr("height", SVGHeight)
+            .attr("stroke", "black")
+            .attr("stroke-width", 5)
+            .attr("fill", "none");
+    interact = d3.behavior.zoom()
+        .scaleExtent([0.4, 2.6])
+        .on("zoom", zoom);
+
+    canvas = canvas.append("g")
+        .attr("id", "drawarea");
+
+    d3.select("svg").call(interact);
+
+    function zoom() {
+        var scale = d3.event.scale,
+            translation = d3.event.translate;
+        translation = [
+            (SVGWidth) / 2 + translation[0],
+            75 + translation[1]
+        ];
+        d3.select("#drawarea")
+            .attr("transform", "translate(" + translation + ")" +
+                " scale(" + scale + ")");
+    }
 
     var aspect = $("#svg").width() / $("#svg").height();
-
     $(window).on("resize",function () {
-        parentWidth = $('#Tree').parent().width();
+        SVGWidth = $('#Tree').parent().width() - getWidth(toggle);
         d3.select("#svg")
-            .attr("width", parentWidth)
-            .attr("height", Math.round(parentWidth / aspect));
+            .attr("width", SVGWidth);
+        border.attr("width", SVGWidth);
+        translation = [(SVGWidth)/2, 75]
+        interact.translate([0, 0]);
+        d3.select("#drawarea")
+            .transition()
+            .delay(1)
+            .attr("transform", "translate(" + translation + ")" +
+                " scale("+interact.scale()+")");
+
     }).trigger("resize");
 
-    /*var borderRect = canvas.append("rect")
-     .attr("width", parentWidth)
-     .attr("height", 1000)
-     .attr("stroke", "black")
-     .attr("stroke-width", 2.5)
-     .attr("fill", "grey")
-     .attr("opacity", 0.65);
-     */
+
     var tree = d3.layout.tree()
-        .size([parentWidth-150, newHeight-102]);
+        .nodeSize([130,130]);
 
     var nodes = tree.nodes(data);
     var links = tree.links(nodes);
@@ -58,12 +103,12 @@ function drawTree(data){
         .append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            return "translate(" + (d.x+75) + "," + (d.y+51) + ")";
+            return "translate(" + d.x + "," + d.y + ")";
         });
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.x+75, d.y+51];
+            return [d.x, d.y];
         });
     var x, y;
     canvas.selectAll(".link")
@@ -79,15 +124,15 @@ function drawTree(data){
     var rectangles = node.append("rect")
         .attr("width", 0)
         .attr("height", 0)
-        .attr("x", function(d) {
-            if (d.name=='or'||d.name=='and') {
+        .attr("x", function (d) {
+            if (d.name == 'or' || d.name == 'and') {
                 return -25;
             }
             else
                 return -50;
         })
-        .attr("y", function(d) {
-            if (d.name=='or'||d.name=='and') {
+        .attr("y", function (d) {
+            if (d.name == 'or' || d.name == 'and') {
                 return -17.5;
             }
             else
@@ -97,8 +142,8 @@ function drawTree(data){
         .attr("ry", 20)
         .attr("stroke", "black")
         .attr("stroke-width", 1.5)
-        .attr("opacity", function(d) {
-            if (d.name=='or'||d.name=='and') {
+        .attr("opacity", function (d) {
+            if (d.name == 'or' || d.name == 'and') {
                 return 0;
             }
             else
@@ -107,18 +152,18 @@ function drawTree(data){
         .attr("nodeValue", function (d) {
             return d.name;
         })
-        .attr("fill", function(d){
-            if(d['done']){
+        .attr("fill", function (d) {
+            if (d['done']) {
                 return "red";
             }
-            else if (d.name=='or' || d.name=='and') {
+            else if (d.name == 'or' || d.name == 'and') {
                 return "white";
             }
-            else{
+            else {
                 return "steelblue";
             }
         })
-        .attr("style", function(d){
+        .attr("style", function (d) {
             if (d.name == 'or' || d.name == 'and')
                 return "cursor:default"
         });
@@ -129,13 +174,13 @@ function drawTree(data){
         })
         .style("fill", "none")
         .style("opacity", 0)
-        .attr("dy", function(d){
+        .attr("dy", function (d) {
             if (d.name == 'or' || d.name == 'and')
                 return "10";
             return "";
         })
         .attr("text-anchor", "middle")
-        .attr("text-decoration", function(d) {
+        .attr("text-decoration", function (d) {
             if (d.name == 'or' || d.name == 'and')
                 return ""
             return "underline";
@@ -145,14 +190,14 @@ function drawTree(data){
     node.selectAll("rect")
         .transition()
         .duration(2000)
-        .attr("width", function(d) {
-            if (d.name=='or'||d.name=='and')
+        .attr("width", function (d) {
+            if (d.name == 'or' || d.name == 'and')
                 return 50;
             else
                 return 100;
         })
-        .attr("height", function(d) {
-            if (d.name=='or'||d.name=='and')
+        .attr("height", function (d) {
+            if (d.name == 'or' || d.name == 'and')
                 return 35;
             else
                 return 70;
@@ -175,44 +220,44 @@ function drawTree(data){
             if (d.name == 'or' || d.name == 'and')
                 return "cursor:default; font-size: 50px;"
         })
-        .each("end",function(){
+        .each("end", function () {
             node.on("mouseout", function () {
                 node.selectAll("rect")
                     .transition()
-                    .attr("fill", function(d){
-                        if(d['done'])
+                    .attr("fill", function (d) {
+                        if (d['done'])
                             return "red";
-                        else if(d.name=='and' || d.name=='or')
+                        else if (d.name == 'and' || d.name == 'or')
                             return "white";
                         else
                             return "steelblue";
                     })
-                    .attr("height", function(d) {
-                        if (d.name=='or'||d.name=='and')
+                    .attr("height", function (d) {
+                        if (d.name == 'or' || d.name == 'and')
                             return 35;
                         else
                             return 70;
                     })
-                    .attr("y", function(d) {
-                        if (d.name=='or'||d.name=='and')
+                    .attr("y", function (d) {
+                        if (d.name == 'or' || d.name == 'and')
                             return -17.5;
                         else
                             return -35;
                     })
-                    .attr("x", function(d) {
-                        if (d.name=='or'||d.name=='and')
+                    .attr("x", function (d) {
+                        if (d.name == 'or' || d.name == 'and')
                             return -25;
                         else
                             return -50;
                     })
-                    .attr("width", function(d) {
-                        if (d.name=='or'||d.name=='and')
+                    .attr("width", function (d) {
+                        if (d.name == 'or' || d.name == 'and')
                             return 50;
                         else
                             return 100;
                     })
                     .attr("opacity", function (d) {
-                        if(d.name=='and' || d.name=='or')
+                        if (d.name == 'and' || d.name == 'or')
                             return 0;
                         else
                             return 1;
@@ -221,46 +266,46 @@ function drawTree(data){
                     .transition()
                     .style("opacity", 1);
             });
-            node.on("mouseover", function (d, i){
-                if(d.name!='and' && d.name!='or') {
+            node.on("mouseover", function (d) {
+                if (d.name != 'and' && d.name != 'or') {
                     node.selectAll("rect")
                         .transition()
-                        .attr("fill", function(d){
-                            if(d['done']){
+                        .attr("fill", function (d) {
+                            if (d['done']) {
                                 return "red";
                             }
-                            else if(d.name=='and' || d.name=='or') {
+                            else if (d.name == 'and' || d.name == 'or') {
                                 return "white";
                             }
-                            else{
+                            else {
                                 return "steelblue";
                             }
                         })
-                        .attr("height", function (d){
-                            if(d.name=='and' || d.name=='or')
+                        .attr("height", function (d) {
+                            if (d.name == 'and' || d.name == 'or')
                                 return 35;
                             else
                                 return 70;
                         })
-                        .attr("y", function (d){
-                            if(d.name=='and' || d.name=='or')
+                        .attr("y", function (d) {
+                            if (d.name == 'and' || d.name == 'or')
                                 return -17.5;
                             else
                                 return -35;
                         })
-                        .attr("x", function (d){
-                            if(d.name=='and' || d.name=='or')
+                        .attr("x", function (d) {
+                            if (d.name == 'and' || d.name == 'or')
                                 return -25;
                             else
                                 return -50;
                         })
-                        .attr("width", function (d){
-                            if(d.name=='and' || d.name=='or')
+                        .attr("width", function (d) {
+                            if (d.name == 'and' || d.name == 'or')
                                 return 50;
                             else
                                 return 100;
                         })
-                        .attr("opacity", function(d){
+                        .attr("opacity", function (d) {
                             if (d.name == 'and' || d.name == 'or')
                                 return 0;
                             else
@@ -284,8 +329,7 @@ function drawTree(data){
                         .attr("width", 150)
                         .attr("opacity", 0.8);
 
-
-                    node.on("click", function (d, i) {
+                    node.on("click", function (d) {
                         if (d.name != 'and' && d.name != 'or') {
                             var modaldivs = $('.modal-header, .modal-body, .modal-footer');
                             var bar = $('#loading-bar');
@@ -314,15 +358,16 @@ function drawTree(data){
                                         .text("No Information Available");
                                 }
                                 else {
-                                    modalLabel.text(currMod+" - "+data["ModuleTitle"]);
+                                    modalLabel.text(currMod + " - " + data["ModuleTitle"]);
                                     modalLabel.parent().attr('href', '/modpage?modName=' + currMod);
                                     footerLink.attr('href', '/modpage?modName=' + currMod);
 
+                                    var modalBody = null;
                                     if (data["ModuleDescription"] !== undefined) {
-                                        var modalBody = data["ModuleDescription"];
+                                        modalBody = data["ModuleDescription"];
                                     }
                                     else {
-                                        var modalBody = "Not Available";
+                                        modalBody = "Not Available";
                                     }
                                     if (typeof data['Prerequisite'] == "string" && data['Prerequisite'].length > 9) {
                                         modalBody += '<br><br><b>Prerequisite: </b><br>' + data['Prerequisite'];
@@ -341,7 +386,7 @@ function drawTree(data){
                                     });
                                 modaldivs.css('display', '');
                                 bar.css('display', 'none');
-                                setTimeout(function(){
+                                setTimeout(function () {
                                     modal
                                         .removeClass('notransition')
                                         .css({

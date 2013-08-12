@@ -4,6 +4,7 @@
     <title>{% block title %}{% endblock %}</title>
     <meta property="fb:app_id" content="{{ FacebookAppID }}"/>
     {% block meta %}{% endblock %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/favicon.ico">
     <!-- Bootstrap -->
@@ -19,25 +20,12 @@
 <!-- FB Stuff -->
 <div id="fb-root"></div>
 <script type="text/javascript">
-    function fbEnsureInit(callback) {
-        if (!window.fbApiInit) {
-            setTimeout(function () {
-                fbEnsureInit(callback);
-            }, 50);
-        } else {
-            if (callback) {
-                console.log("Called");
-                callback();
-            }
-        }
-    }
-
     window.fbAsyncInit = function() {
         FB.init({appId: '{{ FacebookAppID }}', status: true, cookie: true});
         $(document).ready(function(){
             fbLoaded();
+            {% block facebookInit %}{% endblock %}
             //console.log("Init Complete");
-            fbApiInit = true;
         });
     };
 
@@ -106,47 +94,47 @@
     </div>
     {% block main_content %}{% endblock %}
 </div>
-
+{% block tree %}{% endblock %}
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
 <script src="../js/ivle.js"></script>
 <script type="text/javascript">
     {% if CurrentUser %}
-    $.get('/chkIVLE', function(response){
-        if (response === "0") {
-            $("#ivle-alert").css("display", "")
-        }
-    });
+        $.get('/chkIVLE', function(response){
+            if (response === "0") {
+                $("#ivle-alert").css("display", "")
+            }
+        });
     {% endif %}
     var verificationDialog = null;
     var popupClose = null;
     function ivleVerify() {
         if (verificationDialog == null || verificationDialog.closed) {
-            var w = 255;
-            var h = 210;
-            var left = (screen.width / 2) - (w / 2);
-            var top = (screen.height / 3) - (h / 2);
+            if (verificationDialog == null || verificationDialog.closed) {
+                var w = 255;
+                var h = 210;
+                var left = (screen.width / 2) - (w / 2);
+                var top = (screen.height / 3) - (h / 2);
 
-            verificationDialog = window.open(
-                    'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://ash.pagekite.me/ivle',
-                    'IVLEVerificationDialog',
-                    'dependent, toolbar=no, location=no, directories=no, ' +
-                            'status=no, menubar=no, scrollbars' +
-                            '=no, resizable=no, copyhistory=no' +
-                            ', width=' + w + ', height=' + h +
-                            ', top=' + top + ', left=' + left);
+                verificationDialog = window.open(
+                        'https://ivle.nus.edu.sg/api/login/?apikey={{ IVLEKey }}&url=http://nusmodmaven.appspot.com/ivle',
+                        'IVLEVerificationDialog',
+                        'dependent, toolbar=no, location=no, directories=no, ' +
+                                'status=no, menubar=no, scrollbars' +
+                                '=no, resizable=no, copyhistory=no' +
+                                ', width=' + w + ', height=' + h +
+                                ', top=' + top + ', left=' + left);
 
-            popupClose = setInterval(function () {
-                closePopup(verificationDialog);
-            }, 500);
-        }
-        else {
-            verificationDialog.focus();
+                popupClose = setInterval(function () {
+                    closePopup(verificationDialog);
+                }, 500);
+            }
+            else {
+                verificationDialog.focus();
+            }
         }
     }
-
 </script>
 <script src="../js/bootstrap.min.js"></script>
-{% block js %}
-{% endblock %}
+{% block js %}{% endblock %}
 </body>
 </html>

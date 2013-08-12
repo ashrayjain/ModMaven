@@ -2,7 +2,7 @@
 {% block title %}{{ modName }} - {{modTitle}}{% endblock %}
 {% block meta %}
     <meta property="og:type" content="modmaven:module"/>
-    <meta property="og:url" content="http://ash.pagekite.me/modpage?modName={{ modName }}"/>
+    <meta property="og:url" content="http://nusmodmaven.appspot.com/modpage?modName={{ modName }}"/>
     <meta property="og:title" content="{{ modName }} - {{ modTitle }}"/>
     <meta property="og:image" content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png"/>
     <meta property="og:description" content="{{ modDesc }}"/>
@@ -62,11 +62,10 @@
         $(document).ready(function () {
             var treeShown = false;
             var statsShown = false;
-            fbEnsureInit(initializeInterestButton("{{ CurrentUser.access_token }}"));
             $('a[data-toggle="pill"]').on('shown', function (e) {
                 if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false) {
                     $.getJSON('/gettree?modName={{ modName }}', function (data) {
-                        drawTree(data);
+                        drawTree(data, true);
                         treeShown = true;
                     });
                 }
@@ -80,3 +79,4 @@
         });
     </script>
 {% endblock %}
+{% block facebookInit %}initializeInterestButton("{{ CurrentUser.access_token }}");{% endblock %}

@@ -1,5 +1,6 @@
 from init_config import *
 
+
 class MainPage(Handler):
     """Handler for the front page"""
 
@@ -59,6 +60,7 @@ class RequestMod(Handler):
         self.response.out.write(json.dumps({}))
         return
 
+
 class RequestTree(Handler):
     def get(self):
         modName = self.request.get('modName').upper()
@@ -82,8 +84,11 @@ class RequestTree(Handler):
             return tree
 
     def __prune__(self, tree):
-        if tree['name'] == "or" :
-            minval=min([child['cost'] for child in tree['children']])
+        if tree['cost'] == 0 and tree["name"] not in ["and", "or"]:
+            tree['children'] = []
+            return
+        if tree['name'] == "or":
+            minval = min([child['cost'] for child in tree['children']])
             indices = []
             for i in range(len(tree['children'])):
                 if tree["children"][i]["cost"] == minval:
@@ -94,13 +99,17 @@ class RequestTree(Handler):
                 tree["children"] = child["children"]
                 if "done" in child:
                     tree["done"] = child["done"]
+                self.__prune__(tree)
+                return
             else:
                 tree['children'] = [tree["children"][index] for index in indices]
         for child in tree['children']:
             self.__prune__(child)
 
     def __getVal__(self, tree, modsDone):
-        if tree['children']:
+        if tree['name'] in modsDone:
+            tree['cost'] = 0
+        elif tree['children']:
             for child in tree['children']:
                 self.__getVal__(child, modsDone)
                 if child['name'] not in ['or', 'and']:
@@ -110,9 +119,9 @@ class RequestTree(Handler):
             elif tree["name"] == "or":
                 tree["cost"] = min([child["cost"] for child in tree['children']])
             else:
-                tree["cost"] = tree["children"][0]["cost"] + (0 if tree['name'] in modsDone else 1)
+                tree["cost"] = tree["children"][0]["cost"] + 1
         elif tree["name"] in data:
-            tree['cost'] = 0 if tree['name'] in modsDone else 1
+            tree['cost'] = 1
         else:
             tree["cost"] = 99
 
@@ -221,11 +230,13 @@ class AddReply(Handler):
                     postSuccess=True,
                     FacebookAppID=FACEBOOK_APP_ID)
 
+
 class GetUsers(Handler):
     def get(self):
         self.response.headers['Content-Type'] = "application/json"
         mod = Module.get_by_id(self.request.get("modName"))
         self.response.out.write(json.dumps({} if mod == None else mod.users))
+
 
 class ChkIVLE(Handler):
     def get(self):

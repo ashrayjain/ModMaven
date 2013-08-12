@@ -26,11 +26,11 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span12" id="Tree">
-            {% include 'modal.html' %}
-        </div>
-    </div>
+{% endblock %}
+{% block tree %}
+<div id="Tree" style="padding-left: 30px; padding-right: 30px;">
+    {% include 'modal.html' %}
+</div>
 {% endblock %}
 {% block js %}
     <script src="/js/jquery.autocomplete.js"></script>

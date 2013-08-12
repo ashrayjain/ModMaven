@@ -5,6 +5,7 @@ html, body {
 body {
     padding-top: 10px;
     padding-bottom: 10px;
+    min-width: 728px;
 }
 
 .container-fluid {
@@ -79,4 +80,27 @@ a.dropdown-toggle{outline: none}
   -o-transition: none !important;
   -ms-transition: none !important;
   transition: none !important;
+}
+
+#zoom-btns {
+    position: relative;
+    top: 80px;
+    left: 20px;
+    opacity: 0.5;
+    z-index: 99;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#zoom-btns:hover {
+    -webkit-transition: opacity 0.5s !important;
+    -moz-transition: opacity 0.5s !important;
+    -o-transition: opacity 0.5s !important;
+    -ms-transition: opacity 0.5s !important;
+    transition: opacity 0.5s !important;
+    opacity: 1 !important;
+    z-index: 99 !important;
 }

@@ -16,6 +16,7 @@ modRE = re.compile(modString + '|' + '|'.join(operators) + '|[\(\)\[\]\{\}]')
 parenRE = re.compile('[\{\}\[\]]')
 slashRE = re.compile('[/]')
 colonRE = re.compile(';')
+andRE = re.compile('&')
 commaRE = re.compile(modString + ', ')
 commaFixRE = re.compile(modString + ', |' + '|'.join(operators))
 
@@ -30,10 +31,13 @@ restrictedRE = re.compile('|'.join(restricted))
 # key = EXACT pre-requisite string to match
 # value = parsed output
 exceptions = {
+    'CS2261 or IS2103 (applicable to intakes from AY2005/06 to AY2007/08) or [(CS2261 or IS2103) and (CS2301 or IS2101)] (applicable to intakes from AY2008/09 onwards)':
+        {' and ': ['IS2103', 'IS2101']},
     'For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).':
         'For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).',
     'Pass ID 2105 & 2106': {' and ': ['ID2105', 'ID2106']},
-    'Pass ID 1105 & 1106': {' and ': ['ID1105', 'ID1106']}
+    'Pass ID 1105 & 1106': {' and ': ['ID1105', 'ID1106']},
+    'Pass ID 3105 & 3106': {' and ': ['ID3105', 'ID3106']}
 }
 
 
@@ -119,6 +123,7 @@ def preProcess(prereq, mod):
     prereq = parenRE.sub(replaceParen, prereq)
     prereq = slashRE.sub(' or ', prereq)
     prereq = colonRE.sub(' and ', prereq)
+    prereq = andRE.sub(' and ', prereq)
     commaResult = commaRE.findall(prereq)
     if len(commaResult):
         prereq = commaFix(prereq, commaResult)
@@ -130,40 +135,44 @@ def preProcess(prereq, mod):
     return prereq
 
 
-def getInterpretedResult(prereq):
+def getInterpretedResult(prereq, data):
     stack = []
     result = []
     modRE_results = modRE.findall(prereq)
 
+    dirtyLast = False
     i = 0
     while i < len(modRE_results):
         val = modRE_results[i]
-        if isOperand(val):
-            result += [val]
-        elif val == '(':
-            stack.append(val)
-        elif val == ')':
-            while len(stack) and stack[len(stack) - 1] != '(':
-                result.append(stack.pop())
-            if len(stack):
-                stack.pop()
-        elif i and i < len(modRE_results) - 1 \
-            and not isOperator(modRE_results[i - 1]) \
-            and not isOperator(modRE_results[i + 1]) \
-            and modRE_results[i + 1] != ')':
-            if not len(stack) or stack[len(stack) - 1] == '(':
+        if not (verifyRE.match(val) and val not in data) and not dirtyLast:
+            dirtyLast = False
+            if isOperand(val):
+                result += [val]
+            elif val == '(':
                 stack.append(val)
-            else:
-                while len(stack) and stack[len(stack) - 1] != '(' and precedence(val, stack):
+            elif val == ')':
+                while len(stack) and stack[len(stack) - 1] != '(':
                     result.append(stack.pop())
-                stack.append(val)
+                if len(stack):
+                    stack.pop()
+            elif i and i < len(modRE_results) - 1 \
+                and not isOperator(modRE_results[i - 1]) \
+                and not isOperator(modRE_results[i + 1]) \
+                and modRE_results[i + 1] != ')':
+                if not len(stack) or stack[len(stack) - 1] == '(':
+                    stack.append(val)
+                else:
+                    while len(stack) and stack[len(stack) - 1] != '(' and precedence(val, stack):
+                        result.append(stack.pop())
+                    stack.append(val)
+            else:
+                modRE_results.pop(i)
+                i -= 1
         else:
-            modRE_results.pop(i)
-            i -= 1
+            dirtyLast = (dirtyLast == False)
         i += 1
     while len(stack):
         result.append(stack.pop())
-
     return result
 
 
@@ -172,7 +181,7 @@ def evalResult(interpretedResult):
     for val in interpretedResult:
         if isOperand(val):
             stack.append(val)
-        else:
+        elif len(stack):
             a = stack.pop()
             try:
                 b = stack.pop()
@@ -192,7 +201,7 @@ def noMod(result):
     return True
 
 
-def getPrereq(prereq, mod):
+def getPrereq(prereq, mod, data):
     # Copy of Prereq
     orignalPrereq = '' + prereq
     if prereq in exceptions:
@@ -203,7 +212,8 @@ def getPrereq(prereq, mod):
     if not prereq:
         return orignalPrereq
 
-    interpretedResult = getInterpretedResult(prereq)
+    interpretedResult = getInterpretedResult(prereq, data)
+
     if not interpretedResult or noMod(interpretedResult):
         return orignalPrereq
 
@@ -213,6 +223,7 @@ def getPrereq(prereq, mod):
         postProcess(evaluatedResult)
 
     return evaluatedResult
+
 
 preclusion_exceptions = {
     "XX3550": [
@@ -242,7 +253,7 @@ preclusion_exceptions = {
 }
 
 #def getPreclusions(preclusion):
-    
+
 #     return evaluatedResult
 
 # 'Parsing Done!'

@@ -51,7 +51,7 @@
         var noop = function () { },
             that = this,
             defaults = {
-                autoSelectFirst: false,
+                autoSelectFirst: true,
                 appendTo: 'body',
                 serviceUrl: null,
                 lookup: null,
@@ -499,6 +499,7 @@
                 container.width(width > 0 ? width : 300);
             }
 
+            that.fixPosition();
             container.html(html).show();
             that.visible = true;
 

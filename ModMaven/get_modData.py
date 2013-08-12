@@ -1,10 +1,14 @@
 import json
 import prereqs_parser
 import urllib2
+from bs4 import BeautifulSoup
+import lxml
 
 modData = {}
 modlist = []
-
+modExceptions = {
+    'PH2216 / GEK2031': 'GEK2031'
+}
 def traverseDict(root):
     """Return Tree for given mod with given prereqs"""
     children = []
@@ -45,8 +49,10 @@ def getTree(mod):
 
 
 def addMod(mod, module, sem):
+    if mod in modExceptions:
+        mod = modExceptions[mod]
+        module["ModuleCode"] = mod
     modData[mod] = module
-    modData[mod]["Prerequisite"] = prereqs_parser.getPrereq(modData[mod]["Prerequisite"], mod) if "Prerequisite" in module else "Not Available."
     modData[mod].update(ExamDate={sem: module['ExamDate'] if "ExamDate" in module else "No Exam."} if sem else "Not Applicable.")
     modData[mod].update(Timetable={sem: module['Timetable'] if "Timetable" in module else "Not Available."} if sem else "Not Applicable.")
     modlist.append(mod)
@@ -77,11 +83,70 @@ for module in json.load(urllib2.urlopen("http://api.nusmods.com/2012-2013/2/modu
 
 print "Data Loaded!"
 
+
+def scrapeIVLE(soup):
+    tag = soup.find(id="viewtbl").find_all("td")
+    key = None
+    module = ""
+    for ele in tag:
+        if not key:
+            if ele.string == "Module Code":
+                key = "ModuleCode"
+            elif ele.string == "Module Title":
+                key = "ModuleTitle"
+            elif ele.string == "Description":
+                key = "ModuleDescription"
+            elif ele.string == "Module Credit":
+                key = "ModuleCredit"
+            elif ele.string == "Workload":
+                key = "Workload"
+            elif ele.string == "Prerequisites":
+                key = "Prerequisite"
+            elif ele.string == "Preclusions":
+                key = "Preclusion"
+        else:
+            if key == "ModuleCode":
+                module = ele.string
+                modData[module] = {}
+            modData[module][key] = ele.string
+            key = None
+    modData[module]["ExamDate"] = "Not Applicable."
+    modData[module]["Timetable"] = "Not Applicable."
+    modlist.append(module)
+
+print "Data loading...11/12 Sem1"
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2011-2012/1/corsBiddingStatsRaw.json")):
+    if module["ModuleCode"] not in modData:
+        scrapeIVLE(BeautifulSoup(urllib2.urlopen(
+            "http://ivle7.nus.edu.sg/lms/Account/NUSBulletin/msearch_view.aspx?acadYear=2011/2012&semester={0}&modeCode={1}".format(
+                1, module["ModuleCode"])
+        ), "lxml"))
+
+print "Data Loaded!"
+print "Data loading...11/12 Sem2"
+
+for module in json.load(urllib2.urlopen("http://api.nusmods.com/2011-2012/2/moduleTimetableDeltaRaw.json")):
+    if module["ModuleCode"] not in modData:
+        scrapeIVLE(BeautifulSoup(urllib2.urlopen(
+            "http://ivle7.nus.edu.sg/lms/Account/NUSBulletin/msearch_view.aspx?acadYear=2011/2012&semester={0}&modeCode={1}".format(
+                2, module["ModuleCode"])
+        ), "lxml"))
+print "Data Loaded!"
+
+print "Prereqs Parsing!!"
+for mod in modData:
+    modData[mod]["Prerequisite"] = prereqs_parser.getPrereq(modData[mod]["Prerequisite"], mod, modData) if "Prerequisite" in modData[mod] else "Not Available."
+    # if type(modData[mod]['Prerequisite']) == str and len(modData[mod]['Prerequisite']) > 9:
+    #     print modData[mod]['Prerequisite']
+
+print "Prereqs done!"
+print "Tree Creation started!!"
 for mod in modData:
     modData[mod]["Tree"] = getTree(mod)
+print "Tree Creation done!!"
 
 modlist.sort()
 modData['ModList'] = modlist
 
 with open("data/modInfo.json", "w") as outfile:
-    json.dump(modData, outfile, indent=2)
+    json.dump(modData, outfile)
