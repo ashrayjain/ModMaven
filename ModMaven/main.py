@@ -77,7 +77,9 @@ class RequestTree(Handler):
             user = User.get_by_id(self.current_user['id'])
             if user.mods_done:
                 newtree['done'] = True if newtree['name'] in user.mods_done else False
-                self.__getVal__(newtree, user.mods_done)
+                if not newtree['done']:
+                    newtree['prec'] = True if newtree['name'] in user.mods_precluded else False
+                self.__getVal__(newtree, user.mods_done, user.mods_precluded)
                 self.__prune__(newtree)
             return newtree
         else:
@@ -97,8 +99,10 @@ class RequestTree(Handler):
                 child = tree["children"][indices[0]]
                 tree["name"] = child["name"]
                 tree["children"] = child["children"]
-                if "done" in child:
-                    tree["done"] = child["done"]
+                if 'done' in child:
+                    tree['done'] = child['done']
+                if 'prec' in child:
+                    tree['prec'] = child['prec']
                 self.__prune__(tree)
                 return
             else:
@@ -106,14 +110,16 @@ class RequestTree(Handler):
         for child in tree['children']:
             self.__prune__(child)
 
-    def __getVal__(self, tree, modsDone):
-        if tree['name'] in modsDone:
+    def __getVal__(self, tree, modsDone, modsPrec):
+        if tree['name'] in modsDone or tree['name'] in modsPrec:
             tree['cost'] = 0
         elif tree['children']:
             for child in tree['children']:
-                self.__getVal__(child, modsDone)
+                self.__getVal__(child, modsDone, modsPrec)
                 if child['name'] not in ['or', 'and']:
                     child['done'] = True if child['name'] in modsDone else False
+                    if not child['done']:
+                        child['prec'] = True if child['name'] in modsPrec else False
             if tree["name"] == "and":
                 tree["cost"] = sum([child["cost"] for child in tree['children']])
             elif tree["name"] == "or":
@@ -140,6 +146,11 @@ class IVLEVerify(Handler):
             user = User.get_by_id(self.current_user['id'])
             user.ivle_token = token
             user.mods_done = self.__userMods__(token)
+            precludedMods = set(user.mods_done)
+            for mod in user.mods_done:
+                if isinstance(data[mod]["Preclusion"], list):
+                    precludedMods.update(data[mod]["Preclusion"])
+            user.mods_precluded = list(precludedMods)
             user.put()
 
     def __userMods__(self, token):
@@ -216,8 +227,8 @@ class AddReply(Handler):
             if post.question==modquestion:
                 post.replies.append(reply)
                 post.put()
-            #postkey = ndb.Key('Post',postkeystring[11:-1])
-        #post = postkey.get()
+                #postkey = ndb.Key('Post',postkeystring[11:-1])
+            #post = postkey.get()
         modPosts = Post.query(Post.moduleName==modName).order(-Post.created).fetch(20)
         self.render("modulepage.html",
                     modName=modName,

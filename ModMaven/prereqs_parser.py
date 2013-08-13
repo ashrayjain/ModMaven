@@ -226,34 +226,35 @@ def getPrereq(prereq, mod, data):
 
 
 preclusion_exceptions = {
-    "XX3550": [
-        "SE3550",
-        "MS3550",
-        "EU3550",
-        "GE3550A",
-        "GE3550B",
-        "IEU3550",
-        "ISE3550"
-    ],
-    "XX3311 or XX3312": [
+    "XX3311": [
         "CM3311",
-        "CM3312",
         "LSM3311",
         "MA3311",
-        "MA3312",
         "PC3311",
-        "PC3312",
         "QF3311",
-        "QF3312",
         "ST3311",
+        "ZB3311"
+    ],
+    "XX3312": [
+        "QF3312",
+        "PC3312",
+        "CM3312",
+        "MA3312",
         "ST3312",
-        "ZB3311",
         "PR3312"
     ]
 }
 
-#def getPreclusions(preclusion):
 
-#     return evaluatedResult
+
+def getPreclusions(preclusion, mod):
+    preclusions = verifyRE.findall(preclusion)
+    for key in preclusion_exceptions.keys():
+        if key in preclusions:
+            preclusions.remove(key)
+            preclusions.extend(preclusion_exceptions[key])
+    if mod in preclusions:
+        preclusions.remove(mod)
+    return preclusions if preclusions != [] else preclusion
 
 # 'Parsing Done!'

@@ -153,15 +153,12 @@ function drawTree(data, toggle) {
             return d.name;
         })
         .attr("fill", function (d) {
-            if (d['done']) {
+            if (d['done'])
                 return "red";
-            }
-            else if (d.name == 'or' || d.name == 'and') {
-                return "white";
-            }
-            else {
+            else if (d['prec'])
+                return "yellow";
+            else
                 return "steelblue";
-            }
         })
         .attr("style", function (d) {
             if (d.name == 'or' || d.name == 'and')
@@ -227,8 +224,8 @@ function drawTree(data, toggle) {
                     .attr("fill", function (d) {
                         if (d['done'])
                             return "red";
-                        else if (d.name == 'and' || d.name == 'or')
-                            return "white";
+                        else if (d['prec'])
+                            return "yellow";
                         else
                             return "steelblue";
                     })
@@ -271,15 +268,12 @@ function drawTree(data, toggle) {
                     node.selectAll("rect")
                         .transition()
                         .attr("fill", function (d) {
-                            if (d['done']) {
+                            if (d['done'])
                                 return "red";
-                            }
-                            else if (d.name == 'and' || d.name == 'or') {
-                                return "white";
-                            }
-                            else {
+                            else if (d['prec'])
+                                return "yellow";
+                            else
                                 return "steelblue";
-                            }
                         })
                         .attr("height", function (d) {
                             if (d.name == 'and' || d.name == 'or')

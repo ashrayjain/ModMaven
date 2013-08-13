@@ -18,9 +18,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'libs'))
 import facebook
 
 # Constants
-#FACEBOOK_APP_ID = "579845202048952"
+# FACEBOOK_APP_ID = "579845202048952"
+# FACEBOOK_APP_SECRET = "97246d17b224a43c322cbca33bff0261"
 FACEBOOK_APP_ID = "211279135690183"
-#FACEBOOK_APP_SECRET = "97246d17b224a43c322cbca33bff0261"
 FACEBOOK_APP_SECRET = "0a49fe29d02a7995563486ac95ba5a50"
 IVLE_LAPI_KEY = "nR7o7vzmqBA3BAXxPrLLD"
 SESSIONS_SECRET = "QR2YKc1ktlIvd9SvAI01PUFKVY7vso5sfSrDir5ebDbUoC3X7mgp2wNZkWCzlfVG"
@@ -46,6 +46,7 @@ class User(ndb.Model):
     access_token = ndb.StringProperty("at", required=True)
     ivle_token = ndb.StringProperty("it")
     mods_done = ndb.JsonProperty("md")
+    mods_precluded = ndb.JsonProperty("mp")
 
 
 class Module(ndb.Model):
