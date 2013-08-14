@@ -71,7 +71,10 @@
                 }
                 else if ($(e.target).text() === "Statistics" && $(e.relatedTarget).text() !== "Statistics" && statsShown === false) {
                     $.getJSON('/getusers?modName={{ modName }}', function (data) {
-                        getFriendLikers("{{ CurrentUser.access_token }}", data);
+                        getFriendLikers("{{ CurrentUser.access_token }}", data); 
+                    });
+                    $.getJSON('/getusercompletions?modName={{ modName }}', function (data) {
+                        getFriendCompletions("{{ CurrentUser.access_token }}", data);
                         statsShown = true;
                     });
                 }

@@ -51,7 +51,7 @@ class User(ndb.Model):
 
 class Module(ndb.Model):
     users = ndb.JsonProperty("u", required=True)
-
+    usersDone = ndb.JsonProperty("ud")
 
 class Reply(ndb.Model):
     """Datastore Model Class for replies to posts"""
