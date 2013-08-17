@@ -19,11 +19,10 @@ class MainPage(Handler):
 
 class Logout(Handler):
     """Handler for AJAX calls for clearing session (logging out)"""
-    def get(self):
+    def post(self):
         if self.current_user is not None:
             # Close the session
             self.session['user'] = None
-        return
 
 
 class ModPage(Handler):
@@ -249,6 +248,12 @@ class GetUsers(Handler):
         self.response.out.write(json.dumps({} if mod == None else mod.users))
 
 
+class JumpPage(Handler):
+    def get(self):
+        for modName in data:
+            self.response.out.write("<a href='http://nusmodmaven.appspot.com/modpage?modName="+modName+"'>"+modName+"</a>")
+
+
 class ChkIVLE(Handler):
     def get(self):
         self.response.out.write("1" if User.get_by_id(self.current_user['id']).ivle_token else "0")
@@ -267,6 +272,7 @@ app = webapp2.WSGIApplication(
         ('/getusers/?', GetUsers),
         ('/addPostReply/?', AddReply),
         ('/chkIVLE', ChkIVLE),
+        ('/jumpPage', JumpPage),
         ('/.*', MainPage)
     ],
     config=config,

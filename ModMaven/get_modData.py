@@ -241,14 +241,13 @@ for mod in modData:
     elif mod.find("3550") != -1:
         modData[mod]["Preclusion"] = seriesInternships
     else:
-        modData[mod]["Preclusion"] = prereqs_parser.getPreclusions(modData[mod]["Preclusion"], mod) if "Preclusion" in modData[mod] else "None"
-    # if type(modData[mod]['Prerequisite']) == str and len(modData[mod]['Prerequisite']) > 9:
-    #     print modData[mod]['Prerequisite']
+        modData[mod]["Preclusion"] = prereqs_parser.getPreclusions(modData[mod]["Preclusion"], mod, modData) if "Preclusion" in modData[mod] else "None"
 
 print "Prereqs done!"
 print "Tree Creation started!!"
 for mod in modData:
     modData[mod]["Tree"] = getTree(mod)
+    #modData[mod]["Preclusion"] = prereqs_parser.twoWayPreclusions(modData[mod]["Preclusion"], modData)
 print "Tree Creation done!!"
 
 modlist.sort()
@@ -256,3 +255,7 @@ modData['ModList'] = modlist
 
 with open("data/modInfo.json", "w") as outfile:
     json.dump(modData, outfile)
+with open("sitemap/mods.txt", "w") as outsd:
+    for modName in modData:
+        outsd.write("http://nusmodmaven.appspot.com/modpage?modName=" + modName + "\n")
+

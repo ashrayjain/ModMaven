@@ -1,6 +1,24 @@
 <div style="display: none;" id="zoom-btns" class="btn-group btn-group-vertical">
-    <div class="btn btn-inverse" onclick="zoomIn();"><div style="font-size: 30px; color: #ffffff">+</div></div>
-    <div class="btn btn-inverse" onclick="zoomOut();" style="position: relative; top:10px;"><div style="font-size: 30px; color: #ffffff; position: relative; bottom: 15px;">_</div></div>
+    <div class="btn btn-large btn-inverse" id="zoom-in"><div style="position: relative; right: 10px; font-size: 50px; color: #ffffff">+</div></div>
+    <div class="btn btn-large btn-inverse" id="zoom-out" style="position: relative; top:10px;"><div style="font-size: 50px; color: #ffffff; position: relative; bottom: 25px; right: 9px;">_</div></div>
+</div>
+<div id="legend" class="pull-right" style="display: none">
+    <div class="key">
+        <strong>Key</strong>
+        <br>
+        <br>
+        <div style="color: #000000; border-radius: 13px; background-color: steelblue; height: 22px; font-size: 20px; overflow: hidden; padding: 5px;">
+            Normal
+        </div>
+        <br>
+        <div style="color: #000000; border-radius: 13px; background-color: red; height: 22px; font-size: 20px; overflow: hidden; padding: 5px;">
+            Completed
+        </div>
+        <br>
+        <div style="color: #000000; border-radius: 13px; background-color: yellow; height: 22px; font-size: 20px; overflow: hidden; padding: 5px;">
+            Precluded
+        </div>
+    </div>
 </div>
 <a href="#myModal" data-toggle="modal"></a>
 

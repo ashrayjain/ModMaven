@@ -82,12 +82,53 @@ a.dropdown-toggle{outline: none}
   transition: none !important;
 }
 
-#zoom-btns {
-    position: relative;
-    top: 80px;
-    left: 20px;
-    opacity: 0.5;
+.key {
     z-index: 99;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    opacity: 0.3;
+    -webkit-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -moz-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -o-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -ms-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    color: #ffffff;
+    background-color: #1c1c1c;
+    border-radius: 13px;
+    padding: 12px 12px 15px 12px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -90px;
+    font-size: 25px;
+    width: 45px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.key:hover{
+    -webkit-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -moz-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -o-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    -ms-transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    transition: width 0.5s, height 0.5s, margin-left 0.5s !important;
+    opacity: 1 !important;
+    width: 120px;
+    height: 175px;
+    margin-left: -165px;
+}
+
+#zoom-btns {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 99;
+    width: 50px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -95,7 +136,15 @@ a.dropdown-toggle{outline: none}
     -ms-user-select: none;
     user-select: none;
 }
-#zoom-btns:hover {
+#zoom-in, #zoom-out{
+    opacity: 0.3;
+    -webkit-transition: opacity 0.5s !important;
+    -moz-transition: opacity 0.5s !important;
+    -o-transition: opacity 0.5s !important;
+    -ms-transition: opacity 0.5s !important;
+    transition: opacity 0.5s !important;
+}
+#zoom-in:hover, #zoom-out:hover {
     -webkit-transition: opacity 0.5s !important;
     -moz-transition: opacity 0.5s !important;
     -o-transition: opacity 0.5s !important;

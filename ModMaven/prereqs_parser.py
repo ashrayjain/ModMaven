@@ -31,6 +31,8 @@ restrictedRE = re.compile('|'.join(restricted))
 # key = EXACT pre-requisite string to match
 # value = parsed output
 exceptions = {
+    'Pass 80 MCs and [CS3240, IS2150, IS3230 and IS3150]':
+        {' and ': ['CS3240', 'IS2150', 'IS3230', 'IS3150']},
     'CS2261 or IS2103 (applicable to intakes from AY2005/06 to AY2007/08) or [(CS2261 or IS2103) and (CS2301 or IS2101)] (applicable to intakes from AY2008/09 onwards)':
         {' and ': ['IS2103', 'IS2101']},
     'For Applied Chemistry Students: Polymer Chemistry II (CM3265). For Chemistry students: Organic Reaction Mechanisms (CM3221).':
@@ -245,9 +247,12 @@ preclusion_exceptions = {
     ]
 }
 
+manualPreclusions = {
+    "CG1101": ["CS1010", "CS1010E"]
+}
 
 
-def getPreclusions(preclusion, mod):
+def getPreclusions(preclusion, mod, data):
     preclusions = verifyRE.findall(preclusion)
     for key in preclusion_exceptions.keys():
         if key in preclusions:
@@ -255,6 +260,24 @@ def getPreclusions(preclusion, mod):
             preclusions.extend(preclusion_exceptions[key])
     if mod in preclusions:
         preclusions.remove(mod)
-    return preclusions if preclusions != [] else preclusion
+    if mod in manualPreclusions:
+        preclusions.extend(manualPreclusions[mod])
+    preclusions = set(preclusions)
+    toRemove = []
+    for module in preclusions:
+        if module not in data:
+            toRemove.append(module)
+    return [pre for pre in preclusions if pre not in toRemove] if len(preclusions) != 0 else preclusion
 
-# 'Parsing Done!'
+
+# Not Using Coz Screwed Up Preclusion in IVLE Data,
+# not safe to assume
+def twoWayPreclusions(preclusion, data):
+    if isinstance(preclusion, list):
+        preclusion = set(preclusion)
+        updates = set()
+        for mod in preclusion:
+            updates.update(data[mod]["Preclusion"])
+        preclusion.update(updates)
+        return list(preclusion)
+    return preclusion

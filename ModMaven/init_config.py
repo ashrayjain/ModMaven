@@ -93,7 +93,7 @@ class Handler(webapp2.RequestHandler):
             return self.session.get("user")
         else:
             # for debugging
-            #print "In cookie", self.session.get("user")
+            # print "In cookie", self.session.get("user")
 
             # Either user just logged in or logged in for the first time
             cookie = facebook.get_user_from_cookie(self.request.cookies,

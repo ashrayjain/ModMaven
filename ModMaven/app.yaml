@@ -8,6 +8,9 @@ default_expiration: "2h"
 
 handlers:
 
+- url: /sitemap
+  static_dir: sitemap
+
 - url: /css
   static_dir: css
 

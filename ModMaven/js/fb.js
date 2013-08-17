@@ -3,7 +3,7 @@ fbLogout = function() {
     FB.getLoginStatus(function(response){
         //console.log(response.status);
         if(response.status === "connected"){FB.logout();}
-        $.get('/logout', function(){window.location.reload();});
+        $.post('/logout', function(){window.location.reload();});
     }, true);
 };
 
@@ -19,7 +19,7 @@ fbLoaded = function(){
         //console.log("Called");
         FB.getLoginStatus(function (response) {
             if (response.status !== 'connected') {
-                $.get('/logout', function(){});
+                $.post('/logout', function(){});
                 clearInterval(intervalID);
             }
             //console.log(response);

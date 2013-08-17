@@ -6,7 +6,7 @@
     <meta property="og:title" content="{{ modName }} - {{ modTitle }}"/>
     <meta property="og:image" content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png"/>
     <meta property="og:description" content="{{ modDesc }}"/>
-{% endblock %}l
+{% endblock %}
 {% block main_content %}
     <div class="row-fluid" style="margin-top: 30px">
         <div class="span12">
@@ -49,9 +49,9 @@
     </div>
 {% endblock %}
 {% block js %}
-    <script src="../js/fb_actions.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="../js/tree.js"></script>
+    <script src="../js/fb_actions.js"></script>
     <script type="text/javascript">
         String.prototype.format = function () {
             var i = 0, args = arguments;
@@ -59,24 +59,87 @@
                 return typeof args[i] != 'undefined' ? args[i++] : '';
             });
         };
-        $(document).ready(function () {
-            var treeShown = false;
-            var statsShown = false;
-            $('a[data-toggle="pill"]').on('shown', function (e) {
-                if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false) {
-                    $.getJSON('/gettree?modName={{ modName }}', function (data) {
-                        drawTree(data, true);
-                        treeShown = true;
+        var treeShown = false,
+                statsShown = false;
+        function permissionsOk(permsNeeded, token) {
+            FB.api('/me/permissions',{access_token: token}, function (response){
+                if (response.hasOwnProperty("error")){
+                    tokenRefreshNeeded = true;
+                    FB.getLoginStatus(function (login_response){
+                        if (login_response.status !== 'connected')
+                            $.post('/logout', function () {
+                                window.location.reload();
+                            });
+                        else
+                            $.post('/logout', function(){
+                                tokenRefreshNeeded = false;
+                                initializeInterestButton(login_response.authResponse.accessToken);
+                            });
                     });
                 }
-                else if ($(e.target).text() === "Statistics" && $(e.relatedTarget).text() !== "Statistics" && statsShown === false) {
-                    $.getJSON('/getusers?modName={{ modName }}', function (data) {
-                        getFriendLikers("{{ CurrentUser.access_token }}", data);
-                        statsShown = true;
-                    });
+                else {
+                    tokenRefreshNeeded = false;
+                    var permsArray = response.data[0];
+                    var permsToPrompt = [];
+                    for (var i in permsNeeded)
+                        if (permsArray[permsNeeded[i]] == null)
+                            permsToPrompt.push(permsNeeded[i]);
+                    permsOk = permsToPrompt.length <= 0;
+                    initializeInterestButton("{{ CurrentUser.access_token }}");
                 }
+                console.log(tokenRefreshNeeded, permsOk);
+                $('a[data-toggle="pill"]').off('shown');
+                $('a[data-toggle="pill"]').on('shown', function (e) {
+                    if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false)
+                        $.getJSON('/gettree?modName={{ modName }}', function (data) {
+                            drawTree(data, true);
+                            treeShown = true;
+                        });
+                    else if ($(e.target).text() === "Statistics" && $(e.relatedTarget).text() !== "Statistics" && statsShown === false) {
+                        if (tokenRefreshNeeded)
+                            FB.login(function (response) {
+                                if (response.authResponse)
+                                    $.post('/logout', function(){
+                                        $.getJSON('/getusers?modName={{ modName }}', function (data) {
+                                            getFriendLikers(response.authResponse.accessToken, data);
+                                            statsShown = true;
+                                        });
+                                    });
+                                else
+                                    $.post('/logout', function () {
+                                        window.location.reload();
+                                    });
+                            });
+                        else
+                            $.getJSON('/getusers?modName={{ modName }}', function (data) {
+                                getFriendLikers("{{ CurrentUser.access_token }}", data);
+                                statsShown = true;
+                            });
+                    }
+                });
             });
-        });
+        }
+        function modPageFBHandler(){
+            $(document).ready(function () {
+                $('a[data-toggle="pill"]').on('shown', function (e) {
+                    if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false)
+                        $.getJSON('/gettree?modName={{ modName }}', function (data) {
+                            drawTree(data, true);
+                            treeShown = true;
+                        });
+                });
+                {% if not CurrentUser %}
+                    loading.css('visibility', 'hidden');
+                    $('#login-required').css('display', '');
+                    statsLoadingBar.css("display", "none");
+                    $('#stats-content').css("display", "");
+                    $('#stats-table').css('display', 'none');
+                    $('#stats-login').css('display', '');
+                {% else %}
+                    permissionsOk(["publish_actions"], "{{ CurrentUser.access_token }}");
+                {% endif %}
+            });
+        }
     </script>
 {% endblock %}
-{% block facebookInit %}initializeInterestButton("{{ CurrentUser.access_token }}");{% endblock %}
+{% block facebookInit %}modPageFBHandler();{% endblock %}

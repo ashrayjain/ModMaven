@@ -37,6 +37,33 @@ function drawTree(data, toggle) {
     }
 
     $("#zoom-btns").css("display", "");
+    $("#legend").css("display", "");
+    var btn = null,
+        delay = null;
+    $("#zoom-out").mousedown(function(){
+        zoomOut();
+        delay = setTimeout(function(){
+            btn = setInterval(zoomOut, 50);
+        }, 500);
+    });
+    $("#zoom-out").mouseup(function () {
+        if(btn)
+            clearInterval(btn);
+        if (delay)
+            clearTimeout(delay);
+    });
+    $("#zoom-in").mousedown(function () {
+        zoomIn();
+        delay = setTimeout(function () {
+            btn = setInterval(zoomIn, 50);
+        }, 500);
+    });
+    $("#zoom-in").mouseup(function () {
+        if (btn)
+            clearInterval(btn);
+        if(delay)
+            clearTimeout(delay);
+    });
     SVGWidth = $("#Tree").width() - getWidth(toggle);
     d3.selectAll("svg")
         .remove();
