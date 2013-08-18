@@ -149,6 +149,9 @@ class IVLEVerify(Handler):
             for mod in user.mods_done:
                 if isinstance(data[mod]["Preclusion"], list):
                     precludedMods.update(data[mod]["Preclusion"])
+                module = Module._get_by_id(mod)
+                module.usersDone.append(user)
+                module.put()
             user.mods_precluded = list(precludedMods)
             user.put()
 
@@ -247,6 +250,11 @@ class GetUsers(Handler):
         mod = Module.get_by_id(self.request.get("modName"))
         self.response.out.write(json.dumps({} if mod == None else mod.users))
 
+class GetUserCompletions(Handler):
+    def get(self):
+        self.response.headers['Content-Type'] = "application/json"
+        mod = Module.get_by_id(self.request.get("modName"))
+        self.response.out.write(json.dumps({} if mod == None else mod.usersDone))
 
 class JumpPage(Handler):
     def get(self):
@@ -270,6 +278,7 @@ app = webapp2.WSGIApplication(
         ('/ivle/?', IVLEVerify),
         ('/gettree/?', RequestTree),
         ('/getusers/?', GetUsers),
+        ('/getusercompletions/?', GetUserCompletions),
         ('/addPostReply/?', AddReply),
         ('/chkIVLE', ChkIVLE),
         ('/jumpPage', JumpPage),

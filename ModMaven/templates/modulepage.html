@@ -62,16 +62,16 @@
         var treeShown = false,
                 statsShown = false;
         function permissionsOk(permsNeeded, token) {
-            FB.api('/me/permissions',{access_token: token}, function (response){
-                if (response.hasOwnProperty("error")){
+            FB.api('/me/permissions', {access_token: token}, function (response) {
+                if (response.hasOwnProperty("error")) {
                     tokenRefreshNeeded = true;
-                    FB.getLoginStatus(function (login_response){
+                    FB.getLoginStatus(function (login_response) {
                         if (login_response.status !== 'connected')
                             $.post('/logout', function () {
                                 window.location.reload();
                             });
                         else
-                            $.post('/logout', function(){
+                            $.post('/logout', function () {
                                 tokenRefreshNeeded = false;
                                 initializeInterestButton(login_response.authResponse.accessToken);
                             });
@@ -99,11 +99,15 @@
                         if (tokenRefreshNeeded)
                             FB.login(function (response) {
                                 if (response.authResponse)
-                                    $.post('/logout', function(){
+                                    $.post('/logout', function () {
                                         $.getJSON('/getusers?modName={{ modName }}', function (data) {
                                             getFriendLikers(response.authResponse.accessToken, data);
                                             statsShown = true;
                                         });
+                                        $.getJSON('/getusercompletions?modName={{ modName }}', function (data) {
+                                            getFriendCompletions(response.authResponse.accessToken, data);
+                                            statsShown = true;
+                                        });                                        
                                     });
                                 else
                                     $.post('/logout', function () {
@@ -111,15 +115,21 @@
                                     });
                             });
                         else
+                        {
                             $.getJSON('/getusers?modName={{ modName }}', function (data) {
                                 getFriendLikers("{{ CurrentUser.access_token }}", data);
                                 statsShown = true;
                             });
+                        $.getJSON('/getusercompletions?modName={{ modName }}', function (data) {
+                            getFriendCompletions("{{ CurrentUser.access_token }}", data);
+                            statsShown = true;
+                        });
+                        }
                     }
                 });
             });
         }
-        function modPageFBHandler(){
+        function modPageFBHandler() {
             $(document).ready(function () {
                 $('a[data-toggle="pill"]').on('shown', function (e) {
                     if ($(e.target).text() === "Tree" && $(e.relatedTarget).text() !== "Tree" && treeShown === false)
