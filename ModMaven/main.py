@@ -146,12 +146,17 @@ class IVLEVerify(Handler):
             user.ivle_token = token
             user.mods_done = self.__userMods__(token)
             precludedMods = set(user.mods_done)
-            for mod in user.mods_done:
+            modList = ndb.get_multi([ndb.Key(Module, mod) for mod in user.mods_done])
+            for i in range(len(user.mods_done)):
+                mod = user.mods_done[i]
                 if isinstance(data[mod]["Preclusion"], list):
                     precludedMods.update(data[mod]["Preclusion"])
-                module = Module._get_by_id(mod)
-                module.usersDone.append(user)
-                module.put()
+                #print modList[i], mod
+                if modList[i] is None:
+                    modList[i] = Module(id=mod, users={}, usersDone={user.key.id(): ""})
+                else:
+                    modList[i].usersDone[user.key.id()]=""
+            ndb.put_multi(modList)
             user.mods_precluded = list(precludedMods)
             user.put()
 
@@ -184,7 +189,7 @@ class ModTaken(Handler):
         if modAdded:
             modAdded.users[self.current_user['id']] = ""
         else:
-            modAdded = Module(id=mod, users={self.current_user['id']:""})
+            modAdded = Module(id=mod, users={self.current_user['id']:""}, usersDone={})
         modAdded.put()
         #print modAdded.users
 
@@ -254,6 +259,7 @@ class GetUserCompletions(Handler):
     def get(self):
         self.response.headers['Content-Type'] = "application/json"
         mod = Module.get_by_id(self.request.get("modName"))
+        #print mod
         self.response.out.write(json.dumps({} if mod == None else mod.usersDone))
 
 class JumpPage(Handler):

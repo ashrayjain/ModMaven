@@ -50,7 +50,7 @@ class User(ndb.Model):
 
 
 class Module(ndb.Model):
-    users = ndb.JsonProperty("u", required=True)
+    users = ndb.JsonProperty("u")
     usersDone = ndb.JsonProperty("ud")
 
 class Reply(ndb.Model):

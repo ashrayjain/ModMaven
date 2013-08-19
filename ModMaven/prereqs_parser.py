@@ -42,7 +42,6 @@ exceptions = {
     'Pass ID 3105 & 3106': {' and ': ['ID3105', 'ID3106']}
 }
 
-
 def getNext(iterator):
     try:
         return iterator.next()

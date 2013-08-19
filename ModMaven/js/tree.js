@@ -9,10 +9,11 @@ function zoomIn(){
             (SVGWidth) / 2 + translation[0],
             75 + translation[1]
         ];
+        var interval = 0.05;
         d3.select("#drawarea")
             .attr("transform", "translate(" + translation + ")" +
-                " scale(" + (interact.scale()+0.15) + ")");
-        interact.scale(interact.scale()+0.15);
+                " scale(" + (interact.scale()+interval) + ")");
+        interact.scale(interact.scale()+interval);
     }
 }
 function zoomOut(){
@@ -22,10 +23,11 @@ function zoomOut(){
             (SVGWidth) / 2 + translation[0],
             75 + translation[1]
         ];
+        var interval = 0.05;
         d3.select("#drawarea")
             .attr("transform", "translate(" + translation + ")" +
-                " scale(" + (interact.scale()-0.15) + ")");
-        interact.scale(interact.scale()-0.15);
+                " scale(" + (interact.scale()-interval) + ")");
+        interact.scale(interact.scale()-interval);
     }
 
 }

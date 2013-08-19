@@ -1,0 +1,15 @@
+# robots.txt generated at http://www.mcanerin.com
+User-agent: *
+Disallow: /modlist
+Disallow: /addModPost
+Disallow: /modtaken
+Disallow: /logout
+Disallow: /getmod
+Disallow: /ivle
+Disallow: /gettree
+Disallow: /getusers
+Disallow: /getusercompletions
+Disallow: /addPostReply
+Disallow: /chkIVLE
+Disallow: /addModPost
+Sitemap: http://nusmodmaven.appspot.com/sitemap/mods.txt

@@ -2,7 +2,8 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# modmaven: http://ogp.me/ns/fb/modmaven#">
     <title>{% block title %}{% endblock %}</title>
-    <meta name="google-site-verification" content="nFHBnsAFIYNzm_TFaOOkAdbrXqqEEfBhd_-GzQm-BVc"/>
+    <meta name="google-site-verification"
+          content="nFHBnsAFIYNzm_TFaOOkAdbrXqqEEfBhd_-GzQm-BVc"/>
     <meta property="fb:app_id" content="{{ FacebookAppID }}"/>
     {% block meta %}{% endblock %}
 
@@ -101,9 +102,8 @@
 <script type="text/javascript">
     {% if CurrentUser %}
         $.get('/chkIVLE', function(response){
-            if (response === "0") {
-                $("#ivle-alert").css("display", "")
-            }
+            if (response === "0")
+                $("#ivle-alert").css("display", "");
         });
     {% endif %}
     var verificationDialog = null;

@@ -26,5 +26,4 @@ fbLoaded = function(){
         }, true);
     };
     var intervalID = setInterval(loggedInChk, 10000); // Check every 10 secs
-
 };

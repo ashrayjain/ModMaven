@@ -1,11 +1,13 @@
 {% extends "base.html" %}
-{% block title %}{{ modName }} - {{modTitle}}{% endblock %}
+{% block title %}{{ modName }} - NUS ModMaven{% endblock %}
 {% block meta %}
     <meta property="og:type" content="modmaven:module"/>
     <meta property="og:url" content="http://nusmodmaven.appspot.com/modpage?modName={{ modName }}"/>
     <meta property="og:title" content="{{ modName }} - {{ modTitle }}"/>
     <meta property="og:image" content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png"/>
     <meta property="og:description" content="{{ modDesc }}"/>
+    <meta name="Description"
+          content="{{ modName }} - {{ modTitle }}. {{ modDesc }}"/>
 {% endblock %}
 {% block main_content %}
     <div class="row-fluid" style="margin-top: 30px">
@@ -35,7 +37,7 @@
                     <h4>{{modTitle}}</h4>
                     <p class="lead">{{modDesc}}</p>
                 </div>
-                <div id="Tree" class="pill-pane" style="margin-top: ">
+                <div id="Tree" class="pill-pane">
                     {% include 'modal.html' %}
                 </div>
                 <div id="Stats" class="pill-pane">
@@ -100,14 +102,8 @@
                             FB.login(function (response) {
                                 if (response.authResponse)
                                     $.post('/logout', function () {
-                                        $.getJSON('/getusers?modName={{ modName }}', function (data) {
-                                            getFriendLikers(response.authResponse.accessToken, data);
-                                            statsShown = true;
-                                        });
-                                        $.getJSON('/getusercompletions?modName={{ modName }}', function (data) {
-                                            getFriendCompletions(response.authResponse.accessToken, data);
-                                            statsShown = true;
-                                        });                                        
+                                        getStats(response.authResponse.accessToken, "{{ modName }}");
+                                        statsShown = true;
                                     });
                                 else
                                     $.post('/logout', function () {
@@ -116,14 +112,8 @@
                             });
                         else
                         {
-                            $.getJSON('/getusers?modName={{ modName }}', function (data) {
-                                getFriendLikers("{{ CurrentUser.access_token }}", data);
-                                statsShown = true;
-                            });
-                        $.getJSON('/getusercompletions?modName={{ modName }}', function (data) {
-                            getFriendCompletions("{{ CurrentUser.access_token }}", data);
+                            getStats("{{ CurrentUser.access_token }}", "{{ modName }}");
                             statsShown = true;
-                        });
                         }
                     }
                 });
@@ -142,8 +132,7 @@
                     loading.css('visibility', 'hidden');
                     $('#login-required').css('display', '');
                     statsLoadingBar.css("display", "none");
-                    $('#stats-content').css("display", "");
-                    $('#stats-table').css('display', 'none');
+                    $('#stats-content').css("display", "none");
                     $('#stats-login').css('display', '');
                 {% else %}
                     permissionsOk(["publish_actions"], "{{ CurrentUser.access_token }}");

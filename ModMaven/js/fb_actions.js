@@ -1,6 +1,7 @@
 var friendLikers = [],
-    statsLoadingBar = $("#stats-loading-bar"),
+    friendCompletions = [],
     loading = $('#loading-gif'),
+    statsLoadingBar = $("#stats-loading-bar"),
     permsOk,
     tokenRefreshNeeded;
 
@@ -196,29 +197,76 @@ function initializeInterestButton(token) {
     );
 }
 
-function getFriendLikers(token, data){
+function getStats(token, modName){
     FB.api(
         '/me/friends',
         {
             access_token: token,
             fields: "id,name,link"
         },
-        function(response){
-            for (var i = 0, len = response.data.length; i < len; i++)
-                if (data.hasOwnProperty(response.data[i].id))
-                    friendLikers.push(response.data[i]);
-            var firstrow = $("#firstrow");
-            if (friendLikers.length === 0)
-                firstrow.html("<td>No Friends have considered this module.</td>")
-            else {
-                var user = "<td><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none'>{}</td></tr></table></td>"
-                for (var i = 0; i < friendLikers.length; i++) {
-                    var friend = friendLikers[i];
-                    firstrow.html(firstrow.html() + user.format(friend['link'], friend['id'], friend['name']));
-                }
-            }
-            $("#total-users").html("<h5>" + Object.keys(data).length + " User(s)</h5>");
-            statsLoadingBar.css("display", "none");
-            $('#stats-content').css("display", "");
+        function (response) {
+            $.getJSON('/getusers?modName='+modName, function (data) {
+                getFriendLikers(response, data);
+                $("#total-users").html("<h5>" + Object.keys(data).length + " User(s)</h5>");
+            });
+            $.get('/chkIVLE', function (chk) {
+                if (chk === "0")
+                    $("#frnds-completed").html("<tr><td>Please <a href='#' onclick='ivleVerify(); return false;'>Verify IVLE</a> for this information.</td></tr>");
+                else
+                    $.getJSON('/getusercompletions?modName='+modName, function (data) {
+                        getFriendCompletions(response, data);
+                    });
+                statsLoadingBar.css("display", "none");
+                $('#stats-content').css("display", "");
+            });
         });
+}
+
+function getFriendLikers(response, data){
+    for (var i = 0, len = response.data.length; i < len; i++)
+        if (data.hasOwnProperty(response.data[i].id))
+            friendLikers.push(response.data[i]);
+    var body = $("#frnds-considered");
+    if (friendLikers.length === 0)
+        body.html('<div class="row-fluid"><div class="span12">No Friends have considered this module.</div></div>')
+    else {
+        var user = "<div class='span3' style='margin: 7px;'><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none; vertical-align: middle; font-size: 19px;'>{}</td></tr></table></div>",
+            count = 0
+        html = "";
+        for (var i = 0; i < friendCompletions.length; i++, count++) {
+            var friend = friendCompletions[i];
+            if (count % 4 === 0)
+                html += "<div class='row-fluid'>";
+            html += user.format(friend['link'], friend['id'], friend['name']);
+            if (count % 4 === 3)
+                html += "</div>";
+        }
+        body.html(html);
+    }
+}
+
+function getFriendCompletions(response, data){
+    //console.log(data);
+    //console.log(response);
+    for (var i = 0, len = response.data.length; i < len; i++)
+        if (data.hasOwnProperty(response.data[i].id))
+            friendCompletions.push(response.data[i]);
+    //console.log(friendCompletions);
+    var body = $("#frnds-completed");
+    if (friendCompletions.length === 0)
+        body.html('<div class="row-fluid"><div class="span12">No Friends have completed this module.</div></div>')
+    else {
+        var user = "<div class='span3' style='margin: 7px;'><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none; vertical-align: middle; font-size: 19px;'>{}</td></tr></table></div>",
+            count = 0
+        html = "";
+        for (var i = 0; i < friendCompletions.length; i++, count++) {
+            var friend = friendCompletions[i];
+            if (count % 4 === 0)
+                html += "<div class='row-fluid'>";
+            html += user.format(friend['link'], friend['id'], friend['name']);
+            if (count % 4 === 3)
+                html += "</div>";
+        }
+        body.html(html);
+    }
 }
