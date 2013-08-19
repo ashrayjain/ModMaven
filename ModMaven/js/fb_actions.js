@@ -231,10 +231,10 @@ function getFriendLikers(response, data){
         body.html('<div class="row-fluid"><div class="span12">No Friends have considered this module.</div></div>')
     else {
         var user = "<div class='span3' style='margin: 7px;'><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none; vertical-align: middle; font-size: 19px;'>{}</td></tr></table></div>",
-            count = 0
-        html = "";
-        for (var i = 0; i < friendCompletions.length; i++, count++) {
-            var friend = friendCompletions[i];
+            count = 0,
+            html = "";
+        for (var i = 0; i < friendLikers.length; i++, count++) {
+            var friend = friendLikers[i];
             if (count % 4 === 0)
                 html += "<div class='row-fluid'>";
             html += user.format(friend['link'], friend['id'], friend['name']);
@@ -257,8 +257,8 @@ function getFriendCompletions(response, data){
         body.html('<div class="row-fluid"><div class="span12">No Friends have completed this module.</div></div>')
     else {
         var user = "<div class='span3' style='margin: 7px;'><table><tr><td style = 'border: none'><a href={} target='_blank' style='outline:none'><img src='https://graph.facebook.com/{}/picture'/></a></td><td style = 'border: none; vertical-align: middle; font-size: 19px;'>{}</td></tr></table></div>",
-            count = 0
-        html = "";
+            count = 0,
+            html = "";
         for (var i = 0; i < friendCompletions.length; i++, count++) {
             var friend = friendCompletions[i];
             if (count % 4 === 0)

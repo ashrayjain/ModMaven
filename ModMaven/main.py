@@ -147,17 +147,22 @@ class IVLEVerify(Handler):
             user.mods_done = self.__userMods__(token)
             precludedMods = set(user.mods_done)
             modList = ndb.get_multi([ndb.Key(Module, mod) for mod in user.mods_done])
+            ghostMods = []
             for i in range(len(user.mods_done)):
                 mod = user.mods_done[i]
-                if isinstance(data[mod]["Preclusion"], list):
-                    precludedMods.update(data[mod]["Preclusion"])
-                #print modList[i], mod
-                if modList[i] is None:
-                    modList[i] = Module(id=mod, users={}, usersDone={user.key.id(): ""})
+                if mod in data:
+                    if isinstance(data[mod]["Preclusion"], list):
+                        precludedMods.update(data[mod]["Preclusion"])
+                    #print modList[i], mod
+                    if modList[i] is None:
+                        modList[i] = Module(id=mod, users={}, usersDone={user.key.id(): ""})
+                    else:
+                        modList[i].usersDone[user.key.id()]=""
                 else:
-                    modList[i].usersDone[user.key.id()]=""
+                    ghostMods.append(mod)
             ndb.put_multi(modList)
             user.mods_precluded = list(precludedMods)
+            user.mods_done = [mod for mod in user.mods_done if mod not in ghostMods]
             user.put()
 
     def __userMods__(self, token):
