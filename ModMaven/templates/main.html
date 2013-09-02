@@ -36,7 +36,7 @@
 </div>
 {% endblock %}
 {% block js %}
-    <script src="/js/jquery.autocomplete.js"></script>
+    <script src="/js/jquery.autocomplete.min.js"></script>
     <script type="text/javascript">
         $.getJSON('/modlist', function(data){
             $('#modName').autocomplete({"lookup": data, "maxHeight": 100, "onHint": function (hint) {}});
