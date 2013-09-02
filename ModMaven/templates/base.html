@@ -176,6 +176,7 @@
             $.post('/feedback', {feedback: feedbackText}, function() {
                 $("#invalidInput").css("display", "none");
                 $("#Feedback").modal("hide");
+                $("#feedback-text").val("");
             });
         }
         else
