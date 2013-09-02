@@ -160,6 +160,7 @@ class IVLEVerify(Handler):
                         modList[i].usersDone[user.key.id()]=""
                 else:
                     ghostMods.append(mod)
+            modList = [mod for mod in modList if mod != None]
             ndb.put_multi(modList)
             user.mods_precluded = list(precludedMods)
             user.mods_done = [mod for mod in user.mods_done if mod not in ghostMods]
@@ -277,6 +278,9 @@ class ChkIVLE(Handler):
     def get(self):
         self.response.out.write("1" if User.get_by_id(self.current_user['id']).ivle_token else "0")
 
+class ReceiveFeedBack(Handler):
+    def post(self):
+        FeedBack(string=self.request.get("feedback")).put()
 
 app = webapp2.WSGIApplication(
     [
@@ -293,6 +297,7 @@ app = webapp2.WSGIApplication(
         ('/addPostReply/?', AddReply),
         ('/chkIVLE', ChkIVLE),
         ('/jumpPage', JumpPage),
+        ('/feedback', ReceiveFeedBack),
         ('/.*', MainPage)
     ],
     config=config,

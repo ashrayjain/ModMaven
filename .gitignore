@@ -1,4 +1,9 @@
 ModMaven/.idea/
+ModMaven/get_modData.py
+ModMaven/prereqs_parser.py
+ModMaven/init_config.py
+ModMaven/data/
+ModMaven/sitemap/
 *.bmml
 Docs/
 *.pptx

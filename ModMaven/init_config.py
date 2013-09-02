@@ -69,6 +69,11 @@ class Post(ndb.Model):
     replies = ndb.StructuredProperty(Reply, repeated=True)
 
 
+class FeedBack(ndb.Model):
+    created = ndb.DateTimeProperty(auto_now_add=True)
+    string=ndb.TextProperty(required=True)
+
+
 class Handler(webapp2.RequestHandler):
     """Handler Class with Utility functions for Templates"""
 

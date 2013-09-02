@@ -42,61 +42,91 @@
 </script>
 
 <!-- Other Stuff -->
+<div id="wrap">
+    <div class="container-fluid">
+        <div class = "navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
+                <ul class="nav pull-right" style="top: 22px">
+                    {% if CurrentUser %}
+                        <li><a href="{{ CurrentUser.profile_url }}" target="_blank" style="outline:none">
+                            <img style="position:relative; left: 18px; bottom:10px;"
+                                 src="https://graph.facebook.com/{{ CurrentUser.id }}/picture"/>
+                        </a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <table style="position: relative; bottom: 6px;">
+                                    <tr><td style="font-size: 16px; color: #777777; padding-bottom: 5px;">
+                                        Welcome,
+                                    </td></tr>
+                                    <tr><td style="font-size: 23px;">
+                                        {{ CurrentUser.name }}<b class="caret"></b>
+                                    </td></tr>
+                                </table>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a>
+                                    <button id ="ivlebtn" class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
+                                    <button class="btn btn-danger" onclick="fbLogout()">Logout
+                                    </button>
+                                </a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a>
+                            <button class="btn btn-primary"
+                                    onclick="FB.login();">
+                                <div id="fb-btn-txt" style="font-size: 20px; padding: 3px">
+                                    Login with Facebook
+                                </div>
+                            </button>
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div id="ivle-alert" class="alert alert-error fade in" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                Please <strong><a href="#" onclick="ivleVerify(); return false;">Verify IVLE</a></strong> for getting
+                custom module trees that account for modules you may have already completed.
+                <br>
+                <div style="font-size: 12px;"><em>Note: Changes might take about 10 secs to reflect as IVLE API is very slow to respond!</em></div>
+            </div>
+        </div>
+        {% block main_content %}{% endblock %}
+    </div>
+    {% block tree %}{% endblock %}
+    <div id="push"></div>
 
-<div class="container-fluid">
-    <div class = "navbar">
-        <div class="navbar-inner">
-            <a class="brand" href="/"><img src="../img/modmaven.png"/></a>
-            <ul class="nav pull-right" style="top: 22px">
-                {% if CurrentUser %}
-                    <li><a href="{{ CurrentUser.profile_url }}" target="_blank" style="outline:none">
-                        <img style="position:relative; left: 18px; bottom:10px;"
-                             src="https://graph.facebook.com/{{ CurrentUser.id }}/picture"/>
-                    </a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <table style="position: relative; bottom: 6px;">
-                                <tr><td style="font-size: 16px; color: #777777; padding-bottom: 5px;">
-                                    Welcome,
-                                </td></tr>
-                                <tr><td style="font-size: 23px;">
-                                    {{ CurrentUser.name }}<b class="caret"></b>
-                                </td></tr>
-                            </table>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a>
-                                <button id ="ivlebtn" class="btn btn-primary" onclick="ivleVerify(); return false;">Verify IVLE</button>
-                                <button class="btn btn-danger" onclick="fbLogout()">Logout
-                                </button>
-                            </a></li>
-                        </ul>
-                    </li>
-                {% else %}
-                    <li><a>
-                        <button class="btn btn-primary"
-                                onclick="FB.login();">
-                            <div id="fb-btn-txt" style="font-size: 20px; padding: 3px">
-                                Login with Facebook
-                            </div>
-                        </button>
-                    </a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
-    <div class="row-fluid">
-        <div id="ivle-alert" class="alert alert-error fade in" style="display: none">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            Please <strong><a href="#" onclick="ivleVerify(); return false;">Verify IVLE</a></strong> for getting
-            custom module trees that account for modules you may have already completed.
-            <br>
-            <div style="font-size: 12px;"><em>Note: Changes might take about 10 secs to reflect as IVLE API is very slow to respond!</em></div>
-        </div>
-    </div>
-    {% block main_content %}{% endblock %}
 </div>
-{% block tree %}{% endblock %}
+<div id="footer">
+    <div class="container-fluid">
+        <div id="Feedback" class="modal hide fade" tabindex="-1" role="dialog"
+             aria-labelledby="FeedbackLabel" aria-hidden="true" data-backdrop="static" style="min-width: 560px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="feedbackCancelled();">&times;</button>
+                <h3 id="FeedbackLabel">Feedback Form</h3>
+            </div>
+            <div class="modal-body">
+                <textarea id="feedback-text" name="feedback" style="resize: none; width: 97%;" rows="5" placeholder="Type your feedback here..."></textarea>
+                <div id="invalidInput" class="alert alert-error" style="margin-bottom: 0 !important; display: none;">
+                    <strong>Error!</strong> Invalid input. Please try again.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true" onclick="feedbackCancelled();">Cancel</button>
+                <button class="btn btn-primary" onclick="processFeedback();">Submit Feedback</button>
+            </div>
+        </div>
+        <div class="centered">
+            <div id="footerDiv">
+            <p style="position: relative; top: 10px;">Built by <a target="_blank" href="https://github.com/ashrayjain">Ashray</a> & <a target="_blank" href="https://github.com/Moriarty26">Karan</a>.</p>
+            <p>Please report any bugs / feedback <a href="#Feedback" data-toggle="modal">here</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="../js/fb.js"></script> <!-- Main FB SDK Logic -->
 <script src="../js/ivle.js"></script>
 <script type="text/javascript">
@@ -133,6 +163,23 @@
                 verificationDialog.focus();
             }
         }
+    }
+
+    function feedbackCancelled() {
+        $("#feedback-text").val("");
+        $("#invalidInput").css("display", "none");
+    }
+
+    function processFeedback() {
+        var feedbackText = $("#feedback-text").val();
+        if (/^ *[a-z0-9]+/i.test(feedbackText)) {
+            $.post('/feedback', {feedback: feedbackText}, function() {
+                $("#invalidInput").css("display", "none");
+                $("#Feedback").modal("hide");
+            });
+        }
+        else
+            $("#invalidInput").css("display", "");
     }
 </script>
 <script src="../js/bootstrap.min.js"></script>

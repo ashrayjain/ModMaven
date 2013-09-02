@@ -1,13 +1,44 @@
 html, body {
     background-image: url("../img/natural_paper.png") !important;
+    height: 100%;
 }
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 body {
-    padding-top: 10px;
-    padding-bottom: 10px;
     min-width: 728px;
+}
+
+#footerDiv {
+    border: 2px solid black;
+    border-radius: 5px;
+    width : 40%;
+    margin: 0 auto;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -75px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 75px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .container-fluid {

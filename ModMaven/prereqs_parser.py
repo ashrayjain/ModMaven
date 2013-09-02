@@ -31,6 +31,8 @@ restrictedRE = re.compile('|'.join(restricted))
 # key = EXACT pre-requisite string to match
 # value = parsed output
 exceptions = {
+    'RE4221 ADVANCED URBAN PLANNING THEORIES, RE4222 PUBLIC POLICY AND REAL ESTATE MARKETS.':
+        {' and ': ['RE4221', 'RE4222']},
     'Pass 80 MCs and [CS3240, IS2150, IS3230 and IS3150]':
         {' and ': ['CS3240', 'IS2150', 'IS3230', 'IS3150']},
     'CS2261 or IS2103 (applicable to intakes from AY2005/06 to AY2007/08) or [(CS2261 or IS2103) and (CS2301 or IS2101)] (applicable to intakes from AY2008/09 onwards)':
@@ -261,12 +263,8 @@ def getPreclusions(preclusion, mod, data):
         preclusions.remove(mod)
     if mod in manualPreclusions:
         preclusions.extend(manualPreclusions[mod])
-    preclusions = set(preclusions)
-    toRemove = []
-    for module in preclusions:
-        if module not in data:
-            toRemove.append(module)
-    return [pre for pre in preclusions if pre not in toRemove] if len(preclusions) != 0 else preclusion
+    preclusions = list(set(preclusions))
+    return preclusions if len(preclusions) != 0 else preclusion
 
 
 # Not Using Coz Screwed Up Preclusion in IVLE Data,
