@@ -326,7 +326,7 @@
                     if (e.which === keys.TAB && that.options.tabDisabled === false) {
                         return;
                     }
-                    break;
+                    return;
                 case keys.UP:
                     that.moveUp();
                     break;
