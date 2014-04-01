@@ -1,0 +1,4 @@
+cron:
+- description: updating IVLE data
+  url: /updateivle
+  schedule: 2nd monday of jan,aug 12:00

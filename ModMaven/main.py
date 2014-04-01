@@ -7,6 +7,7 @@ class MainPage(Handler):
     def get(self):
         isError = self.request.cookies.get('error')
         error = ""
+        print 2
         if isError:
             error = "The Module You Requested Was Not Found"
             self.response.headers.add_header('Set-Cookie', 'error=false; Path=/; Expires=Thu, 01-Jan-1970 00:00:00 GMT')
@@ -136,13 +137,19 @@ class IVLEVerify(Handler):
 
     # Get Method for allowing AJAX Post call and improve UX
     def get(self):
-        self.response.out.write("")
+        self.response.out.write("Please wait!<br>Wrangling with IVLE LAPI <i>*sigh*</i>...")
 
     # Update IVLE Token and Mods Taken
     def post(self):
         token = self.request.get('token')
         if token:
-            user = User.get_by_id(self.current_user['id'])
+            user_id = self.request.get('userid')
+            if not user_id:
+                user_id = self.current_user['id']
+            user = User.get_by_id(user_id)
+            if not user:
+                return
+
             user.ivle_token = token
             user.mods_done = self.__userMods__(token)
             precludedMods = set(user.mods_done)
@@ -153,7 +160,6 @@ class IVLEVerify(Handler):
                 if mod in data:
                     if isinstance(data[mod]["Preclusion"], list):
                         precludedMods.update(data[mod]["Preclusion"])
-                    #print modList[i], mod
                     if modList[i] is None:
                         modList[i] = Module(id=mod, users={}, usersDone={user.key.id(): ""})
                     else:
@@ -282,6 +288,15 @@ class ReceiveFeedBack(Handler):
     def post(self):
         FeedBack(string=self.request.get("feedback")).put()
 
+class UpdateIVLE(Handler):
+    def get(self):
+        token = self.request.get('token')
+        users = User.query(User.ivle_token != None)
+        for user in users:
+            taskqueue.add(url='/ivle', method='POST', params={'token': user.ivle_token, 'userid': user.key.id()})
+
+
+
 app = webapp2.WSGIApplication(
     [
         ('/modpage/?', ModPage),
@@ -298,6 +313,7 @@ app = webapp2.WSGIApplication(
         ('/chkIVLE', ChkIVLE),
         ('/jumpPage', JumpPage),
         ('/feedback', ReceiveFeedBack),
+        ('/updateivle', UpdateIVLE),
         ('/.*', MainPage)
     ],
     config=config,
