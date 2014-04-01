@@ -24,6 +24,10 @@ handlers:
 - url: /img
   static_dir: img
 
+- url: /updateivle
+  script: main.app
+  login: admin
+  
 - url: /.*
   script: main.app
 
