@@ -65,6 +65,7 @@ class RequestTree(Handler):
     def get(self):
         modName = self.request.get('modName').upper()
         self.response.headers['Content-Type'] = "application/json"
+        self.response.headers['Access-Control-Allow-Origin'] = '*'
         if modName in data:
             self.response.out.write(json.dumps(self.__personalizeTree__(data[modName]['Tree'])))
             return
